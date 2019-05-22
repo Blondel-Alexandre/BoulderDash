@@ -1,7 +1,5 @@
 ﻿# JPU-BlankProject
 
-Base de démarrage pour le projet Jave/POO/UML des 1ières années Exia-Cesi
+Bienvenu sur le projet Java de première année du groupe Alexandre.B, Corentin.L, Léo.O et Thibaut.P.
 
-
-
-ceci est une modification
+Ce projet consiste à re faire le jeu Boulder Dash en Java
