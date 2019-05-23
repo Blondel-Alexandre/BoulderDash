@@ -1,15 +1,16 @@
 package model;
 
-import contract.IInteractions;
-import entity.MotionElement;
-
-public class Player implements IInteractions {
-
-public Player() {
+public class Player {
 	
-	MotionElement player = new MotionElement();
-	
-}
-
+	/**
+	 * Method to move player
+	 * @param x
+	 * 		move to x direction
+	 * @param y
+	 * 		move to y direction
+	 */
+	public void move(int x, int y) {
+		
+	}
 
 }
