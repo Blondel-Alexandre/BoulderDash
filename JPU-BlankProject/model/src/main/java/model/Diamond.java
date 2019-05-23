@@ -1,5 +1,10 @@
 package model;
 
-public class Diamond {
+import contract.IInteractions;
 
+public class Diamond implements IInteractions {
+
+	public Diamond() {
+		
+	}
 }
