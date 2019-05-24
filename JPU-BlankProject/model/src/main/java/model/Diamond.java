@@ -1,10 +1,9 @@
 package model;
 
-import contract.IInteractions;
-
-public class Diamond implements IInteractions {
+public class Diamond extends MotionElement implements IInteractions {
 
 	public Diamond() {
+		super();
 		
 	}
 }

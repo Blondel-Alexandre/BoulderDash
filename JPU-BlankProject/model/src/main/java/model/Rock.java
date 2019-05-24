@@ -1,11 +1,11 @@
 package model;
 
-import contract.IInteractions;
 
-public class Rock implements IInteractions {
+public class Rock extends MotionElement {
 
-	public Rock()
-	{
-		MotionElement rock = new MotionElement();
+	public Rock(int x, int y) {
+		super();
+		// TODO Auto-generated constructor stub
 	}
+
 }

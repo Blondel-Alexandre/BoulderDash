@@ -1,8 +1,7 @@
 package model;
 
-import contract.IInteractions;
 
-public class Exit implements IInteractions {
+public class Exit extends MotionLessElement  {
 
 	public Exit() {
 		

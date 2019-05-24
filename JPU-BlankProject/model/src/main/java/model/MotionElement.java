@@ -1,20 +1,18 @@
-package entity;
+package model;
 
+import java.awt.Image;
 import java.util.Observable;
 
-public class MotionElement extends Observable {
+public class MotionElement extends Observable implements IInteractions {
 
-	public int x;
-	public int y;
-	public int Weight;
-	public int Leigth;
+	public static int x;
+	public static int y;	
 
-
-	public MotionElement()
-	{
-		
+	public MotionElement() {
+		// TODO Auto-generated constructor stub
 	}
-	
+
+
 	public void moveUp(int y)
 	{
 		this.setY(y--);
@@ -53,6 +51,12 @@ public class MotionElement extends Observable {
 		this.y = y;
 		this.setChanged();
 		this.notifyObservers();
+	}
+
+	@Override
+	public void update(Observable arg0, Object arg1) {
+		// TODO Auto-generated method stub
+		
 	}
 	
 }

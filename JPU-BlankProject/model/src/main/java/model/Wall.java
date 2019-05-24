@@ -1,9 +1,6 @@
 package model;
 
-import contract.IInteractions;
-import entity.MotionLessElement;
-
-public class Wall implements IInteractions{
+public class Wall extends MotionLessElement  {
 
 	public Wall() {
 		MotionLessElement wall = new MotionLessElement();

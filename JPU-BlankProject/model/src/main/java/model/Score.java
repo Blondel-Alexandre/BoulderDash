@@ -1,8 +1,7 @@
 package model;
 
-import contract.IInteractions;
 
-public class Score implements IInteractions{
+public abstract class Score implements IInteractions{
 
 	public int Score = 0;
 	

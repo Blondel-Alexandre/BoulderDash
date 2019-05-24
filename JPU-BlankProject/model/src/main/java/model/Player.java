@@ -1,15 +1,26 @@
 package model;
 
-import contract.IInteractions;
-import entity.MotionElement;
 
-public class Player implements IInteractions {
+import java.awt.Image;
+import javax.swing.ImageIcon;
 
-public Player() {
-	
-	MotionElement player = new MotionElement();
-	
-}
+public class Player extends MotionElement implements IInteractions {
+
+	public MotionElement player;
+	static int numberLife;
+	public Player(int x, int y) {
+		super();
+		MotionElement player = new MotionElement();
+		ImageIcon i = new ImageIcon("C:/Users/Avantro/Desktop/a.png");
+		Image image = i.getImage();
+		player = this.player;
+	}
+	public int getNumberLife() {
+		return numberLife;
+	}
+	public void setNumberLife(int numberLife) {
+		this.numberLife = numberLife;
+	}
 
 
 }

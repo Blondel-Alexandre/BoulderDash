@@ -1,10 +1,11 @@
 package model;
 
-import contract.IInteractions;
 
-public class Ennemy implements IInteractions{
+public class Ennemy extends MotionElement{
 
-	public Ennemy() {
-		
+	public Ennemy(int x, int y) {
+		super();
+		// TODO Auto-generated constructor stub
 	}
+
 }
