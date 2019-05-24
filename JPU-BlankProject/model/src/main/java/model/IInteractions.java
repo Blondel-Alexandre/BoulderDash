@@ -6,20 +6,25 @@ public interface IInteractions extends Observer {
 
 	public static void updateStatus()
 	{
-//if(x.Player.player==x.Rock.rock );
-//{
-//	if (Player.numberLife>1)
-//{
-//		Player.numberLife--;
-//	}
-//	else
-//	{
-//		// dead
-//	}
-//}
+if(Player.x == Rock.x && Player.y == Rock.y);
+{
+	if (Player.numberLife>1)
+{
+		Player.numberLife--;
+	}
+	else
+	{
+		// dead
+	}
+}
 	}
 	public static void updateEnnemy()
 	{
+		if(Ennemy.x == Rock.x && Ennemy.y == Rock.y);
+		{
+			
+		}
+		
 		// ennemi en diamant
 	}
 	public static void updateScore()
