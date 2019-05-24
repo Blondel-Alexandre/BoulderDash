@@ -1,5 +1,16 @@
 package model;
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -7,7 +18,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.time.format.ResolverStyle;
 import java.util.Observable;
-
+import java.util.Scanner;
 
 import contract.IModel;
 import entity.HelloWorld;
@@ -54,10 +65,8 @@ public final class Model extends Observable implements IModel {
 		this.setChanged();
 		this.notifyObservers();
 	}
+
 	
-
-
-
 	public void loadHelloWorld(final String code) {
 		try {
 			final DAOHelloWorld daoHelloWorld = new DAOHelloWorld(DBConnection.getInstance().getConnection());

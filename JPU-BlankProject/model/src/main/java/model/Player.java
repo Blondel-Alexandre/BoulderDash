@@ -7,7 +7,7 @@ import javax.swing.ImageIcon;
 public class Player extends MotionElement implements IInteractions {
 
 	public MotionElement player;
-	static int numberLife;
+	static int numberLife =2;
 	public Player(int x, int y) {
 		super();
 		MotionElement player = new MotionElement();

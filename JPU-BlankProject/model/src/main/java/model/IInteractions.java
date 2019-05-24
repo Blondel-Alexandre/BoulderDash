@@ -6,7 +6,7 @@ public interface IInteractions extends Observer {
 
 	public static void updateStatus()
 	{
-if(Player.x == Rock.x && Player.y == Rock.y);
+if(Player.x == Rock.x && Player.y == Rock.y)
 {
 	if (Player.numberLife>1)
 {
@@ -14,10 +14,10 @@ if(Player.x == Rock.x && Player.y == Rock.y);
 	}
 	else
 	{
-		// dead
+		GameLoop.res = false;
 	}
 }
-	}
+	}  
 	public static void updateEnnemy()
 	{
 		if(Ennemy.x == Rock.x && Ennemy.y == Rock.y);
@@ -29,8 +29,11 @@ if(Player.x == Rock.x && Player.y == Rock.y);
 	}
 	public static void updateScore()
 	{
-		// score diamant
-	}
+		if(Player.x == Rock.x && Diamond.y == Diamond.y)
+			{
+			
+			}
+			}
 	public static void updateDirt()
 	{
 		// terre -> terre cassée

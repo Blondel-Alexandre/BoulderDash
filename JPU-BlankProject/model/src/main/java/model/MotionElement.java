@@ -13,7 +13,7 @@ public class MotionElement extends Observable implements IInteractions {
 	}
 
 
-	public void moveUp(int y)
+	public void moveUp()
 	{
 		this.setY(y--);
 	}
@@ -33,6 +33,11 @@ public class MotionElement extends Observable implements IInteractions {
 		this.setX(y++);
 	}
 
+	public void doNothing()
+	{
+		this.setX(x);
+		this.setY(y);
+	}
 	public int getX() {
 		return x;
 	}
