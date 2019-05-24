@@ -3,6 +3,7 @@ package model;
 import java.sql.SQLException;
 import java.util.Observable;
 
+
 import contract.IModel;
 import entity.HelloWorld;
 
@@ -68,6 +69,7 @@ public final class Model extends Observable implements IModel {
 			e.printStackTrace();
 		}
 	}
+	
 
 	/**
      * Gets the observable.
