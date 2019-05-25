@@ -1,5 +1,7 @@
 package view;
 
+import java.awt.Color;
+import java.awt.Font;
 import java.awt.Graphics;
 import java.util.Observable;
 import java.util.Observer;
@@ -66,5 +68,25 @@ class ViewPanel extends JPanel implements Observer {
 	protected void paintComponent(final Graphics graphics) {
 		graphics.clearRect(0, 0, this.getWidth(), this.getHeight());
 		graphics.drawString(this.getViewFrame().getModel().getHelloWorld().getMessage(), 10, 20);
-	}
+		
+		//score
+		Font f = new Font("Impact",Font.BOLD,20);
+		graphics.setColor(Color.BLUE);
+		graphics.setFont(f);
+		graphics.drawString("Diamants : " ,20,30);
+		
+		Font B = new Font("Impact",Font.BOLD,20);
+		graphics.setColor(Color.RED);
+		graphics.setFont(B);
+		graphics.drawString("Vies: " , 20, 50);
+		
+		//rocher 
+		
+		//for (int i = 0 ; i<Model.Rock.rocks.size() ; i++)
+		//{
+		//	Rock r = Model.Rock.rocks.get(i);
+		//	graphics.drawImage(r.image, r.x, r.y, null);
+		
+		//	}
+}
 }

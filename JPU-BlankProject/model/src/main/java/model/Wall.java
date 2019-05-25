@@ -10,10 +10,6 @@ public class Wall extends MotionLessElement  {
 
 	public Wall() {
 		super();
-		MotionLessElement wall = new MotionLessElement();
-		ImageIcon i = new ImageIcon("C:/Users/Avantro/Desktop/a.png");
-		Image image = i.getImage();
-		wall = this.wall;
 		
 	}
 }
