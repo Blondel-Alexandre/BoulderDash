@@ -38,7 +38,7 @@ public final class Controller implements IController {
 	 * @see contract.IController#control()
 	 */
 	public void control() {
-		this.view.printMessage("Appuyer sur les touches 'E', 'F', 'D' ou 'I', pour afficher Hello world dans la langue d votre choix.");
+		this.view.printMessage("Appuyer sur les touches '1', '2', '3', '4' ou '5' pour sélectionner le niveau correspondant");
 	}
 
 	/**
@@ -93,5 +93,6 @@ public final class Controller implements IController {
 				break;
 		}
 	}
+	
 
 }
