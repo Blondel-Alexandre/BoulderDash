@@ -44,7 +44,11 @@ public final class Controller extends KeyAdapter implements IController  {
 	 * @see contract.IController#control()
 	 */
 	public void control() {
+<<<<<<< HEAD
 		this.view.printMessage("BoulderDash");
+=======
+		this.view.printMessage("Appuyer sur les touches '1', '2', '3', '4' ou '5' pour sélectionner le niveau correspondant");
+>>>>>>> d1ea8e309193b25a4a785b53c7bdf20d8fbc608e
 	}
 
 	/**
