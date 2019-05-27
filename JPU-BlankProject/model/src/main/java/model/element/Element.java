@@ -1,6 +1,6 @@
 package model.element;
 
-public class Element {
+public class Element implements IElement{
 	
 
 }

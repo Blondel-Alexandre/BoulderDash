@@ -67,7 +67,10 @@ class ViewPanel extends JPanel implements Observer {
 	@Override
 	protected void paintComponent(final Graphics graphics) {
 		graphics.clearRect(0, 0, this.getWidth(), this.getHeight());
-		graphics.drawString(this.getViewFrame().getModel().getHelloWorld().getMessage(), 10, 20);
+		int y = 20;
+		for(String s: this.getViewFrame().getModel().getHelloWorld().getMessage().split("@")) {
+			graphics.drawString(s, 10, y += graphics.getFontMetrics().getHeight());
+		}
 		
 		//score
 		Font f = new Font("Impact",Font.BOLD,20);
