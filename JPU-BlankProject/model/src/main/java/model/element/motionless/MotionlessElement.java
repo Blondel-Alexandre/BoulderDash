@@ -3,7 +3,7 @@ package model.element.motionless;
 import model.element.Element;
 
 public class MotionlessElement extends Element{
-
+/*
 	int x;
 	int y;
 	public int getX() {
@@ -18,7 +18,8 @@ public class MotionlessElement extends Element{
 	public void setY(int y) {
 		this.y = y;
 	}
-	
-
-
-}
+	*/
+    public MotionlessElement(String filename) {
+        super(filename);
+    }
+	}

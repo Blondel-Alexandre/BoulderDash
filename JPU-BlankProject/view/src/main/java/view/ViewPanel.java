@@ -68,6 +68,7 @@ class ViewPanel extends JPanel implements Observer {
 	protected void paintComponent(final Graphics graphics) {
 		graphics.clearRect(0, 0, this.getWidth(), this.getHeight());
 		int y = 20;
+		//separate string chain
 		for(String s: this.getViewFrame().getModel().getHelloWorld().getMessage().split("@")) {
 			graphics.drawString(s, 10, y += graphics.getFontMetrics().getHeight());
 		}
