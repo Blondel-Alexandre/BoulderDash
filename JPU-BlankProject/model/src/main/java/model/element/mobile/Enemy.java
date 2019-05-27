@@ -1,8 +1,8 @@
 package model.element.mobile;
 
-public class Ennemy extends Mobile{
+public class Enemy extends Mobile{
 
-	public Ennemy() {
+	public Enemy() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
