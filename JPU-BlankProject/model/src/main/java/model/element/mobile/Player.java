@@ -1,16 +1,13 @@
-package model;
+package model.element.mobile;
 
 
-import java.awt.Image;
-import javax.swing.ImageIcon;
-
-public class Player extends MotionElement implements IInteractions {
-
-	public MotionElement player;
+public class Player extends Mobile {
+/*
+	public Mobile player;
 	static int numberLife =2;
 	public Player(int x, int y) {
 		super();
-		MotionElement player = new MotionElement();
+		Mobile player = new Mobile();
 		ImageIcon i = new ImageIcon("C:/Users/Avantro/Desktop/a.png");
 		Image image = i.getImage();
 		player = this.player;
@@ -21,6 +18,6 @@ public class Player extends MotionElement implements IInteractions {
 	public void setNumberLife(int numberLife) {
 		this.numberLife = numberLife;
 	}
-
+*/
 
 }

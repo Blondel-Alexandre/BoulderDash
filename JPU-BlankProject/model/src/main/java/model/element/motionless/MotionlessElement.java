@@ -1,6 +1,8 @@
-package model;
+package model.element.motionless;
 
-public class MotionLessElement {
+import model.element.Element;
+
+public class MotionlessElement extends Element{
 
 	int x;
 	int y;

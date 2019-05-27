@@ -1,24 +1,24 @@
 package model;
 
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.io.PrintWriter;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
+//import java.io.BufferedReader;
+//import java.io.BufferedWriter;
+//import java.io.File;
+//import java.io.FileInputStream;
+//import java.io.FileNotFoundException;
+//import java.io.FileReader;
+//import java.io.FileWriter;
+//import java.io.IOException;
+//import java.io.InputStream;
+//import java.io.InputStreamReader;
+//import java.io.PrintWriter;
+//import java.sql.Connection;
+//import java.sql.DriverManager;
+//import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
-import java.time.format.ResolverStyle;
+//import java.sql.Statement;
+//import java.time.format.ResolverStyle;
 import java.util.Observable;
-import java.util.Scanner;
+//import java.util.Scanner;
 
 import contract.IModel;
 import entity.HelloWorld;
@@ -28,7 +28,7 @@ import entity.HelloWorld;
  *
  * @author Jean-Aymeric Diet
  */
-public final class Model extends Observable implements IModel {
+public final class BoulderDashModel extends Observable implements IModel {
 
 	/** The helloWorld. */
 	private HelloWorld helloWorld;
@@ -36,7 +36,7 @@ public final class Model extends Observable implements IModel {
 	/**
 	 * Instantiates a new model.
 	 */
-	public Model() {
+	public BoulderDashModel() {
 		this.helloWorld = new HelloWorld();
 	}
 
