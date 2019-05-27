@@ -6,7 +6,6 @@ import contract.ControllerOrder;
 import contract.IController;
 import contract.IModel;
 import contract.IView;
-import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 
 
@@ -17,10 +16,10 @@ import java.awt.event.KeyEvent;
 public final class Controller extends KeyAdapter implements IController  {
 
 	/** The view. */
-	private IView		view;
+	private IView view;
 
 	/** The model. */
-	private IModel	model;
+	private IModel model;
 
 	/**
 	 * Instantiates a new controller.
@@ -46,6 +45,7 @@ public final class Controller extends KeyAdapter implements IController  {
 	public void control() {
 
 		this.view.printMessage("BoulderDash");
+
 
 	}
 
