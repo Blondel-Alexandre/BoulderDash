@@ -1,9 +1,7 @@
 package model.element.motionless;
 
-import model.element.mobile.Mobile;
-
-public class Dirt extends Mobile{
+public class Dirt extends MotionlessElement  {
 	public Dirt(int x, int y) {
-	
-}
+	super();
+	}
 }
