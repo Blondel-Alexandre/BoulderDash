@@ -5,7 +5,7 @@ public class Character
 
 static int numberLife =2;
 
-public Character(int x, int y) {
+public Character() {
 	super();
 }
 public int getNumberLife() {
