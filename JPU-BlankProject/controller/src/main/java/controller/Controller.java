@@ -1,14 +1,20 @@
 package controller;
 
+import java.awt.event.KeyAdapter;
+
 import contract.ControllerOrder;
 import contract.IController;
 import contract.IModel;
 import contract.IView;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
+
+
 
 /**
  * The Class Controller.
  */
-public final class Controller implements IController {
+public final class Controller extends KeyAdapter implements IController  {
 
 	/** The view. */
 	private IView		view;
@@ -38,7 +44,7 @@ public final class Controller implements IController {
 	 * @see contract.IController#control()
 	 */
 	public void control() {
-		this.view.printMessage("Appuyer sur les touches 'E', 'F', 'D' ou 'I', pour afficher Hello world dans la langue d votre choix.");
+		this.view.printMessage("BoulderDash");
 	}
 
 	/**
@@ -91,6 +97,41 @@ public final class Controller implements IController {
 				break;
 			default:
 				break;
+		}
+	}
+	
+	public void KeyPressed(KeyEvent motion)
+	{
+		int key =motion.getKeyCode();
+		if (key == KeyEvent.VK_UP)
+		{
+			character.moveUp();
+		}
+		if (key == KeyEvent.VK_RIGHT) {
+			character.moveRight();
+		}
+		if (key == KeyEvent.VK_LEFT) {
+			character.moveLeft();
+		}
+		if(key == KeyEvent.VK_DOWN){	
+			character.moveDown();
+		}
+	}
+	public void KeyRealeased(KeyEvent motion)
+	{
+		int key =motion.getKeyCode();
+		if (key == KeyEvent.VK_UP)
+		{
+			character.doNothing();
+		}
+		if (key == KeyEvent.VK_RIGHT) {
+			character.doNothing();
+		}
+		if (key == KeyEvent.VK_LEFT) {
+			character.doNothing();
+		}
+		if(key == KeyEvent.VK_DOWN){	
+			character.doNothing();
 		}
 	}
 	
