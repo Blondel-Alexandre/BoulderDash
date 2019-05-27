@@ -51,7 +51,7 @@ public final class BoulderDashModel extends Observable implements IModel {
 	 * @see contract.IModel#getMessage()
 	 */
 	public HelloWorld getHelloWorld() {
-		return this.helloWorld;
+		return this.helloWorld ;
 	}
 
 	/**

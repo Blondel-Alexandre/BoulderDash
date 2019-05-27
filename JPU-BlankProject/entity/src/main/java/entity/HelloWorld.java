@@ -1,5 +1,7 @@
 package entity;
 
+import java.awt.Graphics;
+
 /**
  * The Class HelloWorld.
  *
@@ -14,7 +16,7 @@ public class HelloWorld extends Entity {
 	private String	key;
 
 	/** The message. */
-	private String	message;
+	private String	message  ;
 
 	/**
 	 * Instantiates a new hello world.
@@ -92,8 +94,17 @@ public class HelloWorld extends Entity {
 	 * @param message
 	 *          the new message
 	 */
+	
 	public void setMessage(final String message) {
+		/*
+		final String SEPARATEUR = "@";
+		String mot[] = message.split(SEPARATEUR);
+
+        for (int i = 0; i < mot.length; i++) {
+            System.out.println(mot[i] + );
+        }*/
 		this.message = message;
+
 	}
 
 }

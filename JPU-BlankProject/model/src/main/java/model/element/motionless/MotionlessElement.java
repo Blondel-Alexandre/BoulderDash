@@ -2,23 +2,12 @@ package model.element.motionless;
 
 import model.element.Element;
 
-public class MotionlessElement extends Element{
-
-	int x;
-	int y;
-	public int getX() {
-		return x;
+public class MotionlessElement extends Element
+{
+	public void MotionlessElement(permeability: Permeability)
+	{
+		
 	}
-	public void setX(int x) {
-		this.x = x;
-	}
-	public int getY() {
-		return y;
-	}
-	public void setY(int y) {
-		this.y = y;
-	}
-	
-
-
 }
+
+
