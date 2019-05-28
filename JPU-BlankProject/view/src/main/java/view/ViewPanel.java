@@ -3,9 +3,11 @@ package view;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
+import java.awt.Image;
 import java.util.Observable;
 import java.util.Observer;
 
+import javax.swing.ImageIcon;
 import javax.swing.JPanel;
 
 import contract.IElement;
@@ -22,6 +24,11 @@ class ViewPanel extends JPanel implements Observer {
 	/** The Constant serialVersionUID. */
 	private static final long	serialVersionUID	= -998294702363713521L;
 
+	public Image img;
+	
+	
+	
+	
 	/**
 	 * Instantiates a new view panel.
 	 *
@@ -59,10 +66,17 @@ class ViewPanel extends JPanel implements Observer {
 	 */
 	@Override
 	protected void paintComponent(final Graphics graphics) {
-		graphics.clearRect(0, 0, this.getWidth(), this.getHeight());		
-		for(int i = 0; i < this.viewFrame.getModel().getSprites().size(); i++) {
+		System.out.println("jsqbcqkc");
+		//int a = 0,b = 0;
+		graphics.clearRect(0, 0, this.getWidth(), this.getHeight());	
+		int size = this.viewFrame.getModel().getSprites().size();
+		for(int i = 0; i < size ; i++) {
 			IElement element = this.viewFrame.getModel().getSprites().get(i);
-			graphics.drawImage(element.getImage(), element.getX(), element.getY(), null);
+			//graphics.drawImage(element.getImage(), element.getX(), element.getY(), null);
+			//System.out.println();
+			ImageIcon i1 = new ImageIcon("E:/Java/BoulderDash/BoulderDash/JPU-BlankProject/model/resource/Wall.png");
+			img = i1.getImage();
+			graphics.drawImage(img,element.getX()*16, element.getY()*16, null);
 		}
 		
 		//score

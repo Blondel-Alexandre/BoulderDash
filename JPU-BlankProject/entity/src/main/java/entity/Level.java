@@ -48,16 +48,18 @@ public class Level extends Entity {
 	public void loadLevel() {
 
 	//String mapCharacter = getMessage();
-		String mapCharacter = "www@ww@w";
+		String mapCharacter = "www@www@www";
 	final String SEPARATEUR = "@";
-	String mot[] = mapCharacter.split(SEPARATEUR);
+	String[] mot = mapCharacter.split(SEPARATEUR);
     for (int y = 0; y < mot.length; y++) {
     	String temp = mot[y];
+		//System.out.println("salut");
     	int tempLenght = temp.length();
     	for(int x = 0; x < tempLenght; x++) {
     		char c = temp.charAt(x);
     		map[x][y] = c;
-    		System.out.println(c + " x : " + x  + " y : " + y );
+    		//System.out.println(c + " x : " + x  + " y : " + y );
+    		//System.out.println(tempLenght);
     		}
     		}
       }

@@ -23,7 +23,7 @@ public class Sprite implements ISprite{
 
 	public void loadImage() {
         try {
-            this.setImage(ImageIO.read(new File("images/" + this.getImageName())));
+            this.setImage(ImageIO.read(new File(this.getImageName())));
         }
         catch (IOException e) {
             e.printStackTrace();
@@ -50,7 +50,7 @@ public class Sprite implements ISprite{
     }
     
     private void setImageName(final String imageName) {
-       // this.filename = filename;
+        this.filename = filename;
     }
 
 }

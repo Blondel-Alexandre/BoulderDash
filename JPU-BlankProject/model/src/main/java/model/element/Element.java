@@ -27,6 +27,8 @@ public class Element implements IElement {
     public final Sprite getSprite() {
         return this.sprite;
     }
+    
+
 
     /**
      * Sets the sprite.

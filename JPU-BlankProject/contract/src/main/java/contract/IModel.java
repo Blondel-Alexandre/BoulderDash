@@ -35,4 +35,6 @@ public interface IModel {
 	Observable getObservable();
 	
 	ArrayList<IElement> getSprites();
+
+	ArrayList<IElement> zob();
 }

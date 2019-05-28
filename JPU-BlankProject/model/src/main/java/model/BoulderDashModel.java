@@ -104,10 +104,15 @@ public final class BoulderDashModel extends Observable implements IModel {
 	
 	@Override
 	public ArrayList<IElement> getSprites() {
+		System.out.println("aaaa");
 		char[][] map = this.helloWorld.getLevel();
-		for(int y = 0; y < 16; y++) {
-			for (int x = 0; x < 16 ; x++) {
+		//System.out.println(map);
+		for(int y = 0; y < 3; y++) {
+			for (int x = 0; x < 3 ; x++) {
 				char c = map[y][x];
+	    		System.out.println(c);
+	    		System.out.println(x+ "je suis x");	 
+	    		System.out.println(y +"je suis y");
 				switch (c) {
 				case 'w':
 					Wall wall = new Wall();
@@ -118,6 +123,11 @@ public final class BoulderDashModel extends Observable implements IModel {
 				}
 			}
 		}
+		return this.sprites;
+	}
+	
+	public ArrayList<IElement> zob() {
+		System.out.println("aakvdvdbkxwbxcjkxlvxdjklnaa");
 		return this.sprites;
 	}
 	
