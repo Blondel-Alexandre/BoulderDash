@@ -1,5 +1,6 @@
 package contract;
 
+import java.util.ArrayList;
 import java.util.Observable;
 
 import entity.Level;
@@ -32,4 +33,6 @@ public interface IModel {
 	 * @return the observable
 	 */
 	Observable getObservable();
+	
+	ArrayList<IElement> getSprites();
 }

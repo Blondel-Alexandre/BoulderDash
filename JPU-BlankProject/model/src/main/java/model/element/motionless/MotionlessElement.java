@@ -4,7 +4,7 @@ import model.element.Element;
 import model.element.Permeability;
 import model.element.Sprite;
 
-abstract class MotionlessElement extends Element{
+public abstract class MotionlessElement extends Element{
 /*
 	int x;
 	int y;

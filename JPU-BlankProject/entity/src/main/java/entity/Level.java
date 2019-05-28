@@ -1,6 +1,5 @@
 package entity;
 
-import java.awt.Graphics;
 
 /**
  * The Class HelloWorld.
@@ -17,6 +16,10 @@ public class Level extends Entity {
 
 	/** The message. */
 	private String	message  ;
+	
+	final int tile = 16;
+	
+	char map[][] = new char[tile][tile];
 
 	/**
 	 * Instantiates a new hello world.
@@ -32,6 +35,7 @@ public class Level extends Entity {
 		this.setId(id);
 		this.setKey(key);
 		this.setMessage(message);
+		this.loadLevel();
 	}
 
 	/**
@@ -43,11 +47,10 @@ public class Level extends Entity {
 	
 	public void loadLevel() {
 
-	String mapCharacter = "";
+	//String mapCharacter = getMessage();
+		String mapCharacter = "www@ww@w";
 	final String SEPARATEUR = "@";
 	String mot[] = mapCharacter.split(SEPARATEUR);
-	final int tile = 16;
-	char map[][] = new char[tile][tile];
     for (int y = 0; y < mot.length; y++) {
     	String temp = mot[y];
     	int tempLenght = temp.length();
@@ -55,11 +58,13 @@ public class Level extends Entity {
     		char c = temp.charAt(x);
     		map[x][y] = c;
     		System.out.println(c + " x : " + x  + " y : " + y );
-    		
+    		}
     		}
       }
-
-}
+	public char[][] getLevel(){
+		return this.map;
+		
+	}
 
 	/**
 	 * Gets the id.

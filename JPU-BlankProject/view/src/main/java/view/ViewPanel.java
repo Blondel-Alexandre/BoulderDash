@@ -8,6 +8,8 @@ import java.util.Observer;
 
 import javax.swing.JPanel;
 
+import contract.IElement;
+
 /**
  * The Class ViewPanel.
  *
@@ -29,15 +31,6 @@ class ViewPanel extends JPanel implements Observer {
 	public ViewPanel(final ViewFrame viewFrame) {
 		this.setViewFrame(viewFrame);
 		viewFrame.getModel().getObservable().addObserver(this);
-	}
-
-	/**
-	 * Gets the view frame.
-	 *
-	 * @return the view frame
-	 */
-	private ViewFrame getViewFrame() {
-		return this.viewFrame;
 	}
 
 	/**
@@ -66,11 +59,10 @@ class ViewPanel extends JPanel implements Observer {
 	 */
 	@Override
 	protected void paintComponent(final Graphics graphics) {
-		graphics.clearRect(0, 0, this.getWidth(), this.getHeight());
-		int y = 20;
-		//separate string chain
-		for(String s: this.getViewFrame().getModel().getHelloWorld().getMessage().split("@")) {
-			graphics.drawString(s, 10, y += graphics.getFontMetrics().getHeight());
+		graphics.clearRect(0, 0, this.getWidth(), this.getHeight());		
+		for(int i = 0; i < this.viewFrame.getModel().getSprites().size(); i++) {
+			IElement element = this.viewFrame.getModel().getSprites().get(i);
+			graphics.drawImage(element.getImage(), element.getX(), element.getY(), null);
 		}
 		
 		//score

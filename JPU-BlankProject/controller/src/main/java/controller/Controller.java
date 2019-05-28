@@ -6,7 +6,7 @@ import contract.ControllerOrder;
 import contract.IController;
 import contract.IModel;
 import contract.IView;
-import java.awt.event.KeyEvent;
+//import java.awt.event.KeyEvent;
 
 
 
@@ -101,7 +101,7 @@ public final class Controller extends KeyAdapter implements IController  {
 				break;
 		}
 	}
-	
+/*	
 	public void KeyPressed(KeyEvent motion)
 	{
 		int key =motion.getKeyCode();
@@ -136,6 +136,6 @@ public final class Controller extends KeyAdapter implements IController  {
 			character.doNothing();
 		}
 	}
-	
+	*/
 
 }

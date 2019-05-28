@@ -50,7 +50,7 @@ public class Sprite implements ISprite{
     }
     
     private void setImageName(final String imageName) {
-        this.filename = filename;
+       // this.filename = filename;
     }
 
 }

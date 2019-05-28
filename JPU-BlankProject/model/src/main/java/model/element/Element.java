@@ -2,9 +2,11 @@ package model.element;
 
 import java.awt.Image;
 
+import contract.IElement;
 
 
-public class Element {
+
+public class Element implements IElement {
 
 
 	private Sprite sprite;
@@ -63,17 +65,17 @@ public class Element {
     public final Image getImage() {
         return this.getSprite().getImage();
     }
-/*
-protected int x;
-protected int y;
+
+	int x;
+	int y;
 	public int getX() {
 		return x;
 	}
 
 	public void setX(int x) {
 		this.x = x;
-		this.setChanged();
-		this.notifyObservers();
+		//this.setChanged();
+		//this.notifyObservers();
 	}
 
 	public int getY() {
@@ -82,8 +84,10 @@ protected int y;
 
 	public void setY(int y) {
 		this.y = y;
-		this.setChanged();
-		this.notifyObservers();
+		//this.setChanged();
+		//this.notifyObservers();
 	}
-*/
+
+
+
 }

@@ -15,13 +15,16 @@ package model;
 //import java.sql.DriverManager;
 //import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 //import java.sql.Statement;
 //import java.time.format.ResolverStyle;
 import java.util.Observable;
 //import java.util.Scanner;
 
+import contract.IElement;
 import contract.IModel;
 import entity.Level;
+import model.element.motionless.Wall;
 
 /**
  * The Class Model.
@@ -32,14 +35,20 @@ public final class BoulderDashModel extends Observable implements IModel {
 
 	/** The helloWorld. */
 	private Level helloWorld;
-	private BoulderMap boulderMap;
+	//private BoulderMap boulderMap;
+	//get Sprite type into arraylist
+	private ArrayList<IElement> sprites;
 	/**
 	 * Instantiates a new model.
 	 */
 	public BoulderDashModel() {
+		this.sprites = new ArrayList<>();
 		this.helloWorld = new Level();
-		this.boulderMap = new BoulderMap();
+		//this.boulderMap = new BoulderMap();
+		
 	}
+	
+
 
 	/**
      * Gets the hello world.
@@ -90,6 +99,26 @@ public final class BoulderDashModel extends Observable implements IModel {
 	 */
 	public Observable getObservable() {
 		return this;
+	}
+
+	
+	@Override
+	public ArrayList<IElement> getSprites() {
+		char[][] map = this.helloWorld.getLevel();
+		for(int y = 0; y < 16; y++) {
+			for (int x = 0; x < 16 ; x++) {
+				char c = map[y][x];
+				switch (c) {
+				case 'w':
+					Wall wall = new Wall();
+					wall.setX(x);
+					wall.setY(y);
+					this.sprites.add(wall);
+					break;
+				}
+			}
+		}
+		return this.sprites;
 	}
 	
 
