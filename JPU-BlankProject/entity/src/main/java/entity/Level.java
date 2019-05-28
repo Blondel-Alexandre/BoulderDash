@@ -40,6 +40,26 @@ public class Level extends Entity {
 	public Level() {
 		this(0, "", "");
 	}
+	
+	public void loadLevel() {
+
+	String mapCharacter = "";
+	final String SEPARATEUR = "@";
+	String mot[] = mapCharacter.split(SEPARATEUR);
+	final int tile = 16;
+	char map[][] = new char[tile][tile];
+    for (int y = 0; y < mot.length; y++) {
+    	String temp = mot[y];
+    	int tempLenght = temp.length();
+    	for(int x = 0; x < tempLenght; x++) {
+    		char c = temp.charAt(x);
+    		map[x][y] = c;
+    		System.out.println(c + " x : " + x  + " y : " + y );
+    		
+    		}
+      }
+
+}
 
 	/**
 	 * Gets the id.

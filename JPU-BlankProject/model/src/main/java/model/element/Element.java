@@ -2,10 +2,9 @@ package model.element;
 
 import java.awt.Image;
 
-import contract.IElement;
 
 
-public class Element implements ISquare{
+public class Element {
 
 
 	private Sprite sprite;
@@ -60,7 +59,7 @@ public class Element implements ISquare{
      * (non-Javadoc)
      * @see fr.exia.showboard.ISquare#getImage()
      */
-    @Override
+ 
     public final Image getImage() {
         return this.getSprite().getImage();
     }
