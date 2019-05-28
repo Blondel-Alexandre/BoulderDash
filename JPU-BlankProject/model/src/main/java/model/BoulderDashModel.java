@@ -21,7 +21,7 @@ import java.util.Observable;
 //import java.util.Scanner;
 
 import contract.IModel;
-import entity.HelloWorld;
+import entity.Level;
 
 /**
  * The Class Model.
@@ -31,13 +31,14 @@ import entity.HelloWorld;
 public final class BoulderDashModel extends Observable implements IModel {
 
 	/** The helloWorld. */
-	private HelloWorld helloWorld;
-
+	private Level helloWorld;
+	private BoulderMap boulderMap;
 	/**
 	 * Instantiates a new model.
 	 */
 	public BoulderDashModel() {
-		this.helloWorld = new HelloWorld();
+		this.helloWorld = new Level();
+		this.boulderMap = new BoulderMap();
 	}
 
 	/**
@@ -50,7 +51,7 @@ public final class BoulderDashModel extends Observable implements IModel {
 	 *
 	 * @see contract.IModel#getMessage()
 	 */
-	public HelloWorld getHelloWorld() {
+	public Level getHelloWorld() {
 		return this.helloWorld ;
 	}
 
@@ -60,7 +61,7 @@ public final class BoulderDashModel extends Observable implements IModel {
      * @param helloWorld
      *            the new hello world
      */
-	private void setHelloWorld(final HelloWorld helloWorld) {
+	private void setHelloWorld(final Level helloWorld) {
 		this.helloWorld = helloWorld;
 		this.setChanged();
 		this.notifyObservers();
@@ -76,7 +77,7 @@ public final class BoulderDashModel extends Observable implements IModel {
 		}
 	}
 	
-
+	
 	/**
      * Gets the observable.
      *
@@ -90,4 +91,6 @@ public final class BoulderDashModel extends Observable implements IModel {
 	public Observable getObservable() {
 		return this;
 	}
+	
+
 }

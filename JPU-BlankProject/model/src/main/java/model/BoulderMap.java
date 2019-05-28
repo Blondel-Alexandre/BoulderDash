@@ -3,10 +3,11 @@ package model;
 import java.awt.Point;
 import java.util.HashMap;
 
+import contract.IBoulderMap;
 import contract.IModel;
 import model.element.motionless.MotionlessElement;
 
-public class BoulderMap {
+public class BoulderMap implements IBoulderMap{
 	
 	//private int width = 0, height = 0;
 	private HashMap<Point, MotionlessElement> walls;
@@ -17,35 +18,26 @@ public class BoulderMap {
 		
 	}
 	//private BuffuredImage image;
-	protected IModel getModel() {
-		return this.getModel();
-	}
-	
-	public void loadLevel() {
-	String str = getModel().getHelloWorld().getMessage();
-	/*final Graphics graphics;
-	graphics.clearRect(0, 0, this.getWidth(), this.getHeight());
-	int y = 20;
-	for(String str: this.getModel().getHelloWorld().getMessage().split("@")) {
-		graphics.drawString(s, 10, y += graphics.getFontMetrics().getHeight());
-	}*/
-	int length = str.length();
-	{
-		
-	for(int x = 0 ,y = 0 , i = 0; i < length; i++) {
-		char c = str.charAt(i);
-		x++;
-		switch(c) {
-		case 'w':
-			MotionlessElement wall = new MotionlessElement("Wall.png");
-			Point wallPosition = new Point(x, y);
-			walls.put(wallPosition, wall);
-			break;
-		}
 
 	
-	}
-	}
+	public void loadLevel() {
+
+	String mapCharacter = "";
+	final String SEPARATEUR = "@";
+	String mot[] = mapCharacter.split(SEPARATEUR);
+	final int tile = 16;
+	char map[][] = new char[tile][tile];
+    for (int y = 0; y < mot.length; y++) {
+    	String temp = mot[y];
+    	int tempLenght = temp.length();
+    	for(int x = 0; x < tempLenght; x++) {
+    		char c = temp.charAt(x);
+    		map[x][y] = c;
+    		System.out.println(c + " x : " + x  + " y : " + y );
+    		
+    		}
+      }
+
 }
     
     public HashMap<Point, MotionlessElement> getWalls() {

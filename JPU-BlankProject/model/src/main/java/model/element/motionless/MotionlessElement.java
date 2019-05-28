@@ -1,8 +1,10 @@
 package model.element.motionless;
 
 import model.element.Element;
+import model.element.Permeability;
+import model.element.Sprite;
 
-public class MotionlessElement extends Element{
+abstract class MotionlessElement extends Element{
 /*
 	int x;
 	int y;
@@ -19,7 +21,7 @@ public class MotionlessElement extends Element{
 		this.y = y;
 	}
 	*/
-    public MotionlessElement(String filename) {
-        super(filename);
+    public MotionlessElement(final Sprite sprite, final Permeability permeability) {
+        super(sprite, permeability);
     }
 	}

@@ -1,11 +1,11 @@
 package model.element.mobile;
 
-public class Character
+public class DwarfMiner
 {
 
 static int numberLife =2;
 
-public Character() {
+public DwarfMiner() {
 	super();
 }
 public int getNumberLife() {
