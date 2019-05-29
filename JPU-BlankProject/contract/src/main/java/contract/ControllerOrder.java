@@ -6,5 +6,5 @@ package contract;
  * @author Jean-Aymeric Diet
  */
 public enum ControllerOrder {
-	A,B,C,D,E,
+	A,B,C,D,E, UP, DOWN,LEFT, RIGHT,
 }

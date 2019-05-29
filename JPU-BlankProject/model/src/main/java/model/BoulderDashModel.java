@@ -29,6 +29,10 @@ import model.element.mobile.DwarfMiner;
 import model.element.mobile.Enemy;
 import model.element.mobile.Rock;
 import model.element.motionless.*;
+<<<<<<< HEAD
+import model.element.mobile.*;
+=======
+>>>>>>> 91b3597abdf1779749cdc7bebced5060c1ad4046
 
 /**
  * The Class Model.
@@ -39,8 +43,11 @@ public final class BoulderDashModel extends Observable implements IModel {
 
 	/** The helloWorld. */
 	private Level helloWorld;
+<<<<<<< HEAD
+=======
 	
 	private Level levelSize ;
+>>>>>>> 91b3597abdf1779749cdc7bebced5060c1ad4046
 	//private BoulderMap boulderMap;
 	//get Sprite type into arraylist
 	private ArrayList<IElement> sprites;
@@ -50,7 +57,10 @@ public final class BoulderDashModel extends Observable implements IModel {
 	public BoulderDashModel() {
 		this.sprites = new ArrayList<>();
 		this.helloWorld = new Level();
+<<<<<<< HEAD
+=======
 		this.levelSize = new Level();
+>>>>>>> 91b3597abdf1779749cdc7bebced5060c1ad4046
 		//this.boulderMap = new BoulderMap();
 		
 	}
@@ -122,8 +132,16 @@ public final class BoulderDashModel extends Observable implements IModel {
 		System.out.println("aaaa");
 		char[][] map = this.helloWorld.getLevel();
 		//System.out.println(map);
+<<<<<<< HEAD
+		for(int y = 0; y < 3; y++) {
+=======
 		for(int y = 0, mapSize = this.levelSize.getLevelSize(); y < mapSize ; y++) {
+<<<<<<< HEAD
 			for (int x = 0; x < mapSize ; x++) {
+=======
+>>>>>>> 91b3597abdf1779749cdc7bebced5060c1ad4046
+			for (int x = 0; x < 3 ; x++) {
+>>>>>>> d6bbc594eb66f78b5ff4871a17facf8dab3e2977
 				char c = map[y][x];
 	    		//System.out.println(c);
 	    		//System.out.println(mapSize + "je suis la putain de taille de map ta mere");
@@ -142,6 +160,7 @@ public final class BoulderDashModel extends Observable implements IModel {
 					dirt.setY(y);
 					this.sprites.add(dirt);
 					break;
+<<<<<<< HEAD
 				case 'b':
 	                BrokenDirt brokendirt = new BrokenDirt();
 	                brokendirt.setX(x);
@@ -178,6 +197,47 @@ public final class BoulderDashModel extends Observable implements IModel {
 	            	dwarfMiner.setY(y);
 	            	this.sprites.add(dwarfMiner);	            	
 	            	break;
+=======
+<<<<<<< HEAD
+				   case 'b':
+	                    BrokenDirt brokendirt = new BrokenDirt();
+	                    brokendirt.setX(x);
+	                    brokendirt.setY(y);
+	                    this.sprites.add(brokendirt);
+	                    break;
+	                case 'r':
+	                    Rock rock = new Rock();
+	                    rock.setX(x);
+	                    rock.setY(y);
+	                    this.sprites.add(rock);
+	                    break;
+	                case 'i':
+	                    Diamond diamond = new Diamond();
+	                    diamond.setX(x);
+	                    diamond.setY(y);
+	                    this.sprites.add(diamond);
+	                    break;
+	                case 'p':
+	                    Exit exit = new Exit();
+	                    exit.setX(x);
+	                    exit.setY(y);
+	                    this.sprites.add(exit);
+	                    break;
+	                case 'm':
+	                    Enemy enemy = new Enemy();
+	                    enemy.setX(x);
+	                    enemy.setY(y);
+	                    this.sprites.add(enemy);
+	                    break;
+	                case 'c':
+	                	DwarfMiner dwarf = new DwarfMiner();
+	                	dwarf.setX(x);
+	                	dwarf.setY(y);
+	                	this.sprites.add(dwarf);
+	                	break;
+=======
+>>>>>>> 91b3597abdf1779749cdc7bebced5060c1ad4046
+>>>>>>> d6bbc594eb66f78b5ff4871a17facf8dab3e2977
 					
 				}
 			}
@@ -189,7 +249,10 @@ public final class BoulderDashModel extends Observable implements IModel {
 		System.out.println("aakvdvdbkxwbxcjkxlvxdjklnaa");
 		return this.sprites;
 	}
+<<<<<<< HEAD
+=======
 	
+>>>>>>> 91b3597abdf1779749cdc7bebced5060c1ad4046
 	
 
 }

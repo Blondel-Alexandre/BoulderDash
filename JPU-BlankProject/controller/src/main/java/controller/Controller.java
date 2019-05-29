@@ -1,9 +1,12 @@
 package controller;
 
 import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 
 import contract.ControllerOrder;
 import contract.IController;
+import contract.IDwarfMiner;
+import contract.IMobile;
 import contract.IModel;
 import contract.IView;
 //import java.awt.event.KeyEvent;
@@ -13,13 +16,15 @@ import contract.IView;
 /**
  * The Class Controller.
  */
-public final class Controller extends KeyAdapter implements IController  {
+public final class Controller extends KeyAdapter implements IController, IDwarfMiner  {
 
 	/** The view. */
 	private IView view;
 
 	/** The model. */
 	private IModel model;
+
+	private IDwarfMiner dwarfminer;
 
 	/**
 	 * Instantiates a new controller.
@@ -68,7 +73,7 @@ public final class Controller extends KeyAdapter implements IController  {
 	private void setModel(final IModel model) {
 		this.model = model;
 	}
-
+	
 	/**
      * Order perform.
      *
@@ -97,10 +102,28 @@ public final class Controller extends KeyAdapter implements IController  {
 			case E:
 				this.model.loadHelloWorld("ID");
 				break;
+			case UP:
+				this.dwarfminer.moveUp();
+				break;
+			case DOWN:
+				this.dwarfminer.moveDown();
+				break;
+			case LEFT:
+				this.dwarfminer.moveLeft();
+				break;
+			case RIGHT:
+				this.dwarfminer.moveRight();
+				break;
 			default:
 				break;
 		}
 	}
+<<<<<<< HEAD
+
+
+
+
+=======
 /*	
 	public void KeyPressed(KeyEvent motion)
 	{
@@ -137,5 +160,6 @@ public final class Controller extends KeyAdapter implements IController  {
 		}
 	}
 	*/
+>>>>>>> 91b3597abdf1779749cdc7bebced5060c1ad4046
 
 }
