@@ -24,6 +24,10 @@ import java.util.Observable;
 import contract.IElement;
 import contract.IModel;
 import entity.Level;
+import model.element.mobile.Diamond;
+import model.element.mobile.DwarfMiner;
+import model.element.mobile.Enemy;
+import model.element.mobile.Rock;
 import model.element.motionless.*;
 
 /**
@@ -119,11 +123,12 @@ public final class BoulderDashModel extends Observable implements IModel {
 		char[][] map = this.helloWorld.getLevel();
 		//System.out.println(map);
 		for(int y = 0, mapSize = this.levelSize.getLevelSize(); y < mapSize ; y++) {
-			for (int x = 0; x < 3 ; x++) {
+			for (int x = 0; x < mapSize ; x++) {
 				char c = map[y][x];
-	    		System.out.println(c);
-	    		System.out.println(x+ "je suis x");	 
-	    		System.out.println(y +"je suis y");
+	    		//System.out.println(c);
+	    		//System.out.println(mapSize + "je suis la putain de taille de map ta mere");
+	    		//System.out.println(x+ "je suis x");	 
+	    		//System.out.println(y +"je suis y");
 				switch (c) {
 				case 'w':
 					Wall wall = new Wall();
@@ -137,6 +142,42 @@ public final class BoulderDashModel extends Observable implements IModel {
 					dirt.setY(y);
 					this.sprites.add(dirt);
 					break;
+				case 'b':
+	                BrokenDirt brokendirt = new BrokenDirt();
+	                brokendirt.setX(x);
+	                brokendirt.setY(y);
+	                this.sprites.add(brokendirt);
+	                break;
+	            case 's':
+	                Rock rock = new Rock();
+	                rock.setX(x);
+	                rock.setY(y);
+	                this.sprites.add(rock);
+	                break;
+	            case 'i':
+	                Diamond diamond = new Diamond();
+	                diamond.setX(x);
+	                diamond.setY(y);
+	                this.sprites.add(diamond);
+	                break;
+	            case 'p':
+	                Exit exit = new Exit();
+	                exit.setX(x);
+	                exit.setY(y);
+	                this.sprites.add(exit);
+	                break;
+	            case 'm':
+	                Enemy enemy = new Enemy();
+	                enemy.setX(x);
+	                enemy.setY(y);
+	                this.sprites.add(enemy);
+	                break;
+	            case 'c':
+	            	DwarfMiner dwarfMiner = new DwarfMiner();
+	            	dwarfMiner.setX(x);
+	            	dwarfMiner.setY(y);
+	            	this.sprites.add(dwarfMiner);	            	
+	            	break;
 					
 				}
 			}

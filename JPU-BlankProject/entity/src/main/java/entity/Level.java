@@ -17,7 +17,7 @@ public class Level extends Entity {
 	/** The message. */
 	private String	message  ;
 	
-	private int levelSize = 3;
+	private int levelSize = 30;
 	
 	char map[][] = new char[levelSize][levelSize];
 
@@ -47,10 +47,11 @@ public class Level extends Entity {
 	
 	public void loadLevel() {
 
-	//String mapCharacter = getMessage();
-	String mapCharacter = "www@ddd@www";
+	String mapCharacter = getMessage();
+	//String mapCharacter = "www@ddd@www";
 	final String SEPARATEUR = "@";
 	String[] mot = mapCharacter.split(SEPARATEUR);
+	System.out.println(getMessage());
     for (int y = 0; y < mot.length; y++) {
     	String temp = mot[y];
 		//System.out.println("salut");

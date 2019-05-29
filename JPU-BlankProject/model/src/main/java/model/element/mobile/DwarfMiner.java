@@ -1,13 +1,18 @@
 package model.element.mobile;
 
-public class DwarfMiner
-{
+import model.element.Permeability;
+import model.element.Sprite;
+
+public class DwarfMiner extends Mobile{
 
 static int numberLife =2;
 
-public DwarfMiner() {
-	super();
-}
+    private static final Sprite SPRITE = new Sprite('c', "E:\\Java\\BoulderDash\\BoulderDash\\JPU-BlankProject\\model\\resource\\Character.png");
+	
+	public DwarfMiner() {
+		super(SPRITE, Permeability.BLOCKING);
+		
+	}
 public int getNumberLife() {
 	return numberLife;
 }
