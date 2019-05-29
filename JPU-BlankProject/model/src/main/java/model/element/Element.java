@@ -94,13 +94,4 @@ public class Element implements IElement {
 	public String getFileName() {
 		return this.getSprite().getImageName();
 	}
-<<<<<<< HEAD
-
-
-
-
-
-
-=======
->>>>>>> 66d1c0d7d5c5ff4850e2537c27bfefc0cefd52f1
 }

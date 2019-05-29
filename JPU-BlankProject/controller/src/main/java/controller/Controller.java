@@ -10,8 +10,7 @@ import contract.IMobile;
 import contract.IModel;
 import contract.IView;
 //import java.awt.event.KeyEvent;
-import model.BoulderDashModel;
-import view.View;
+
 
 
 
@@ -124,8 +123,6 @@ public final class Controller extends KeyAdapter implements IController, IDwarfM
 				break;
 		}
 	}
-<<<<<<< HEAD
-=======
 
 	@Override
 	public void moveUp() {
@@ -150,20 +147,6 @@ public final class Controller extends KeyAdapter implements IController, IDwarfM
 		// TODO Auto-generated method stub
 		
 	}
->>>>>>> 66d1c0d7d5c5ff4850e2537c27bfefc0cefd52f1
-
-
-
-
-<<<<<<< HEAD
-
-
-
-
-
-
-
-=======
 /*	
 	public void KeyPressed(KeyEvent motion)
 	{
@@ -200,6 +183,5 @@ public final class Controller extends KeyAdapter implements IController, IDwarfM
 		}
 	}
 	*/
->>>>>>> 66d1c0d7d5c5ff4850e2537c27bfefc0cefd52f1
 
 }
