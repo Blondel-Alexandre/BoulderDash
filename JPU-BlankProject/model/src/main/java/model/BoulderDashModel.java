@@ -22,6 +22,7 @@ import java.util.Observable;
 //import java.util.Scanner;
 
 import contract.IElement;
+import contract.IMobile;
 import contract.IModel;
 import entity.Level;
 import model.element.mobile.*;
@@ -40,7 +41,10 @@ public final class BoulderDashModel extends Observable implements IModel {
 	private Level helloWorld;
 	
 	private Level levelSize ;
-
+	
+	IMobile dwarfs;
+	
+	
 
 	//private BoulderMap boulderMap;
 	//get Sprite type into arraylist
@@ -173,6 +177,7 @@ public final class BoulderDashModel extends Observable implements IModel {
 	                	dwarf.setX(x);
 	                	dwarf.setY(y);
 	                	this.sprites.add(dwarf);
+	                	this.dwarfs=dwarf;
 	                	break;
 					
 				}
@@ -184,6 +189,14 @@ public final class BoulderDashModel extends Observable implements IModel {
 	public ArrayList<IElement> zob() {
 		System.out.println("aakvdvdbkxwbxcjkxlvxdjklnaa");
 		return this.sprites;
+	}
+
+
+
+	@Override
+	public IMobile getDwarf() {
+		// TODO Auto-generated method stub
+		return this.dwarfs;
 	}
 
 }

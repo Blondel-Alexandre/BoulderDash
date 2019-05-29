@@ -1,12 +1,14 @@
 package model.element;
 
 import java.awt.Image;
+import java.util.Observable;
+import java.util.Observer;
 
 import contract.IElement;
 
 
 
-public class Element implements IElement {
+public class Element extends Observable implements IElement {
 
 
 	private Sprite sprite;
@@ -75,8 +77,8 @@ public class Element implements IElement {
 
 	public void setX(int x) {
 		this.x = x;
-		//this.setChanged();
-		//this.notifyObservers();
+		this.setChanged();
+		this.notifyObservers();
 	}
 
 	public int getY() {
@@ -85,8 +87,8 @@ public class Element implements IElement {
 
 	public void setY(int y) {
 		this.y = y;
-		//this.setChanged();
-		//this.notifyObservers();
+		this.setChanged();
+		this.notifyObservers();
 	}
 
 
@@ -94,4 +96,13 @@ public class Element implements IElement {
 	public String getFileName() {
 		return this.getSprite().getImageName();
 	}
-}
+
+	
+	}
+
+	
+	}
+
+	
+	
+

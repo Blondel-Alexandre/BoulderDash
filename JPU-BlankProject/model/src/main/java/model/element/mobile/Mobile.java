@@ -17,22 +17,23 @@ public class Mobile extends Element implements IMobile {
 
 	public void moveUp()
 	{
-		this.setY(y--);
+		this.setY(this.getY()-1*16);
+		System.out.println(getY());
 	}
 	
 	public void moveDown()
 	{
-		this.setY(y++);
+		this.setY(this.getY()+1*16);
 	}
 	
 	public void moveRight()
 	{
-		this.setX(x++);
+		this.setY(this.getY()-1*16);
 	}
 	
 	public void moveLeft()
 	{
-		this.setX(y++);
+		this.setY(this.getY()+1*16);
 	}
 
 	public void doNothing()
