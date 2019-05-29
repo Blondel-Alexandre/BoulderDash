@@ -1,6 +1,7 @@
 package view;
 
 import java.awt.event.KeyEvent;
+import java.util.Observer;
 
 import javax.swing.SwingUtilities;
 
@@ -10,7 +11,7 @@ import contract.IModel;
 import contract.IView;
 
 /**
- * The Class View.
+ * The Class View.z
  *
  * @author Jean-Aymeric Diet
  */
@@ -88,5 +89,17 @@ public final class View implements IView, Runnable {
 	 */
 	public void setController(final IController controller) {
 		this.viewFrame.setController(controller);
+		
 	}
-}
+		@Override
+		public Observer getObserver() {
+			return this.viewFrame.getObserver();
+		}
+
+		/**
+		 * Method to set the controller
+		 * @param controller
+		 * 		Controller interface
+		 */
+	}
+

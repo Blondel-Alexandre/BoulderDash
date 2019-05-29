@@ -4,6 +4,7 @@ import java.awt.GraphicsConfiguration;
 import java.awt.HeadlessException;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.util.Observer;
 
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
@@ -20,6 +21,8 @@ class ViewFrame extends JFrame implements KeyListener {
 
 	/** The model. */
 	private IModel						model;
+	
+	private ViewPanel panel;
 
 	/** The controller. */
 	private IController				controller;
@@ -170,5 +173,10 @@ class ViewFrame extends JFrame implements KeyListener {
 	 */
 	public void keyReleased(final KeyEvent e) {
 
+	}
+
+	public Observer getObserver() {
+		// TODO Auto-generated method stub
+		return this.panel;
 	}
 }

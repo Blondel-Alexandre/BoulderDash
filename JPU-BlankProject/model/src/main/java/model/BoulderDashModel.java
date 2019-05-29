@@ -174,13 +174,6 @@ public final class BoulderDashModel extends Observable implements IModel {
 	                	this.sprites.add(dwarf);
 	                	this.dwarfs=dwarf;
 	                	break;
-	                /*default : 
-						Wall wall1 = new Wall();
-						wall1.setX(x);
-						wall1.setY(y);
-						this.sprites.add(wall1);
-						//System.out.println("yqsjbqmsbqiviupqwvbqsibvsowvbsovbqsovbqsovbsovbso");
-	                	*/
 					
 				}
 			}

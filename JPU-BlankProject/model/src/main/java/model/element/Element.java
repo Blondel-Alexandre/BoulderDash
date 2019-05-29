@@ -91,6 +91,11 @@ public class Element extends Observable implements IElement {
 	public String getFileName() {
 		return this.getSprite().getImageName();
 	}
+	
+    @Override
+    public void setObserver(Observer observer) {
+        this.addObserver(observer);
+    }
 }
 
 
