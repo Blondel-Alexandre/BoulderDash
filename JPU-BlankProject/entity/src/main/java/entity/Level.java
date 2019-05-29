@@ -17,15 +17,9 @@ public class Level extends Entity {
 	/** The message. */
 	private String	message  ;
 	
-<<<<<<< HEAD
 	final int tile = 3;
 	
 	char map[][] = new char[tile][tile];
-=======
-	private int levelSize = 3;
-	
-	char map[][] = new char[levelSize][levelSize];
->>>>>>> 91b3597abdf1779749cdc7bebced5060c1ad4046
 
 	/**
 	 * Instantiates a new hello world.
@@ -54,11 +48,7 @@ public class Level extends Entity {
 	public void loadLevel() {
 
 	//String mapCharacter = getMessage();
-<<<<<<< HEAD
 	String mapCharacter = "www@dbc@www";
-=======
-	String mapCharacter = "www@ddd@www";
->>>>>>> 91b3597abdf1779749cdc7bebced5060c1ad4046
 	final String SEPARATEUR = "@";
 	String[] mot = mapCharacter.split(SEPARATEUR);
     for (int y = 0; y < mot.length; y++) {
@@ -105,15 +95,6 @@ public class Level extends Entity {
 	public String getKey() {
 		return this.key;
 	}
-	
-	public int getLevelSize() {
-		return this.levelSize;
-	}
-	
-	public void setLevelSize() {
-		this.levelSize = levelSize;
-	}
-	
 
 	/**
 	 * Sets the key.

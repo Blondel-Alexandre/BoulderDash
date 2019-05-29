@@ -17,15 +17,8 @@ public DwarfMiner() {
 public int getNumberLife() {
 	return numberLife;
 }
-<<<<<<< HEAD
 public void setNumberLife(int numberLife) {
 	DwarfMiner.numberLife = numberLife;
 }
-=======
-/*public void setNumberLife(int numberLife) {
-	this.numberLife = numberLife;
-}*/
-
->>>>>>> 91b3597abdf1779749cdc7bebced5060c1ad4046
 }
 

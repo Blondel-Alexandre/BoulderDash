@@ -10,6 +10,8 @@ import contract.IMobile;
 import contract.IModel;
 import contract.IView;
 //import java.awt.event.KeyEvent;
+import model.BoulderDashModel;
+import view.View;
 
 
 
@@ -24,7 +26,7 @@ public final class Controller extends KeyAdapter implements IController, IDwarfM
 	/** The model. */
 	private IModel model;
 
-	private IDwarfMiner dwarfminer;
+
 
 	/**
 	 * Instantiates a new controller.
@@ -37,7 +39,10 @@ public final class Controller extends KeyAdapter implements IController, IDwarfM
 	public Controller(final IView view, final IModel model) {
 		this.setView(view);
 		this.setModel(model);
+
 	}
+
+
 
 	/**
      * Control.
@@ -49,7 +54,7 @@ public final class Controller extends KeyAdapter implements IController, IDwarfM
 	 */
 	public void control() {
 
-		this.view.printMessage("BoulderDash");
+		this.view.printMessage("JOUE");
 
 
 	}
@@ -63,6 +68,7 @@ public final class Controller extends KeyAdapter implements IController, IDwarfM
 	private void setView(final IView pview) {
 		this.view = pview;
 	}
+
 
 	/**
 	 * Sets the model.
@@ -103,63 +109,31 @@ public final class Controller extends KeyAdapter implements IController, IDwarfM
 				this.model.loadHelloWorld("ID");
 				break;
 			case UP:
-				this.dwarfminer.moveUp();
+				//this.model.moveUp();
 				break;
 			case DOWN:
-				this.dwarfminer.moveDown();
+				//this.model.moveDown();
 				break;
 			case LEFT:
-				this.dwarfminer.moveLeft();
+				//this.model.moveLeft();
 				break;
 			case RIGHT:
-				this.dwarfminer.moveRight();
+				//this.model.moveRight();
 				break;
 			default:
 				break;
 		}
 	}
-<<<<<<< HEAD
 
 
 
 
-=======
-/*	
-	public void KeyPressed(KeyEvent motion)
-	{
-		int key =motion.getKeyCode();
-		if (key == KeyEvent.VK_UP)
-		{
-			character.moveUp();
-		}
-		if (key == KeyEvent.VK_RIGHT) {
-			character.moveRight();
-		}
-		if (key == KeyEvent.VK_LEFT) {
-			character.moveLeft();
-		}
-		if(key == KeyEvent.VK_DOWN){	
-			character.moveDown();
-		}
-	}
-	public void KeyRealeased(KeyEvent motion)
-	{
-		int key =motion.getKeyCode();
-		if (key == KeyEvent.VK_UP)
-		{
-			character.doNothing();
-		}
-		if (key == KeyEvent.VK_RIGHT) {
-			character.doNothing();
-		}
-		if (key == KeyEvent.VK_LEFT) {
-			character.doNothing();
-		}
-		if(key == KeyEvent.VK_DOWN){	
-			character.doNothing();
-		}
-	}
-	*/
->>>>>>> 91b3597abdf1779749cdc7bebced5060c1ad4046
+
+
+
+
+
+
+
 
 }

@@ -67,14 +67,8 @@ public class Element implements IElement {
     public final Image getImage() {
         return this.getSprite().getImage();
     }
-<<<<<<< HEAD
 	protected int x;
 	protected int y;
-=======
-
-	int x;
-	int y;
->>>>>>> 91b3597abdf1779749cdc7bebced5060c1ad4046
 	public int getX() {
 		return x;
 	}
@@ -103,10 +97,7 @@ public class Element implements IElement {
 
 
 
-<<<<<<< HEAD
 
 
 
-=======
->>>>>>> 91b3597abdf1779749cdc7bebced5060c1ad4046
 }
