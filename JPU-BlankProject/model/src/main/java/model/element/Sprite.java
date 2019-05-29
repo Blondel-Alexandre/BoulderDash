@@ -49,7 +49,7 @@ public class Sprite implements ISprite{
         return this.filename;
     }
     
-    private void setImageName(final String imageName) {
+    private void setImageName(String filename) {
         this.filename = filename;
     }
 

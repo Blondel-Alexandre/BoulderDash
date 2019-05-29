@@ -24,7 +24,7 @@ import java.util.Observable;
 import contract.IElement;
 import contract.IModel;
 import entity.Level;
-import model.element.motionless.Wall;
+import model.element.motionless.*;
 
 /**
  * The Class Model.
@@ -120,6 +120,13 @@ public final class BoulderDashModel extends Observable implements IModel {
 					wall.setY(y);
 					this.sprites.add(wall);
 					break;
+				case 'd':
+					Dirt dirt = new Dirt();
+					dirt.setX(x);
+					dirt.setY(y);
+					this.sprites.add(dirt);
+					break;
+					
 				}
 			}
 		}

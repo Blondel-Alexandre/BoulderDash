@@ -91,5 +91,11 @@ public class Element implements IElement {
 	}
 
 
+	@Override
+	public String getFileName() {
+		return this.getSprite().getImageName();
+	}
+
+
 
 }

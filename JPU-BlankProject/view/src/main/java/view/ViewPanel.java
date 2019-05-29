@@ -74,7 +74,7 @@ class ViewPanel extends JPanel implements Observer {
 			IElement element = this.viewFrame.getModel().getSprites().get(i);
 			//graphics.drawImage(element.getImage(), element.getX(), element.getY(), null);
 			//System.out.println();
-			ImageIcon i1 = new ImageIcon("E:/Java/BoulderDash/BoulderDash/JPU-BlankProject/model/resource/Wall.png");
+			ImageIcon i1 = new ImageIcon(element.getFileName());
 			img = i1.getImage();
 			graphics.drawImage(img,element.getX()*16, element.getY()*16, null);
 		}
