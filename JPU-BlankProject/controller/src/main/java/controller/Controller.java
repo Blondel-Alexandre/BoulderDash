@@ -107,16 +107,16 @@ public final class Controller extends KeyAdapter implements IController  {
 		int key =motion.getKeyCode();
 		if (key == KeyEvent.VK_UP)
 		{
-			character.moveUp();
+			Character.moveUp();
 		}
 		if (key == KeyEvent.VK_RIGHT) {
-			character.moveRight();
+			Character.moveRight();
 		}
 		if (key == KeyEvent.VK_LEFT) {
-			character.moveLeft();
+			Character.moveLeft();
 		}
 		if(key == KeyEvent.VK_DOWN){	
-			character.moveDown();
+			Character.moveDown();
 		}
 	}
 	public void KeyRealeased(KeyEvent motion)
@@ -124,16 +124,16 @@ public final class Controller extends KeyAdapter implements IController  {
 		int key =motion.getKeyCode();
 		if (key == KeyEvent.VK_UP)
 		{
-			character.doNothing();
+			Character.doNothing();
 		}
 		if (key == KeyEvent.VK_RIGHT) {
-			character.doNothing();
+			Character.doNothing();
 		}
 		if (key == KeyEvent.VK_LEFT) {
-			character.doNothing();
+			Character.doNothing();
 		}
 		if(key == KeyEvent.VK_DOWN){	
-			character.doNothing();
+			Character.doNothing();
 		}
 	}
 	

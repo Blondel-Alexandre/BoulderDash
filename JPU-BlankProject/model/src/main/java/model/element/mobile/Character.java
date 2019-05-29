@@ -1,6 +1,6 @@
 package model.element.mobile;
 
-public class Character
+public class Character extends Mobile
 {
 
 static int numberLife =2;
