@@ -1,13 +1,12 @@
 package entity;
 
-import java.awt.Graphics;
 
 /**
  * The Class HelloWorld.
  *
  * @author Jean-Aymeric Diet
  */
-public class HelloWorld extends Entity {
+public class Level extends Entity {
 
 	/** The id. */
 	private int			id;
@@ -17,6 +16,10 @@ public class HelloWorld extends Entity {
 
 	/** The message. */
 	private String	message  ;
+	
+	private int levelSize = 3;
+	
+	char map[][] = new char[levelSize][levelSize];
 
 	/**
 	 * Instantiates a new hello world.
@@ -28,17 +31,41 @@ public class HelloWorld extends Entity {
 	 * @param message
 	 *          the message
 	 */
-	public HelloWorld(final int id, final String key, final String message) {
+	public Level(final int id, final String key, final String message) {
 		this.setId(id);
 		this.setKey(key);
 		this.setMessage(message);
+		this.loadLevel();
 	}
 
 	/**
 	 * Instantiates a new hello world.
 	 */
-	public HelloWorld() {
+	public Level() {
 		this(0, "", "");
+	}
+	
+	public void loadLevel() {
+
+	//String mapCharacter = getMessage();
+	String mapCharacter = "www@ddd@www";
+	final String SEPARATEUR = "@";
+	String[] mot = mapCharacter.split(SEPARATEUR);
+    for (int y = 0; y < mot.length; y++) {
+    	String temp = mot[y];
+		//System.out.println("salut");
+    	int tempLenght = temp.length();
+    	for(int x = 0; x < tempLenght; x++) {
+    		char c = temp.charAt(x);
+    		map[y][x] = c;
+    		//System.out.println(c + " x : " + x  + " y : " + y );
+    		//System.out.println(tempLenght);
+    		}
+    		}
+      }
+	public char[][] getLevel(){
+		return this.map;
+		
 	}
 
 	/**
@@ -68,6 +95,15 @@ public class HelloWorld extends Entity {
 	public String getKey() {
 		return this.key;
 	}
+	
+	public int getLevelSize() {
+		return this.levelSize;
+	}
+	
+	public void setLevelSize() {
+		this.levelSize = levelSize;
+	}
+	
 
 	/**
 	 * Sets the key.

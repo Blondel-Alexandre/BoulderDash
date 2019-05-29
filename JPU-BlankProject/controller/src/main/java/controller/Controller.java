@@ -6,7 +6,7 @@ import contract.ControllerOrder;
 import contract.IController;
 import contract.IModel;
 import contract.IView;
-import java.awt.event.KeyEvent;
+//import java.awt.event.KeyEvent;
 
 
 
@@ -101,22 +101,22 @@ public final class Controller extends KeyAdapter implements IController  {
 				break;
 		}
 	}
-	
+/*	
 	public void KeyPressed(KeyEvent motion)
 	{
 		int key =motion.getKeyCode();
 		if (key == KeyEvent.VK_UP)
 		{
-			Character.moveUp();
+			character.moveUp();
 		}
 		if (key == KeyEvent.VK_RIGHT) {
-			Character.moveRight();
+			character.moveRight();
 		}
 		if (key == KeyEvent.VK_LEFT) {
-			Character.moveLeft();
+			character.moveLeft();
 		}
 		if(key == KeyEvent.VK_DOWN){	
-			Character.moveDown();
+			character.moveDown();
 		}
 	}
 	public void KeyRealeased(KeyEvent motion)
@@ -124,18 +124,18 @@ public final class Controller extends KeyAdapter implements IController  {
 		int key =motion.getKeyCode();
 		if (key == KeyEvent.VK_UP)
 		{
-			Character.doNothing();
+			character.doNothing();
 		}
 		if (key == KeyEvent.VK_RIGHT) {
-			Character.doNothing();
+			character.doNothing();
 		}
 		if (key == KeyEvent.VK_LEFT) {
-			Character.doNothing();
+			character.doNothing();
 		}
 		if(key == KeyEvent.VK_DOWN){	
-			Character.doNothing();
+			character.doNothing();
 		}
 	}
-	
+	*/
 
 }

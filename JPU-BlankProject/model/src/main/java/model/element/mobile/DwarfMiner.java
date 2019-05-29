@@ -1,18 +1,18 @@
 package model.element.mobile;
 
-public class Character extends Mobile
+public class DwarfMiner
 {
 
 static int numberLife =2;
 
-public Character() {
+public DwarfMiner() {
 	super();
 }
 public int getNumberLife() {
 	return numberLife;
 }
-public void setNumberLife(int numberLife) {
+/*public void setNumberLife(int numberLife) {
 	this.numberLife = numberLife;
-}
+}*/
 
 }

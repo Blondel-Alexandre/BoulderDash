@@ -1,10 +1,15 @@
 package model.element.motionless;
 
+import model.element.Permeability;
+import model.element.Sprite;
 
 public class Wall extends MotionlessElement  {
 	
-	public Wall(String filename, int x, int y) {
-		super(filename);
+    private static final Sprite SPRITE = new Sprite('w', "E:\\Java\\BoulderDash\\BoulderDash\\JPU-BlankProject\\model\\resource\\Wall.png");
+	
+	public Wall() {
+		super(SPRITE, Permeability.BLOCKING);
+		
 		
 	}
 }

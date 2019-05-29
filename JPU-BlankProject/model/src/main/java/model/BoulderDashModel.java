@@ -15,13 +15,16 @@ package model;
 //import java.sql.DriverManager;
 //import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 //import java.sql.Statement;
 //import java.time.format.ResolverStyle;
 import java.util.Observable;
 //import java.util.Scanner;
 
+import contract.IElement;
 import contract.IModel;
-import entity.HelloWorld;
+import entity.Level;
+import model.element.motionless.*;
 
 /**
  * The Class Model.
@@ -31,14 +34,24 @@ import entity.HelloWorld;
 public final class BoulderDashModel extends Observable implements IModel {
 
 	/** The helloWorld. */
-	private HelloWorld helloWorld;
-
+	private Level helloWorld;
+	
+	private Level levelSize ;
+	//private BoulderMap boulderMap;
+	//get Sprite type into arraylist
+	private ArrayList<IElement> sprites;
 	/**
 	 * Instantiates a new model.
 	 */
 	public BoulderDashModel() {
-		this.helloWorld = new HelloWorld();
+		this.sprites = new ArrayList<>();
+		this.helloWorld = new Level();
+		this.levelSize = new Level();
+		//this.boulderMap = new BoulderMap();
+		
 	}
+	
+
 
 	/**
      * Gets the hello world.
@@ -50,8 +63,16 @@ public final class BoulderDashModel extends Observable implements IModel {
 	 *
 	 * @see contract.IModel#getMessage()
 	 */
-	public HelloWorld getHelloWorld() {
+	public Level getHelloWorld() {
 		return this.helloWorld ;
+	}
+	
+	public Level getLevelSize() {
+		return this.levelSize;
+	}
+	
+	private void setLevelSize() {
+		this.levelSize = levelSize;
 	}
 
 	/**
@@ -60,7 +81,7 @@ public final class BoulderDashModel extends Observable implements IModel {
      * @param helloWorld
      *            the new hello world
      */
-	private void setHelloWorld(final HelloWorld helloWorld) {
+	private void setHelloWorld(final Level helloWorld) {
 		this.helloWorld = helloWorld;
 		this.setChanged();
 		this.notifyObservers();
@@ -76,7 +97,7 @@ public final class BoulderDashModel extends Observable implements IModel {
 		}
 	}
 	
-
+	
 	/**
      * Gets the observable.
      *
@@ -90,4 +111,44 @@ public final class BoulderDashModel extends Observable implements IModel {
 	public Observable getObservable() {
 		return this;
 	}
+
+	
+	@Override
+	public ArrayList<IElement> getSprites() {
+		System.out.println("aaaa");
+		char[][] map = this.helloWorld.getLevel();
+		//System.out.println(map);
+		for(int y = 0, mapSize = this.levelSize.getLevelSize(); y < mapSize ; y++) {
+			for (int x = 0; x < 3 ; x++) {
+				char c = map[y][x];
+	    		System.out.println(c);
+	    		System.out.println(x+ "je suis x");	 
+	    		System.out.println(y +"je suis y");
+				switch (c) {
+				case 'w':
+					Wall wall = new Wall();
+					wall.setX(x);
+					wall.setY(y);
+					this.sprites.add(wall);
+					break;
+				case 'd':
+					Dirt dirt = new Dirt();
+					dirt.setX(x);
+					dirt.setY(y);
+					this.sprites.add(dirt);
+					break;
+					
+				}
+			}
+		}
+		return this.sprites;
+	}
+	
+	public ArrayList<IElement> zob() {
+		System.out.println("aakvdvdbkxwbxcjkxlvxdjklnaa");
+		return this.sprites;
+	}
+	
+	
+
 }

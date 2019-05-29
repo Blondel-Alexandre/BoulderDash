@@ -1,11 +1,14 @@
 package model.element.mobile;
 
+import model.element.Permeability;
+import model.element.Sprite;
 
 public class Rock extends Mobile {
 
-	public Rock(int x, int y) {
-		super();
-		// TODO Auto-generated constructor stub
+    private static final Sprite SPRITE = new Sprite('w', "Wall.jpg");
+	
+	public Rock() {
+		super(SPRITE, Permeability.BLOCKING);
+		
 	}
-
 }
