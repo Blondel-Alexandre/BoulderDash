@@ -15,13 +15,17 @@ package model;
 //import java.sql.DriverManager;
 //import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 //import java.sql.Statement;
 //import java.time.format.ResolverStyle;
 import java.util.Observable;
 //import java.util.Scanner;
 
+import contract.IElement;
 import contract.IModel;
 import entity.Level;
+import model.element.motionless.*;
+import model.element.mobile.*;
 
 /**
  * The Class Model.
@@ -32,14 +36,20 @@ public final class BoulderDashModel extends Observable implements IModel {
 
 	/** The helloWorld. */
 	private Level helloWorld;
-	private BoulderMap boulderMap;
+	//private BoulderMap boulderMap;
+	//get Sprite type into arraylist
+	private ArrayList<IElement> sprites;
 	/**
 	 * Instantiates a new model.
 	 */
 	public BoulderDashModel() {
+		this.sprites = new ArrayList<>();
 		this.helloWorld = new Level();
-		this.boulderMap = new BoulderMap();
+		//this.boulderMap = new BoulderMap();
+		
 	}
+	
+
 
 	/**
      * Gets the hello world.
@@ -90,6 +100,79 @@ public final class BoulderDashModel extends Observable implements IModel {
 	 */
 	public Observable getObservable() {
 		return this;
+	}
+
+	
+	@Override
+	public ArrayList<IElement> getSprites() {
+		System.out.println("aaaa");
+		char[][] map = this.helloWorld.getLevel();
+		//System.out.println(map);
+		for(int y = 0; y < 3; y++) {
+			for (int x = 0; x < 3 ; x++) {
+				char c = map[y][x];
+	    		System.out.println(c);
+	    		System.out.println(x+ "je suis x");	 
+	    		System.out.println(y +"je suis y");
+				switch (c) {
+				case 'w':
+					Wall wall = new Wall();
+					wall.setX(x);
+					wall.setY(y);
+					this.sprites.add(wall);
+					break;
+				case 'd':
+					Dirt dirt = new Dirt();
+					dirt.setX(x);
+					dirt.setY(y);
+					this.sprites.add(dirt);
+					break;
+				   case 'b':
+	                    BrokenDirt brokendirt = new BrokenDirt();
+	                    brokendirt.setX(x);
+	                    brokendirt.setY(y);
+	                    this.sprites.add(brokendirt);
+	                    break;
+	                case 'r':
+	                    Rock rock = new Rock();
+	                    rock.setX(x);
+	                    rock.setY(y);
+	                    this.sprites.add(rock);
+	                    break;
+	                case 'i':
+	                    Diamond diamond = new Diamond();
+	                    diamond.setX(x);
+	                    diamond.setY(y);
+	                    this.sprites.add(diamond);
+	                    break;
+	                case 'p':
+	                    Exit exit = new Exit();
+	                    exit.setX(x);
+	                    exit.setY(y);
+	                    this.sprites.add(exit);
+	                    break;
+	                case 'm':
+	                    Enemy enemy = new Enemy();
+	                    enemy.setX(x);
+	                    enemy.setY(y);
+	                    this.sprites.add(enemy);
+	                    break;
+	                case 'c':
+	                	DwarfMiner dwarf = new DwarfMiner();
+	                	dwarf.setX(x);
+	                	dwarf.setY(y);
+	                	this.sprites.add(dwarf);
+	                	break;
+					
+				}
+			}
+		}
+		return this.sprites;
+	}
+	
+	public ArrayList<IElement> zob() {
+		System.out.println("aakvdvdbkxwbxcjkxlvxdjklnaa");
+		return this.sprites;
 	}
 	
 

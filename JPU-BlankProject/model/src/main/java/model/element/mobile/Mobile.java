@@ -1,12 +1,16 @@
 package model.element.mobile;
 
 
+import contract.IMobile;
 import model.element.Element;
+import model.element.Permeability;
+import model.element.Sprite;
 
-public class Mobile extends Element {
+public class Mobile extends Element implements IMobile {
 	
 
-	public Mobile() {
+	public Mobile(final Sprite sprite, final Permeability permeability) {
+        super(sprite, permeability);
 		// TODO Auto-generated constructor stub
 	}
 
