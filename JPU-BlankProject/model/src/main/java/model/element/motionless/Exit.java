@@ -5,10 +5,10 @@ import model.element.Sprite;
 
 public class Exit extends MotionlessElement  {
 
-    private static final Sprite SPRITE = new Sprite('p', "E:\\Java\\BoulderDash\\BoulderDash\\JPU-BlankProject\\model\\resource\\Monster1.png");
+    private static final Sprite SPRITE = new Sprite('p', "Monster1.png");
 	
 	public Exit() {
 		super(SPRITE, Permeability.BLOCKING);
-		
+		this.getSprite().loadImage();
 	}
 }

@@ -49,7 +49,7 @@ public class Level extends Entity {
 	
 	public void loadLevel() {
 	String mapCharacter = getMessage();
-	//String mapCharacter = "www@ddd@www";
+	//String mapCharacter = "wdb@rip@ecw";
 
 	final String SEPARATEUR = "@";
 	String[] mot = mapCharacter.split(SEPARATEUR);

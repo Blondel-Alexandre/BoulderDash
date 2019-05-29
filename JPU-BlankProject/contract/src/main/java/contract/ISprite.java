@@ -1,5 +1,6 @@
 package contract;
 
-public interface ISprite {
+public interface ISprite{
 
+	
 }

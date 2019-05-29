@@ -112,24 +112,21 @@ public final class BoulderDashModel extends Observable implements IModel {
 	
 	@Override
 	public ArrayList<IElement> getSprites() {
-		System.out.println("aaaa");
+		System.err.println("lit le tableau");
 		char[][] map = this.helloWorld.getLevel();
 		//System.out.println(map);
-
 		for(int y = 0, mapSize = this.levelSize.getLevelSize(); y < mapSize ; y++) {
+			//System.out.println("pmpmpmpmpmpmpmpmpmpmpmp");
 			for (int x = 0; x < mapSize ; x++) {
-
 				char c = map[y][x];
-	    		//System.out.println(c);
-	    		//System.out.println(mapSize + "je suis la putain de taille de map ta mere");
-	    		//System.out.println(x+ "je suis x");	 
-	    		//System.out.println(y +"je suis y");
+	    		//System.out.println(mapSize + "ouiuouiuouiuouiuuuoioioiuiu");
 				switch (c) {
 				case 'w':
 					Wall wall = new Wall();
 					wall.setX(x);
 					wall.setY(y);
 					this.sprites.add(wall);
+					System.out.println("je met un mur");
 					break;
 				case 'd':
 					Dirt dirt = new Dirt();
@@ -137,7 +134,6 @@ public final class BoulderDashModel extends Observable implements IModel {
 					dirt.setY(y);
 					this.sprites.add(dirt);
 					break;
-
 				   case 'b':
 	                    BrokenDirt brokendirt = new BrokenDirt();
 	                    brokendirt.setX(x);
@@ -162,7 +158,7 @@ public final class BoulderDashModel extends Observable implements IModel {
 	                    exit.setY(y);
 	                    this.sprites.add(exit);
 	                    break;
-	                case 'm':
+	                case 'e':
 	                    Enemy enemy = new Enemy();
 	                    enemy.setX(x);
 	                    enemy.setY(y);
@@ -174,6 +170,13 @@ public final class BoulderDashModel extends Observable implements IModel {
 	                	dwarf.setY(y);
 	                	this.sprites.add(dwarf);
 	                	break;
+	                /*default : 
+						Wall wall1 = new Wall();
+						wall1.setX(x);
+						wall1.setY(y);
+						this.sprites.add(wall1);
+						//System.out.println("yqsjbqmsbqiviupqwvbqsibvsowvbsovbqsovbqsovbsovbso");
+	                	*/
 					
 				}
 			}
@@ -181,7 +184,7 @@ public final class BoulderDashModel extends Observable implements IModel {
 		return this.sprites;
 	}
 	
-	public ArrayList<IElement> zob() {
+	public ArrayList<IElement> ListLoader() {
 		System.out.println("aakvdvdbkxwbxcjkxlvxdjklnaa");
 		return this.sprites;
 	}

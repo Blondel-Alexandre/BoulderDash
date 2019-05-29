@@ -5,12 +5,10 @@ import model.element.Sprite;
 
 public class Dirt extends MotionlessElement  {
 	
-
-
-    private static final Sprite SPRITE = new Sprite('d', "E:\\Java\\BoulderDash\\BoulderDash\\JPU-BlankProject\\model\\resource\\Dirt.png");
+    private static final Sprite SPRITE = new Sprite('d', "Dirt.png");
 	
 	public Dirt() {
 		super(SPRITE, Permeability.BLOCKING);
-		
+		this.getSprite().loadImage();
 	}
 }

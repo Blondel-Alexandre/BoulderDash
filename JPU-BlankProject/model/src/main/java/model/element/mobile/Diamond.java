@@ -5,10 +5,10 @@ import model.element.Sprite;
 
 public class Diamond extends Mobile {
 
-    private static final Sprite SPRITE = new Sprite('i', "E:\\Java\\BoulderDash\\BoulderDash\\JPU-BlankProject\\model\\resource\\Diamond.png");
+    private static final Sprite SPRITE = new Sprite('i', "Diamond.png");
 	
 	public Diamond() {
 		super(SPRITE, Permeability.BLOCKING);
-		
+		this.getSprite().loadImage();
 	}
 }

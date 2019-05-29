@@ -5,7 +5,6 @@ import javax.imageio.ImageIO;
 import contract.ISprite;
 
 import java.awt.Image;
-import java.io.File;
 import java.io.IOException;
 
 public class Sprite implements ISprite{
@@ -19,11 +18,14 @@ public class Sprite implements ISprite{
     public Sprite(final char character, final String filename) {
         this.setConsoleImage(character);
         this.setImageName(filename);
+        
     }
 
 	public void loadImage() {
         try {
-            this.setImage(ImageIO.read(new File(this.getImageName())));
+            this.setImage(ImageIO.read(getClass().getClassLoader().getResourceAsStream("images/" + this.getImageName())));
+            System.err.println("je charge un sprite");
+            
         }
         catch (IOException e) {
             e.printStackTrace();

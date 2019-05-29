@@ -17,10 +17,11 @@ public void setNumberLife(int numberLife) {
 	DwarfMiner.numberLife = numberLife;
 }
 
-    private static final Sprite SPRITE = new Sprite('c', "E:\\Java\\BoulderDash\\BoulderDash\\JPU-BlankProject\\model\\resource\\Character.png");
+    private static final Sprite SPRITE = new Sprite('c', "Character.png");
 	
 	public DwarfMiner() {
 		super(SPRITE, Permeability.BLOCKING);
+		this.getSprite().loadImage();
 	}
 		
 
