@@ -70,16 +70,10 @@ class ViewPanel extends JPanel implements Observer {
 		graphics.clearRect(0, 0, this.getWidth(), this.getHeight());	
 		int size = this.viewFrame.getModel().getSprites().size();
 		for(int i = 0; i < size ; i++) {
-<<<<<<< HEAD
 			IElement element = this.viewFrame.getModel().ListLoader().get(i);
             System.err.println("je je peint la fenetre en ce moment ");
 			graphics.drawImage(element.getImage(),element.getX()*16, element.getY()*16, null);
-=======
-			IElement element = this.viewFrame.getModel().getSprites().get(i);
-			ImageIcon i1 = new ImageIcon(element.getFileName());
-			img = i1.getImage();
-			graphics.drawImage(img,element.getX()*16, element.getY()*16, null);
->>>>>>> f3afffef53f77dca5acb4527c0a366aae0b607f4
+
 		}
 		
 		/*//score

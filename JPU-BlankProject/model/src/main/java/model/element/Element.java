@@ -20,7 +20,6 @@ public class Element extends Observable implements IElement {
         this.setPermeability(permeability);
     }
     
-
     /**
      * Gets the sprite.
      *
@@ -29,9 +28,6 @@ public class Element extends Observable implements IElement {
     public final Sprite getSprite() {
         return this.sprite;
     }
-    
-
-
     /**
      * Sets the sprite.
      *
@@ -91,17 +87,12 @@ public class Element extends Observable implements IElement {
 		this.notifyObservers();
 	}
 
-
 	@Override
 	public String getFileName() {
 		return this.getSprite().getImageName();
 	}
+}
 
-	
-	}
-
-	
-	}
 
 	
 	

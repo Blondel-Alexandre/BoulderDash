@@ -36,11 +36,8 @@ public interface IModel {
 	
 	ArrayList<IElement> getSprites();
 
-<<<<<<< HEAD
 	ArrayList<IElement> ListLoader();
-=======
-	ArrayList<IElement> zob();
-	
+
 	IMobile getDwarf();
->>>>>>> f3afffef53f77dca5acb4527c0a366aae0b607f4
+
 }

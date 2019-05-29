@@ -123,14 +123,6 @@ public final class BoulderDashModel extends Observable implements IModel {
 			//System.out.println("pmpmpmpmpmpmpmpmpmpmpmp");
 			for (int x = 0; x < mapSize ; x++) {
 				char c = map[y][x];
-<<<<<<< HEAD
-	    		//System.out.println(mapSize + "ouiuouiuouiuouiuuuoioioiuiu");
-=======
-	    		//System.out.println(c);
-	    		//System.out.println(mapSize + "je suis la putain de taille de map ta mere");
-	    		System.out.println(x+ "je suis x");	 
-	    		//System.out.println(y +"je suis y");
->>>>>>> f3afffef53f77dca5acb4527c0a366aae0b607f4
 				switch (c) {
 				case 'w':
 					Wall wall = new Wall();

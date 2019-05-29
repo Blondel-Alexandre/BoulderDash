@@ -6,9 +6,7 @@ import contract.IMobile;
 import model.element.Permeability;
 import model.element.Sprite;
 
-public class DwarfMiner extends Mobile implements IDwarfMiner
-
-{
+public class DwarfMiner extends Mobile implements IDwarfMiner{
 
 static int numberLife =2;
 
@@ -20,11 +18,8 @@ public void setNumberLife(int numberLife) {
 	DwarfMiner.numberLife = numberLife;
 }
 
-<<<<<<< HEAD
     private static final Sprite SPRITE = new Sprite('c', "Character.png");
-=======
-    private static final Sprite SPRITE = new Sprite('c', "C:\\Users\\Avantro\\Desktop\\Character.png");
->>>>>>> f3afffef53f77dca5acb4527c0a366aae0b607f4
+
 	
 	public DwarfMiner() {
 		super(SPRITE, Permeability.BLOCKING);
