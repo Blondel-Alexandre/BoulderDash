@@ -1,8 +1,9 @@
 package contract;
 
 public interface IDwarfMiner {
-	 void moveUp();
-	 void moveLeft();
-	 void moveDown();
-	 void moveRight();
-	}
+	void moveUpPlayer();
+	void moveLeftPlayer();
+	void moveDownPlayer();
+	void moveRightPlayer();
+	void doNothing();
+}

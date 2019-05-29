@@ -22,6 +22,7 @@ import java.util.Observable;
 //import java.util.Scanner;
 
 import contract.IElement;
+import contract.IMobile;
 import contract.IModel;
 import entity.Level;
 import model.element.mobile.*;
@@ -40,7 +41,10 @@ public final class BoulderDashModel extends Observable implements IModel {
 	private Level helloWorld;
 	
 	private Level levelSize ;
-
+	
+	IMobile dwarfs;
+	
+	
 
 	//private BoulderMap boulderMap;
 	//get Sprite type into arraylist
@@ -119,7 +123,14 @@ public final class BoulderDashModel extends Observable implements IModel {
 			//System.out.println("pmpmpmpmpmpmpmpmpmpmpmp");
 			for (int x = 0; x < mapSize ; x++) {
 				char c = map[y][x];
+<<<<<<< HEAD
 	    		//System.out.println(mapSize + "ouiuouiuouiuouiuuuoioioiuiu");
+=======
+	    		//System.out.println(c);
+	    		//System.out.println(mapSize + "je suis la putain de taille de map ta mere");
+	    		System.out.println(x+ "je suis x");	 
+	    		//System.out.println(y +"je suis y");
+>>>>>>> f3afffef53f77dca5acb4527c0a366aae0b607f4
 				switch (c) {
 				case 'w':
 					Wall wall = new Wall();
@@ -169,6 +180,7 @@ public final class BoulderDashModel extends Observable implements IModel {
 	                	dwarf.setX(x);
 	                	dwarf.setY(y);
 	                	this.sprites.add(dwarf);
+	                	this.dwarfs=dwarf;
 	                	break;
 	                /*default : 
 						Wall wall1 = new Wall();
@@ -187,6 +199,14 @@ public final class BoulderDashModel extends Observable implements IModel {
 	public ArrayList<IElement> ListLoader() {
 		System.out.println("aakvdvdbkxwbxcjkxlvxdjklnaa");
 		return this.sprites;
+	}
+
+
+
+	@Override
+	public IMobile getDwarf() {
+		// TODO Auto-generated method stub
+		return this.dwarfs;
 	}
 
 }

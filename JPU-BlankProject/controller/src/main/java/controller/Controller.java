@@ -1,15 +1,15 @@
 package controller;
 
+import java.awt.Image;
+import java.awt.event.ActionEvent;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 
 import contract.ControllerOrder;
 import contract.IController;
 import contract.IDwarfMiner;
-import contract.IMobile;
 import contract.IModel;
 import contract.IView;
-//import java.awt.event.KeyEvent;
 
 
 
@@ -17,7 +17,7 @@ import contract.IView;
 /**
  * The Class Controller.
  */
-public final class Controller extends KeyAdapter implements IController, IDwarfMiner  {
+public final class Controller extends KeyAdapter implements IController  {
 
 	/** The view. */
 	private IView view;
@@ -32,16 +32,17 @@ public final class Controller extends KeyAdapter implements IController, IDwarfM
 	 *
 	 * @param view
 	 *          the view
-	 * @param model
+	 * @param model  
 	 *          the model
 	 */
+	
 	public Controller(final IView view, final IModel model) {
 		this.setView(view);
 		this.setModel(model);
 
 	}
 
-
+	
 
 	/**
      * Control.
@@ -68,6 +69,9 @@ public final class Controller extends KeyAdapter implements IController, IDwarfM
 		this.view = pview;
 	}
 
+    private IModel getModel() {
+        return this.model;
+    }
 
 	/**
 	 * Sets the model.
@@ -108,80 +112,39 @@ public final class Controller extends KeyAdapter implements IController, IDwarfM
 				this.model.loadHelloWorld("ID");
 				break;
 			case UP:
-				//this.model.moveUp();
+				((IDwarfMiner) this.getModel().getDwarf()).moveUpPlayer();
 				break;
 			case DOWN:
-				//this.model.moveDown();
+				System.out.println(this.getModel().getDwarf());
+				((IDwarfMiner) this.getModel().getDwarf()).moveDownPlayer();	
 				break;
 			case LEFT:
-				//this.model.moveLeft();
+				((IDwarfMiner) this.getModel().getDwarf()).moveLeftPlayer();
 				break;
 			case RIGHT:
-				//this.model.moveRight();
+				((IDwarfMiner) this.getModel().getDwarf()).moveRightPlayer();	
 				break;
 			default:
 				break;
 		}
+		
+
 	}
 
-	@Override
-	public void moveUp() {
-		// TODO Auto-generated method stub
-		
-	}
 
-	@Override
-	public void moveLeft() {
-		// TODO Auto-generated method stub
-		
-	}
 
-	@Override
-	public void moveDown() {
-		// TODO Auto-generated method stub
-		
-	}
 
-	@Override
-	public void moveRight() {
-		// TODO Auto-generated method stub
-		
-	}
-/*	
-	public void KeyPressed(KeyEvent motion)
-	{
-		int key =motion.getKeyCode();
-		if (key == KeyEvent.VK_UP)
-		{
-			character.moveUp();
-		}
-		if (key == KeyEvent.VK_RIGHT) {
-			character.moveRight();
-		}
-		if (key == KeyEvent.VK_LEFT) {
-			character.moveLeft();
-		}
-		if(key == KeyEvent.VK_DOWN){	
-			character.moveDown();
-		}
-	}
-	public void KeyRealeased(KeyEvent motion)
-	{
-		int key =motion.getKeyCode();
-		if (key == KeyEvent.VK_UP)
-		{
-			character.doNothing();
-		}
-		if (key == KeyEvent.VK_RIGHT) {
-			character.doNothing();
-		}
-		if (key == KeyEvent.VK_LEFT) {
-			character.doNothing();
-		}
-		if(key == KeyEvent.VK_DOWN){	
-			character.doNothing();
-		}
-	}
-	*/
+
+
+
+
+
+
+
+
+
+
+
+
 
 }

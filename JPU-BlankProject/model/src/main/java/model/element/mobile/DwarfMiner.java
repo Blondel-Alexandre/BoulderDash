@@ -1,10 +1,13 @@
 package model.element.mobile;
 
+
 import contract.IDwarfMiner;
+import contract.IMobile;
 import model.element.Permeability;
 import model.element.Sprite;
 
 public class DwarfMiner extends Mobile implements IDwarfMiner
+
 {
 
 static int numberLife =2;
@@ -17,7 +20,11 @@ public void setNumberLife(int numberLife) {
 	DwarfMiner.numberLife = numberLife;
 }
 
+<<<<<<< HEAD
     private static final Sprite SPRITE = new Sprite('c', "Character.png");
+=======
+    private static final Sprite SPRITE = new Sprite('c', "C:\\Users\\Avantro\\Desktop\\Character.png");
+>>>>>>> f3afffef53f77dca5acb4527c0a366aae0b607f4
 	
 	public DwarfMiner() {
 		super(SPRITE, Permeability.BLOCKING);
@@ -30,28 +37,27 @@ public void setNumberLife(int numberLife) {
 }*/
 
 @Override
-public void moveUp() {
-	// TODO Auto-generated method stub
+public void moveUpPlayer() {
+	super.moveUp();
 	
 }
 
 @Override
-public void moveLeft() {
-	// TODO Auto-generated method stub
-	
+public void moveLeftPlayer() {
+super.moveLeft();	
 }
 
 @Override
-public void moveDown() {
-	// TODO Auto-generated method stub
-	
+public void moveDownPlayer() {
+super.moveDown();	
 }
-
 @Override
-public void moveRight() {
-	// TODO Auto-generated method stub
+public void moveRightPlayer() {
+super.moveRight();	
+}
+
 	
 }
 
-}
+
 
