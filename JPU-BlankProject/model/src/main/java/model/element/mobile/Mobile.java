@@ -13,7 +13,7 @@ public class Mobile extends Element implements IMobile {
         super(sprite, permeability);
 		// TODO Auto-generated constructor stub
 	}
-
+/*
 
 	public void moveUp()
 	{
@@ -40,5 +40,5 @@ public class Mobile extends Element implements IMobile {
 		this.setX(x);
 		this.setY(y);
 	}
-
+*/
 }

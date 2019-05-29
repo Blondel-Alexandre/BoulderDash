@@ -118,9 +118,48 @@ public final class Controller extends KeyAdapter implements IController, IDwarfM
 				break;
 		}
 	}
+<<<<<<< HEAD
 
 
 
 
+=======
+/*	
+	public void KeyPressed(KeyEvent motion)
+	{
+		int key =motion.getKeyCode();
+		if (key == KeyEvent.VK_UP)
+		{
+			character.moveUp();
+		}
+		if (key == KeyEvent.VK_RIGHT) {
+			character.moveRight();
+		}
+		if (key == KeyEvent.VK_LEFT) {
+			character.moveLeft();
+		}
+		if(key == KeyEvent.VK_DOWN){	
+			character.moveDown();
+		}
+	}
+	public void KeyRealeased(KeyEvent motion)
+	{
+		int key =motion.getKeyCode();
+		if (key == KeyEvent.VK_UP)
+		{
+			character.doNothing();
+		}
+		if (key == KeyEvent.VK_RIGHT) {
+			character.doNothing();
+		}
+		if (key == KeyEvent.VK_LEFT) {
+			character.doNothing();
+		}
+		if(key == KeyEvent.VK_DOWN){	
+			character.doNothing();
+		}
+	}
+	*/
+>>>>>>> 91b3597abdf1779749cdc7bebced5060c1ad4046
 
 }
