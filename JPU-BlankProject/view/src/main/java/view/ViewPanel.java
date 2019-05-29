@@ -79,7 +79,7 @@ class ViewPanel extends JPanel implements Observer {
 			graphics.drawImage(img,element.getX()*16, element.getY()*16, null);
 		}
 		
-		//score
+		/*//score
 		Font f = new Font("Impact",Font.BOLD,20);
 		graphics.setColor(Color.BLUE);
 		graphics.setFont(f);
@@ -89,7 +89,7 @@ class ViewPanel extends JPanel implements Observer {
 		graphics.setColor(Color.RED);
 		graphics.setFont(B);
 		graphics.drawString("Vies: " , 20, 50);
-		
+		*/
 		//rocher 
 		
 		//for (int i = 0 ; i<Model.Rock.rocks.size() ; i++)

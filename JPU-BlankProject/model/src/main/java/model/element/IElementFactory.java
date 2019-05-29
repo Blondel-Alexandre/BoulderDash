@@ -6,7 +6,7 @@ public interface IElementFactory {
 	{
 		
 	}
-	public static void createCharacter(int x,int y)
+	public static void createDwarfMiner(int x,int y)
 	{
 		
 	}

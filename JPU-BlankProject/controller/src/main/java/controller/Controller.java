@@ -124,6 +124,38 @@ public final class Controller extends KeyAdapter implements IController, IDwarfM
 				break;
 		}
 	}
+<<<<<<< HEAD
+=======
+
+	@Override
+	public void moveUp() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void moveLeft() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void moveDown() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void moveRight() {
+		// TODO Auto-generated method stub
+		
+	}
+>>>>>>> 66d1c0d7d5c5ff4850e2537c27bfefc0cefd52f1
+
+
+
+
+<<<<<<< HEAD
 
 
 
@@ -131,9 +163,43 @@ public final class Controller extends KeyAdapter implements IController, IDwarfM
 
 
 
-
-
-
-
+=======
+/*	
+	public void KeyPressed(KeyEvent motion)
+	{
+		int key =motion.getKeyCode();
+		if (key == KeyEvent.VK_UP)
+		{
+			character.moveUp();
+		}
+		if (key == KeyEvent.VK_RIGHT) {
+			character.moveRight();
+		}
+		if (key == KeyEvent.VK_LEFT) {
+			character.moveLeft();
+		}
+		if(key == KeyEvent.VK_DOWN){	
+			character.moveDown();
+		}
+	}
+	public void KeyRealeased(KeyEvent motion)
+	{
+		int key =motion.getKeyCode();
+		if (key == KeyEvent.VK_UP)
+		{
+			character.doNothing();
+		}
+		if (key == KeyEvent.VK_RIGHT) {
+			character.doNothing();
+		}
+		if (key == KeyEvent.VK_LEFT) {
+			character.doNothing();
+		}
+		if(key == KeyEvent.VK_DOWN){	
+			character.doNothing();
+		}
+	}
+	*/
+>>>>>>> 66d1c0d7d5c5ff4850e2537c27bfefc0cefd52f1
 
 }
