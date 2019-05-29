@@ -35,6 +35,8 @@ public final class BoulderDashModel extends Observable implements IModel {
 
 	/** The helloWorld. */
 	private Level helloWorld;
+	
+	private Level levelSize ;
 	//private BoulderMap boulderMap;
 	//get Sprite type into arraylist
 	private ArrayList<IElement> sprites;
@@ -44,6 +46,7 @@ public final class BoulderDashModel extends Observable implements IModel {
 	public BoulderDashModel() {
 		this.sprites = new ArrayList<>();
 		this.helloWorld = new Level();
+		this.levelSize = new Level();
 		//this.boulderMap = new BoulderMap();
 		
 	}
@@ -62,6 +65,14 @@ public final class BoulderDashModel extends Observable implements IModel {
 	 */
 	public Level getHelloWorld() {
 		return this.helloWorld ;
+	}
+	
+	public Level getLevelSize() {
+		return this.levelSize;
+	}
+	
+	private void setLevelSize() {
+		this.levelSize = levelSize;
 	}
 
 	/**
@@ -107,7 +118,7 @@ public final class BoulderDashModel extends Observable implements IModel {
 		System.out.println("aaaa");
 		char[][] map = this.helloWorld.getLevel();
 		//System.out.println(map);
-		for(int y = 0; y < 3; y++) {
+		for(int y = 0, mapSize = this.levelSize.getLevelSize(); y < mapSize ; y++) {
 			for (int x = 0; x < 3 ; x++) {
 				char c = map[y][x];
 	    		System.out.println(c);
@@ -137,6 +148,7 @@ public final class BoulderDashModel extends Observable implements IModel {
 		System.out.println("aakvdvdbkxwbxcjkxlvxdjklnaa");
 		return this.sprites;
 	}
+	
 	
 
 }

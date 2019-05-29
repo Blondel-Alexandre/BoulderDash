@@ -17,9 +17,9 @@ public class Level extends Entity {
 	/** The message. */
 	private String	message  ;
 	
-	final int tile = 3;
+	private int levelSize = 3;
 	
-	char map[][] = new char[tile][tile];
+	char map[][] = new char[levelSize][levelSize];
 
 	/**
 	 * Instantiates a new hello world.
@@ -95,6 +95,15 @@ public class Level extends Entity {
 	public String getKey() {
 		return this.key;
 	}
+	
+	public int getLevelSize() {
+		return this.levelSize;
+	}
+	
+	public void setLevelSize() {
+		this.levelSize = levelSize;
+	}
+	
 
 	/**
 	 * Sets the key.
