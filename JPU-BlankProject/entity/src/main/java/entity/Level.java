@@ -17,19 +17,12 @@ public class Level extends Entity {
 	/** The message. */
 	private String	message  ;
 	
-<<<<<<< HEAD
+
 	private int levelSize = 30;
-=======
-<<<<<<< HEAD
-	final int tile = 3;
-	
-	char map[][] = new char[tile][tile];
-=======
-	private int levelSize = 3;
->>>>>>> d6bbc594eb66f78b5ff4871a17facf8dab3e2977
+
 	
 	char map[][] = new char[levelSize][levelSize];
->>>>>>> 91b3597abdf1779749cdc7bebced5060c1ad4046
+
 
 	/**
 	 * Instantiates a new hello world.
@@ -57,17 +50,9 @@ public class Level extends Entity {
 	
 	public void loadLevel() {
 
-<<<<<<< HEAD
 	String mapCharacter = getMessage();
 	//String mapCharacter = "www@ddd@www";
-=======
-	//String mapCharacter = getMessage();
-<<<<<<< HEAD
-	String mapCharacter = "www@dbc@www";
-=======
-	String mapCharacter = "www@ddd@www";
->>>>>>> 91b3597abdf1779749cdc7bebced5060c1ad4046
->>>>>>> d6bbc594eb66f78b5ff4871a17facf8dab3e2977
+
 	final String SEPARATEUR = "@";
 	String[] mot = mapCharacter.split(SEPARATEUR);
 	System.out.println(getMessage());

@@ -118,12 +118,34 @@ public final class Controller extends KeyAdapter implements IController, IDwarfM
 				break;
 		}
 	}
-<<<<<<< HEAD
+
+	@Override
+	public void moveUp() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void moveLeft() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void moveDown() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void moveRight() {
+		// TODO Auto-generated method stub
+		
+	}
 
 
 
 
-=======
 /*	
 	public void KeyPressed(KeyEvent motion)
 	{
@@ -160,6 +182,5 @@ public final class Controller extends KeyAdapter implements IController, IDwarfM
 		}
 	}
 	*/
->>>>>>> 91b3597abdf1779749cdc7bebced5060c1ad4046
 
 }
