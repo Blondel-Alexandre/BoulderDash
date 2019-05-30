@@ -14,32 +14,35 @@ public class Mobile extends Element implements IMobile {
 		// TODO Auto-generated constructor stub
 	}
 
-
+@Override
 	public void moveUp()
 	{
-		this.setY(this.getY()-1*16);
-		System.out.println(getY());
+		this.setY(this.getY()-1);
 	}
+@Override
 	
 	public void moveDown()
 	{
-		this.setY(this.getY()+1*16);
+		this.setY(this.getY()+1);
 	}
+@Override
 	
 	public void moveRight()
 	{
-		this.setY(this.getY()-1*16);
+		this.setY(this.getY()-1);
 	}
-	
+@Override	
 	public void moveLeft()
 	{
-		this.setY(this.getY()+1*16);
+		this.setY(this.getY()+1);
 	}
 
-	public void doNothing()
-	{
-		this.setX(x);
-		this.setY(y);
+
+	@Override
+	public void doNothing() {
+		// TODO Auto-generated method stub
+		
 	}
+
 
 }

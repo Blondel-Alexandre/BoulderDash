@@ -34,7 +34,7 @@ import model.element.motionless.*;
  *
  * @author Jean-Aymeric Diet
  */
-public final class BoulderDashModel extends Observable implements IModel {
+public class BoulderDashModel extends Observable implements IModel {
 
 	/** The helloWorld. */
 
@@ -116,7 +116,6 @@ public final class BoulderDashModel extends Observable implements IModel {
 	
 	@Override
 	public ArrayList<IElement> getSprites() {
-		System.err.println("lit le tableau");
 		char[][] map = this.helloWorld.getLevel();
 		//System.out.println(map);
 		for(int y = 0, mapSize = this.levelSize.getLevelSize(); y < mapSize ; y++) {
@@ -129,7 +128,6 @@ public final class BoulderDashModel extends Observable implements IModel {
 					wall.setX(x);
 					wall.setY(y);
 					this.sprites.add(wall);
-					System.out.println("je met un mur");
 					break;
 				case 'd':
 					Dirt dirt = new Dirt();
@@ -181,8 +179,10 @@ public final class BoulderDashModel extends Observable implements IModel {
 		return this.sprites;
 	}
 	
+
+
+
 	public ArrayList<IElement> ListLoader() {
-		System.out.println("aakvdvdbkxwbxcjkxlvxdjklnaa");
 		return this.sprites;
 	}
 
