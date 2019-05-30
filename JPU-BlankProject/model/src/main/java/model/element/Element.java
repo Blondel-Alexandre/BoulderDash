@@ -10,10 +10,10 @@ import contract.IElement;
 
 public class Element extends Observable implements IElement {
 
-
 	private Sprite sprite;
-	
 	private Permeability permeability;
+	protected int x;
+	protected int y;
 
     public Element(final Sprite sprite, final Permeability permeability) {
         this.setSprite(sprite);
@@ -65,8 +65,7 @@ public class Element extends Observable implements IElement {
     public final Image getImage() {
         return this.getSprite().getImage();
     }
-	protected int x;
-	protected int y;
+
 	public int getX() {
 		return x;
 	}
