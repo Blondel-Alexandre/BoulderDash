@@ -7,6 +7,7 @@ import javax.swing.SwingUtilities;
 
 import contract.ControllerOrder;
 import contract.IController;
+import contract.IElement;
 import contract.IModel;
 import contract.IView;
 
@@ -40,6 +41,8 @@ public final class View implements IView, Runnable {
 	 */
 	protected static ControllerOrder keyCodeToControllerOrder(final int keyCode) {
 		switch (keyCode) {
+			case KeyEvent.VK_UP:
+				return ControllerOrder.UP;
 			case KeyEvent.VK_1:
 				return ControllerOrder.A;
 			case KeyEvent.VK_2:
@@ -50,8 +53,6 @@ public final class View implements IView, Runnable {
 				return ControllerOrder.D;
 			case KeyEvent.VK_5:
 				return ControllerOrder.E;
-			case KeyEvent.VK_UP:
-				return ControllerOrder.UP;
 			case KeyEvent.VK_DOWN:
 				return ControllerOrder.DOWN;
 			case KeyEvent.VK_LEFT:
@@ -59,7 +60,8 @@ public final class View implements IView, Runnable {
 			case KeyEvent.VK_RIGHT:
 				return ControllerOrder.RIGHT;
 			default:
-				return ControllerOrder.A;
+				return ControllerOrder.NO;
+				//doNothing
 		}
 	}
 

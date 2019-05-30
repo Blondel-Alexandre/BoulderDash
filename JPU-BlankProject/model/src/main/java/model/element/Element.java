@@ -2,7 +2,6 @@ package model.element;
 
 import java.awt.Image;
 import java.util.Observable;
-import java.util.Observer;
 
 import contract.IElement;
 
@@ -85,16 +84,17 @@ public class Element extends Observable implements IElement {
 		this.setChanged();
 		this.notifyObservers();
 	}
+	
+	public Observable getObservable() {
+        return this;
+    }
 
 	@Override
 	public String getFileName() {
 		return this.getSprite().getImageName();
 	}
 
-	@Override
-    public void setObserver(Observer observer) {
-        this.addObserver(observer);
-    }
+
 
 
 }

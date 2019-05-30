@@ -31,13 +31,20 @@ public interface IModel {
 	 * Gets the observable.
 	 *
 	 * @return the observable
+	 * 
+	 *
 	 */
-	Observable getObservable();
+
 	
 	ArrayList<IElement> getSprites();
 
 	ArrayList<IElement> ListLoader();
 
 	IMobile getDwarf();
+	Observable getObservable();
+
+
+	IElement getElement();
+
 
 }

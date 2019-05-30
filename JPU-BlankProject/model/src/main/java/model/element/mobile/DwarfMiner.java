@@ -2,7 +2,6 @@ package model.element.mobile;
 
 
 import contract.IDwarfMiner;
-import contract.IMobile;
 import model.element.Permeability;
 import model.element.Sprite;
 
@@ -42,7 +41,7 @@ public void moveUpPlayer() {
 @Override
 public void moveLeftPlayer() {
 super.moveLeft();
-System.out.println(getY());
+System.out.println(y);
 
 }
 

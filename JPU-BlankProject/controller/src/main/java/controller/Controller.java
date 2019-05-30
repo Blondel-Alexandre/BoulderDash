@@ -97,21 +97,21 @@ public final class Controller extends KeyAdapter implements IController  {
 	 */
 	public void orderPerform(final ControllerOrder controllerOrder) {
 		switch (controllerOrder) {
-			case A:
-				this.model.loadHelloWorld("GB");
-				break;
-			case B:
-				this.model.loadHelloWorld("FR");
-				break;
-			case C:
-				this.model.loadHelloWorld("DE");
-				break;
-			case D:
-				this.model.loadHelloWorld("ID");
-				break;
-			case E:
-				this.model.loadHelloWorld("ID");
-				break;
+		case A:
+			this.model.loadHelloWorld("GB");
+			break;
+		case B:
+			this.model.loadHelloWorld("FR");
+			break;
+		case C:
+			this.model.loadHelloWorld("DE");
+			break;
+		case D:
+			this.model.loadHelloWorld("ID");
+			break;
+		case E:
+			this.model.loadHelloWorld("ID");
+			break;
 			case UP:
 				((IDwarfMiner) this.getModel().getDwarf()).moveUpPlayer();
 				break;
@@ -131,10 +131,6 @@ public final class Controller extends KeyAdapter implements IController  {
 
 	}
 
-
-public void play() {
-	IElement.setObserver(this.view.getObserver());
-}
 
 
 

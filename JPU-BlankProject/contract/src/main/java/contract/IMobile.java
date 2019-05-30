@@ -9,4 +9,6 @@ public interface IMobile  {
 	void doNothing();
 	int getX();
 	int getY();
+	void setY(int y);
+	void setX(int x);
 }
