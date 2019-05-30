@@ -6,6 +6,7 @@ import java.util.Observable;
 import java.util.Observer;
 import javax.swing.JPanel;
 import contract.IElement;
+import contract.IModel;
 
 /**
  * The Class ViewPanel.
@@ -21,6 +22,10 @@ class ViewPanel extends JPanel implements Observer {
 
 	public Image img;
 	
+	private IModel model;
+
+	
+	
 	
 	
 	
@@ -32,8 +37,7 @@ class ViewPanel extends JPanel implements Observer {
 	 */
 	public ViewPanel(final ViewFrame viewFrame) {
 		this.setViewFrame(viewFrame);
-		viewFrame.getModel().getObservable().addObserver(this);
-
+		viewFrame.getModel().getElement().getObservable().addObserver(this);
 	}
 
 	/**
@@ -52,7 +56,7 @@ class ViewPanel extends JPanel implements Observer {
 	 * @see java.util.Observer#update(java.util.Observable, java.lang.Object)
 	 */
 	@Override
-	public void update(final Observable observable, final Object observer) {
+	public void update(final Observable arg0, final Object o) {
 		this.repaint();
 	}
 
@@ -67,7 +71,6 @@ class ViewPanel extends JPanel implements Observer {
 		graphics.clearRect(0, 0, this.getWidth(), this.getHeight());	
 		int size = this.viewFrame.getModel().getSprites().size();
 		for(int i = 0; i < size ; i++) {
-			
 			
 			IElement element = this.viewFrame.getModel().ListLoader().get(i);
             System.err.println("je je peint la fenetre en ce moment ");

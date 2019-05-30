@@ -132,10 +132,6 @@ public final class Controller extends KeyAdapter implements IController  {
 	}
 
 
-public void play() {
-	IElement.setObserver(this.view.getObserver());
-}
-
 
 
 

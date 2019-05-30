@@ -7,6 +7,7 @@ package main;
 import contract.ControllerOrder;
 import controller.Controller;
 import model.BoulderDashModel;
+import model.element.*;
 import view.View;
 
 /**
@@ -29,7 +30,7 @@ public abstract class Main {
         view.setController(controller);
 
         controller.control();
-        controller.orderPerform(ControllerOrder.A);
-        controller.play();
+        controller.orderPerform(ControllerOrder.C);
+
     }
 }

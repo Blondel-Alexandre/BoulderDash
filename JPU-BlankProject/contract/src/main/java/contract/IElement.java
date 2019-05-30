@@ -1,7 +1,7 @@
 package contract;
 
 import java.awt.Image;
-import java.util.Observer;
+import java.util.Observable;
 
 public interface IElement {
 	
@@ -11,8 +11,6 @@ public interface IElement {
 	void setY(int y);
 	Image getImage();
 	String getFileName();
-	void setObserver (Observer observer) {
-		
-	}
+	Observable getObservable();
 
 }

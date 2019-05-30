@@ -7,6 +7,7 @@ import javax.swing.SwingUtilities;
 
 import contract.ControllerOrder;
 import contract.IController;
+import contract.IElement;
 import contract.IModel;
 import contract.IView;
 

@@ -44,6 +44,8 @@ public class BoulderDashModel extends Observable implements IModel {
 	
 	IMobile dwarfs;
 	
+	IElement elements;
+	
 	
 
 	//private BoulderMap boulderMap;
@@ -76,17 +78,11 @@ public class BoulderDashModel extends Observable implements IModel {
 		return this.helloWorld ;
 	}
 
-	/**
-     * Sets the hello world.
-     *
-     * @param helloWorld
-     *            the new hello world
-     */
 	private void setHelloWorld(final Level helloWorld) {
 		this.helloWorld = helloWorld;
-		this.setChanged();
-		this.notifyObservers();
+
 	}
+
 
 	
 	public void loadHelloWorld(final String code) {
@@ -109,9 +105,9 @@ public class BoulderDashModel extends Observable implements IModel {
 	 *
 	 * @see contract.IModel#getObservable()
 	 */
-	public Observable getObservable() {
-		return this;
-	}
+//	public Observable getObservable() {
+//		return this;
+//	}
 
 	
 	@Override
@@ -171,6 +167,7 @@ public class BoulderDashModel extends Observable implements IModel {
 	                	dwarf.setY(y);
 	                	this.sprites.add(dwarf);
 	                	this.dwarfs=dwarf;
+	                	this.elements=dwarf;
 	                	break;
 					
 				}
@@ -193,5 +190,16 @@ public class BoulderDashModel extends Observable implements IModel {
 		// TODO Auto-generated method stub
 		return this.dwarfs;
 	}
+	
+	@Override
+	public IElement getElement() {
+		return this.elements;
+	}
+
+
+
+
+
+
 
 }
