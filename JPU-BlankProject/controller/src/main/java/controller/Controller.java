@@ -1,13 +1,14 @@
 package controller;
 
-import java.awt.Image;
-import java.awt.event.ActionEvent;
+
 import java.awt.event.KeyAdapter;
-import java.awt.event.KeyEvent;
+
+
 
 import contract.ControllerOrder;
 import contract.IController;
 import contract.IDwarfMiner;
+import contract.IElement;
 import contract.IModel;
 import contract.IView;
 
@@ -115,7 +116,6 @@ public final class Controller extends KeyAdapter implements IController  {
 				((IDwarfMiner) this.getModel().getDwarf()).moveUpPlayer();
 				break;
 			case DOWN:
-				System.out.println(this.getModel().getDwarf());
 				((IDwarfMiner) this.getModel().getDwarf()).moveDownPlayer();	
 				break;
 			case LEFT:
@@ -130,6 +130,11 @@ public final class Controller extends KeyAdapter implements IController  {
 		
 
 	}
+
+
+public void play() {
+	IElement.setObserver(this.view.getObserver());
+}
 
 
 

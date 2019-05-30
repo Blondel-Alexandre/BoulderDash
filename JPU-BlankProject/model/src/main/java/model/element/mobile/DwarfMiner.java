@@ -34,12 +34,16 @@ public void setNumberLife(int numberLife) {
 @Override
 public void moveUpPlayer() {
 	super.moveUp();
+	System.out.println(getY());
+
 	
 }
 
 @Override
 public void moveLeftPlayer() {
-super.moveLeft();	
+super.moveLeft();
+System.out.println(getY());
+
 }
 
 @Override

@@ -11,6 +11,8 @@ public interface IElement {
 	void setY(int y);
 	Image getImage();
 	String getFileName();
-	void setObserver(Observer observer);
+	void setObserver (Observer observer) {
+		
+	}
 
 }
