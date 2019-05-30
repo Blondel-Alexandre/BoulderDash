@@ -80,6 +80,8 @@ public class BoulderDashModel extends Observable implements IModel {
 
 	private void setHelloWorld(final Level helloWorld) {
 		this.helloWorld = helloWorld;
+		this.setChanged();
+		this.notifyObservers();
 
 	}
 
@@ -194,6 +196,13 @@ public class BoulderDashModel extends Observable implements IModel {
 	@Override
 	public IElement getElement() {
 		return this.elements;
+	}
+
+
+
+	@Override
+	public Observable getObservable() {
+		return this;
 	}
 
 

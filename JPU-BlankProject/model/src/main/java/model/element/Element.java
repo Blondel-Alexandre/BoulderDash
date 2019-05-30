@@ -4,11 +4,10 @@ import java.awt.Image;
 import java.util.Observable;
 
 import contract.IElement;
-import model.BoulderDashModel;
 
 
 
-public class Element extends BoulderDashModel implements IElement {
+public class Element extends Observable implements IElement {
 
 
 	private Sprite sprite;

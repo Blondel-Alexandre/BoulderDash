@@ -22,13 +22,6 @@ class ViewPanel extends JPanel implements Observer {
 
 	public Image img;
 	
-	private IModel model;
-
-	
-	
-	
-	
-	
 	/**
 	 * Instantiates a new view panel.
 	 *
@@ -37,7 +30,9 @@ class ViewPanel extends JPanel implements Observer {
 	 */
 	public ViewPanel(final ViewFrame viewFrame) {
 		this.setViewFrame(viewFrame);
+		viewFrame.getModel().getObservable().addObserver(this);
 		viewFrame.getModel().getElement().getObservable().addObserver(this);
+
 	}
 
 	/**

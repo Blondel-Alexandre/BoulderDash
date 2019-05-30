@@ -1,6 +1,7 @@
 package contract;
 
 import java.util.ArrayList;
+import java.util.Observable;
 
 import entity.Level;
 
@@ -40,6 +41,8 @@ public interface IModel {
 	ArrayList<IElement> ListLoader();
 
 	IMobile getDwarf();
+	Observable getObservable();
+
 
 	IElement getElement();
 
