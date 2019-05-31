@@ -114,7 +114,7 @@ public final class Controller extends KeyAdapter implements IController  {
 			this.model.loadHelloWorld("ID");
 			break;
 			case UP:
-				boolean canMove = true;
+				/*boolean canMove = true;
 				Point p = new Point(this.getModel().getDwarf().getX(), this.getModel().getDwarf().getY()-1);
 				for(IElement elem: this.getModel().elementLoader()) {
 					if(elem.getX() == p.getX() && elem.getY() == p.getY()) {
@@ -125,9 +125,9 @@ public final class Controller extends KeyAdapter implements IController  {
 						}
 					}
 				}
-				if(canMove) {
+				if(canMove) {*/
 					((IDwarfMiner) this.getModel().getDwarf()).moveUpPlayer();
-				}
+			//	}
 				break;
 			case DOWN:
 				((IDwarfMiner) this.getModel().getDwarf()).moveDownPlayer();	
