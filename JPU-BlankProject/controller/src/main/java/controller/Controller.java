@@ -1,19 +1,11 @@
 package controller;
 
-
-import java.awt.Point;
 import java.awt.event.KeyAdapter;
-
-
-
 import contract.ControllerOrder;
 import contract.IController;
 import contract.IDwarfMiner;
-import contract.IElement;
 import contract.IModel;
 import contract.IView;
-
-
 
 
 /**
@@ -27,8 +19,6 @@ public final class Controller extends KeyAdapter implements IController  {
 	/** The model. */
 	private IModel model;
 
-
-
 	/**
 	 * Instantiates a new controller.
 	 *
@@ -41,11 +31,7 @@ public final class Controller extends KeyAdapter implements IController  {
 	public Controller(final IView view, final IModel model) {
 		this.setView(view);
 		this.setModel(model);
-
 	}
-
-	
-
 	/**
      * Control.
      */
@@ -55,10 +41,7 @@ public final class Controller extends KeyAdapter implements IController  {
 	 * @see contract.IController#control()
 	 */
 	public void control() {
-
 		this.view.printMessage("JOUE");
-
-
 	}
 
 	/**
@@ -141,25 +124,5 @@ public final class Controller extends KeyAdapter implements IController  {
 			default:
 				break;
 		}
-		
-
 	}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }

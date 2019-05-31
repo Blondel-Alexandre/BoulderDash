@@ -46,10 +46,6 @@ public class BoulderDashModel extends Observable implements IModel {
 	
 	IElement elements;
 	
-	
-
-	//private BoulderMap boulderMap;
-	//get Sprite type into arraylist
 	private ArrayList<IElement> sprites;
 	/**
 	 * Instantiates a new model.
@@ -62,8 +58,6 @@ public class BoulderDashModel extends Observable implements IModel {
 		
 	}
 	
-
-
 	/**
      * Gets the hello world.
      *
@@ -115,9 +109,7 @@ public class BoulderDashModel extends Observable implements IModel {
 	@Override
 	public ArrayList<IElement> getSprites() {
 		char[][] map = this.helloWorld.getLevel();
-		//System.out.println(map);
 		for(int y = 0, mapSize = this.levelSize.getLevelSize(); y < mapSize ; y++) {
-			//System.out.println("pmpmpmpmpmpmpmpmpmpmpmp");
 			for (int x = 0; x < mapSize ; x++) {
 				char c = map[y][x];
 				switch (c) {
@@ -169,26 +161,19 @@ public class BoulderDashModel extends Observable implements IModel {
 	                	dwarf.setY(y);
 	                	this.dwarfs=dwarf;
 	                	this.elements=dwarf;
-	                	break;
-					
+	                	break;					
 				}
 			}
 		}
 		return this.sprites;
 	}
-	
-
-
 
 	public ArrayList<IElement> elementLoader() {
 		return this.sprites;
 	}
 
-
-
 	@Override
 	public IMobile getDwarf() {
-		// TODO Auto-generated method stub
 		return this.dwarfs;
 	}
 	
@@ -197,17 +182,8 @@ public class BoulderDashModel extends Observable implements IModel {
 		return this.elements;
 	}
 
-
-
 	@Override
 	public Observable getObservable() {
 		return this;
 	}
-
-
-
-
-
-
-
 }

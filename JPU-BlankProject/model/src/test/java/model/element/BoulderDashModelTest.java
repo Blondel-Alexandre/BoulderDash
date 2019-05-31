@@ -1,4 +1,4 @@
-7package model.element;
+package model.element;
 
 import static org.junit.Assert.*;
 

@@ -2,8 +2,8 @@ package model.element.mobile;
 
 
 import contract.IMobile;
+import contract.Permeability;
 import model.element.Element;
-import model.element.Permeability;
 import model.element.Sprite;
 
 public class Mobile extends Element implements IMobile {

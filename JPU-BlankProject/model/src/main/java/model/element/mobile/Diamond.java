@@ -1,6 +1,6 @@
 package model.element.mobile;
 
-import model.element.Permeability;
+import contract.Permeability;
 import model.element.Sprite;
 
 public class Diamond extends Mobile {

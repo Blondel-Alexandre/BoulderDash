@@ -101,10 +101,6 @@ public class Level extends Entity {
 	public int getLevelSize() {
 		return this.levelSize;
 	}
-	
-	public void setLevelSize() {
-		this.levelSize = levelSize;
-	}
 
 	/**
 	 * Sets the key.

@@ -1,6 +1,6 @@
 package model.element.motionless;
 
-import model.element.Permeability;
+import contract.Permeability;
 import model.element.Sprite;
 
 public class Exit extends MotionlessElement  {

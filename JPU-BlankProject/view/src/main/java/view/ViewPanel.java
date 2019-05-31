@@ -6,7 +6,6 @@ import java.util.Observable;
 import java.util.Observer;
 import javax.swing.JPanel;
 import contract.IElement;
-import contract.IModel;
 
 /**
  * The Class ViewPanel.
@@ -67,16 +66,11 @@ class ViewPanel extends JPanel implements Observer {
 		System.out.println("jsqbcqkc");
 		graphics.clearRect(0, 0, 800, 800);	
 		int size = this.viewFrame.getModel().elementLoader().size();
-		for(int i = 0; i < size ; i++) {
-			
+		for(int i = 0; i < size ; i++) {			
 			IElement element = this.viewFrame.getModel().elementLoader().get(i);
             System.err.println("je je peint la fenetre en ce moment ");
-            
-            //
 			graphics.drawImage(element.getImage(),element.getX()*16, element.getY()*16, null);
-
-		}
-		
+		}		
 		IElement character = this.viewFrame.getModel().getElement();
 		graphics.drawImage(character.getImage(), character.getX()*16, character.getY()*16, null);
 		
@@ -90,14 +84,13 @@ class ViewPanel extends JPanel implements Observer {
 		graphics.setColor(Color.RED);
 		graphics.setFont(B);
 		graphics.drawString("Vies: " , 20, 50);
+		
+		rocher 
+		
+		for (int i = 0 ; i<Model.Rock.rocks.size() ; i++)
+		{
+		Rock r = Model.Rock.rocks.get(i);
+		graphics.drawImage(r.image, r.x, r.y, null);
 		*/
-		//rocher 
-		
-		//for (int i = 0 ; i<Model.Rock.rocks.size() ; i++)
-		//{
-		//	Rock r = Model.Rock.rocks.get(i);
-		//	graphics.drawImage(r.image, r.x, r.y, null);
-		
-		//	}
-}
+			}
 }

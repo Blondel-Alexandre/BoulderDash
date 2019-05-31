@@ -4,6 +4,7 @@ import java.awt.Image;
 import java.util.Observable;
 
 import contract.IElement;
+import contract.Permeability;
 
 
 
