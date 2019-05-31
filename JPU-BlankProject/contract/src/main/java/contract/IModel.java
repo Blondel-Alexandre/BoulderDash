@@ -38,7 +38,7 @@ public interface IModel {
 	
 	ArrayList<IElement> getSprites();
 
-	ArrayList<IElement> ListLoader();
+	ArrayList<IElement> elementLoader();
 
 	IMobile getDwarf();
 	Observable getObservable();

@@ -29,12 +29,12 @@ public class Mobile extends Element implements IMobile {
 	
 	public void moveRight()
 	{
-		this.setY(this.getY()-1);
+		this.setX(this.getX()+1);
 	}
 @Override	
 	public void moveLeft()
 	{
-		this.setY(this.getY()+1);
+		this.setX(this.getX()-1);
 	}
 
 

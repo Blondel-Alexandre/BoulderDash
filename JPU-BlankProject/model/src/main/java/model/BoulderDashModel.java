@@ -56,9 +56,9 @@ public class BoulderDashModel extends Observable implements IModel {
 	 */
 	public BoulderDashModel() {
 		this.sprites = new ArrayList<>();
-		this.helloWorld = new Level();
+		this.loadHelloWorld("GB");
 		this.levelSize = new Level();
-		//this.boulderMap = new BoulderMap();
+		this.sprites = this.getSprites();
 		
 	}
 	
@@ -167,7 +167,6 @@ public class BoulderDashModel extends Observable implements IModel {
 	                	DwarfMiner dwarf = new DwarfMiner();
 	                	dwarf.setX(x);
 	                	dwarf.setY(y);
-	                	this.sprites.add(dwarf);
 	                	this.dwarfs=dwarf;
 	                	this.elements=dwarf;
 	                	break;
@@ -181,7 +180,7 @@ public class BoulderDashModel extends Observable implements IModel {
 
 
 
-	public ArrayList<IElement> ListLoader() {
+	public ArrayList<IElement> elementLoader() {
 		return this.sprites;
 	}
 

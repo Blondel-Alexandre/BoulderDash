@@ -1,6 +1,7 @@
 package controller;
 
 
+import java.awt.Point;
 import java.awt.event.KeyAdapter;
 
 
@@ -113,7 +114,20 @@ public final class Controller extends KeyAdapter implements IController  {
 			this.model.loadHelloWorld("ID");
 			break;
 			case UP:
-				((IDwarfMiner) this.getModel().getDwarf()).moveUpPlayer();
+				boolean canMove = true;
+				Point p = new Point(this.getModel().getDwarf().getX(), this.getModel().getDwarf().getY()-1);
+				for(IElement elem: this.getModel().elementLoader()) {
+					if(elem.getX() == p.getX() && elem.getY() == p.getY()) {
+						switch(elem.getTYpe()) {
+						case Type.DIRT:
+							canMove = false;
+							break;
+						}
+					}
+				}
+				if(canMove) {
+					((IDwarfMiner) this.getModel().getDwarf()).moveUpPlayer();
+				}
 				break;
 			case DOWN:
 				((IDwarfMiner) this.getModel().getDwarf()).moveDownPlayer();	

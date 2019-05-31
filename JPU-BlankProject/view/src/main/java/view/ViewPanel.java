@@ -30,9 +30,11 @@ class ViewPanel extends JPanel implements Observer {
 	 */
 	public ViewPanel(final ViewFrame viewFrame) {
 		this.setViewFrame(viewFrame);
-		viewFrame.getModel().getObservable().addObserver(this);
 		viewFrame.getModel().getElement().getObservable().addObserver(this);
-
+		for(int i = 0; i < viewFrame.getModel().elementLoader().size(); i++) {
+			viewFrame.getModel().elementLoader().get(i).getObservable().addObserver(this);
+		}
+		System.out.println(viewFrame.getModel().elementLoader().size());
 	}
 
 	/**
@@ -63,17 +65,20 @@ class ViewPanel extends JPanel implements Observer {
 	@Override
 	public void paintComponent(final Graphics graphics) {
 		System.out.println("jsqbcqkc");
-		graphics.clearRect(0, 0, this.getWidth(), this.getHeight());	
-		int size = this.viewFrame.getModel().getSprites().size();
+		graphics.clearRect(0, 0, 800, 800);	
+		int size = this.viewFrame.getModel().elementLoader().size();
 		for(int i = 0; i < size ; i++) {
 			
-			IElement element = this.viewFrame.getModel().ListLoader().get(i);
+			IElement element = this.viewFrame.getModel().elementLoader().get(i);
             System.err.println("je je peint la fenetre en ce moment ");
             
             //
 			graphics.drawImage(element.getImage(),element.getX()*16, element.getY()*16, null);
 
 		}
+		
+		IElement character = this.viewFrame.getModel().getElement();
+		graphics.drawImage(character.getImage(), character.getX()*16, character.getY()*16, null);
 		
 		/*//score
 		Font f = new Font("Impact",Font.BOLD,20);
