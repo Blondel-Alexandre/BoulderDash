@@ -9,13 +9,10 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import model.element.motionless.Wall;
 import model.element.*;
+import model.element.mobile.DwarfMiner;
 
 public class ElementTest  {
-	private Sprite sprite;
-	private Permeability permeability;
-	protected int x = 3;
-	protected int y = 2;
-	
+	private DwarfMiner dwarf;
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
 	}
@@ -26,7 +23,10 @@ public class ElementTest  {
 
 	@Before
 	public void setUp() throws Exception {
-		Wall wall = new Wall();
+	this.dwarf = new DwarfMiner();
+	this.dwarf.setX(1);
+	this.dwarf.setY(1);
+		
 	}
 
 	@After
@@ -35,19 +35,13 @@ public class ElementTest  {
 
 	/*@Test
 	public void testElement() {
-		fail("Not yet implemented");
+	
 	}
 	**/
+	
 
-	@Test
-	public void testGetSprite() {
-		assertNotNull(this.sprite);
-	}
 
-	@Test
-	public void testGetPermeability() {
-		assertNotNull(this.permeability);
-	}
+
 
 	/*@Test
 	public void testGetImage() {
@@ -57,13 +51,14 @@ public class ElementTest  {
 
 	@Test
 	public void testGetX() {
-		assertNotNull(x);
+		int expected = 1;
+		assertEquals(expected, this.dwarf.getX());
 	}
 
 	@Test
 	public void testGetY() {
-		assertNotNull(y);
-	}
+		int expected = 1;
+		assertEquals(expected, this.dwarf.getY());	}
 }
 
 
