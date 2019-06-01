@@ -49,7 +49,6 @@ public class Level extends Entity {
 	
 	public void loadLevel() {
 	String mapCharacter = getMessage();
-
 	final String SEPARATEUR = "@";
 	String[] mot = mapCharacter.split(SEPARATEUR);
 	System.out.println(getMessage());

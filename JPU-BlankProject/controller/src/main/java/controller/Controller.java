@@ -1,9 +1,11 @@
 package controller;
 
+import java.awt.Point;
 import java.awt.event.KeyAdapter;
 import contract.ControllerOrder;
 import contract.IController;
 import contract.IDwarfMiner;
+import contract.IElement;
 import contract.IModel;
 import contract.IView;
 
@@ -43,6 +45,14 @@ public final class Controller extends KeyAdapter implements IController  {
 	public void control() {
 		this.view.printMessage("JOUE");
 	}
+	
+	public void gameOver() {
+		this.view.printMessage("Game Over");
+	}
+	
+	public void win() {
+		this.view.printMessage("You Win");
+	}
 
 	/**
      * Sets the view.
@@ -80,6 +90,8 @@ public final class Controller extends KeyAdapter implements IController  {
 	 * @see contract.IController#orderPerform(contract.ControllerOrder)
 	 */
 	public void orderPerform(final ControllerOrder controllerOrder) {
+		boolean canMove = true;
+		Point position;
 		switch (controllerOrder) {
 		case A:
 			this.model.loadHelloWorld("GB");
@@ -97,29 +109,123 @@ public final class Controller extends KeyAdapter implements IController  {
 			this.model.loadHelloWorld("ID");
 			break;
 			case UP:
-				/*boolean canMove = true;
-				Point p = new Point(this.getModel().getDwarf().getX(), this.getModel().getDwarf().getY()-1);
-				for(IElement elem: this.getModel().elementLoader()) {
-					if(elem.getX() == p.getX() && elem.getY() == p.getY()) {
-						switch(elem.getTYpe()) {
-						case Type.DIRT:
+				position = new Point(this.getModel().getDwarf().getX(), this.getModel().getDwarf().getY()-1);
+				for(IElement element: this.getModel().elementList()) {
+					if(element.getX() == position.getX() && element.getY() == position.getY()) {
+						switch(element.getElementType()) {
+						case Dirt:
+							canMove = true;
+							break;
+						case Wall:
 							canMove = false;
+							break;
+						case Rock:
+							canMove = false;
+							break;
+						case Diamond:
+							canMove = true;
+							break;
+						case Enemy:
+							gameOver();
+							break;
+						case Exit:
+							win();
+							break;
+						default:
 							break;
 						}
 					}
 				}
-				if(canMove) {*/
+				if(canMove == true) {
 					((IDwarfMiner) this.getModel().getDwarf()).moveUpPlayer();
-			//	}
+				}
 				break;
 			case DOWN:
-				((IDwarfMiner) this.getModel().getDwarf()).moveDownPlayer();	
+				position = new Point(this.getModel().getDwarf().getX(), this.getModel().getDwarf().getY()+1);
+				for(IElement element: this.getModel().elementList()) {
+					if(element.getX() == position.getX() && element.getY() == position.getY()) {
+						switch(element.getElementType()) {
+						case Dirt:
+							canMove = true;
+							break;
+						case Wall:
+							canMove = false;
+							break;
+						case Rock:
+							canMove = false;
+							break;
+						case Diamond:
+							canMove = true;
+							break;
+						case Enemy:
+							gameOver();
+							break;
+						default:
+							break;
+						}
+					}
+				}
+				if(canMove == true) {
+					((IDwarfMiner) this.getModel().getDwarf()).moveDownPlayer();
+				}	
 				break;
 			case LEFT:
-				((IDwarfMiner) this.getModel().getDwarf()).moveLeftPlayer();
+				position = new Point(this.getModel().getDwarf().getX()-1, this.getModel().getDwarf().getY());
+				for(IElement element: this.getModel().elementList()) {
+					if(element.getX() == position.getX() && element.getY() == position.getY()) {
+						switch(element.getElementType()) {
+						case Dirt:
+							canMove = true;
+							break;
+						case Wall:
+							canMove = false;
+							break;
+						case Rock:
+							canMove = false;
+							break;
+						case Diamond:
+							canMove = true;
+							break;
+						case Enemy:
+							gameOver();
+							break;
+						default:
+							break;
+						}
+					}
+				}
+				if(canMove == true) {
+					((IDwarfMiner) this.getModel().getDwarf()).moveLeftPlayer();
+				}
 				break;
 			case RIGHT:
-				((IDwarfMiner) this.getModel().getDwarf()).moveRightPlayer();	
+				position = new Point(this.getModel().getDwarf().getX()+1, this.getModel().getDwarf().getY());
+				for(IElement element: this.getModel().elementList()) {
+					if(element.getX() == position.getX() && element.getY() == position.getY()) {
+						switch(element.getElementType()) {
+						case Dirt:
+							canMove = true;
+							break;
+						case Wall:
+							canMove = false;
+							break;
+						case Rock:
+							canMove = false;
+							break;
+						case Diamond:
+							canMove = true;
+							break;
+						case Enemy:
+							gameOver();
+							break;
+						default:
+							break;
+						}
+					}
+				}
+				if(canMove == true) {
+					((IDwarfMiner) this.getModel().getDwarf()).moveRightPlayer();
+				}	
 				break;
 			default:
 				break;

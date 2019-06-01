@@ -125,50 +125,50 @@ public class BoulderDashModel extends Observable implements IModel {
 					dirt.setY(y);
 					this.sprites.add(dirt);
 					break;
-				   case 'b':
-	                    BrokenDirt brokendirt = new BrokenDirt();
-	                    brokendirt.setX(x);
-	                    brokendirt.setY(y);
-	                    this.sprites.add(brokendirt);
-	                    break;
-	                case 'r':
-	                    Rock rock = new Rock();
-	                    rock.setX(x);
-	                    rock.setY(y);
-	                    this.sprites.add(rock);
-	                    break;
-	                case 'i':
-	                    Diamond diamond = new Diamond();
-	                    diamond.setX(x);
-	                    diamond.setY(y);
-	                    this.sprites.add(diamond);
-	                    break;
-	                case 'p':
-	                    Exit exit = new Exit();
-	                    exit.setX(x);
-	                    exit.setY(y);
-	                    this.sprites.add(exit);
-	                    break;
-	                case 'e':
-	                    Enemy enemy = new Enemy();
-	                    enemy.setX(x);
-	                    enemy.setY(y);
-	                    this.sprites.add(enemy);
-	                    break;
-	                case 'c':
-	                	DwarfMiner dwarf = new DwarfMiner();
-	                	dwarf.setX(x);
-	                	dwarf.setY(y);
-	                	this.dwarfs=dwarf;
-	                	this.elements=dwarf;
-	                	break;					
-				}
+				case 'b':
+	                BrokenDirt brokendirt = new BrokenDirt();
+	                brokendirt.setX(x);
+	                brokendirt.setY(y);
+	                this.sprites.add(brokendirt);
+	                break;
+	            case 'r':
+	                Rock rock = new Rock();
+	                rock.setX(x);
+	                rock.setY(y);
+	                this.sprites.add(rock);
+	                break;
+	            case 'i':
+	                Diamond diamond = new Diamond();
+	                diamond.setX(x);
+	                diamond.setY(y);
+	                this.sprites.add(diamond);
+	                break;
+	            case 'p':
+	                Exit exit = new Exit();
+	                exit.setX(x);
+	                exit.setY(y);
+	                this.sprites.add(exit);
+	                break;
+	            case 'e':
+	                Enemy enemy = new Enemy();
+	                enemy.setX(x);
+	                enemy.setY(y);
+	                this.sprites.add(enemy);
+	                break;
+	            case 'c':
+	             	DwarfMiner dwarf = new DwarfMiner();
+	              	dwarf.setX(x);
+	               	dwarf.setY(y);
+	               	this.dwarfs=dwarf;
+	               	this.elements=dwarf;
+	               	break;					
 			}
 		}
-		return this.sprites;
+	}
+	return this.sprites;
 	}
 
-	public ArrayList<IElement> elementLoader() {
+	public ArrayList<IElement> elementList() {
 		return this.sprites;
 	}
 

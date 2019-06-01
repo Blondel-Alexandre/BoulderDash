@@ -3,6 +3,7 @@ package model.element;
 import java.awt.Image;
 import java.util.Observable;
 
+import contract.ElementType;
 import contract.IElement;
 import contract.Permeability;
 
@@ -12,12 +13,14 @@ public class Element extends Observable implements IElement {
 
 	private Sprite sprite;
 	private Permeability permeability;
+	private ElementType elementType;
 	protected int x;
 	protected int y;
 
-    public Element(final Sprite sprite, final Permeability permeability) {
+    public Element(final Sprite sprite, final Permeability permeability, final ElementType elementType) {
         this.setSprite(sprite);
         this.setPermeability(permeability);
+        this.setElementType(elementType);
     }
     
     /**
@@ -55,6 +58,25 @@ public class Element extends Observable implements IElement {
      */
     private void setPermeability(final Permeability permeability) {
         this.permeability = permeability;
+    }
+
+    /**
+     * Gets the elementType.
+     *
+     * @return the elementType
+     */
+    public final ElementType getElementType() {
+        return this.elementType;
+    }
+
+    /**
+     * Sets the elementType.
+     *
+     * @param elementType
+     *            the new elementType
+     */
+    private void setElementType(final ElementType elementType) {
+        this.elementType = elementType;
     }
 
     /*

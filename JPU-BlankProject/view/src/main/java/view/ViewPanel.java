@@ -30,10 +30,10 @@ class ViewPanel extends JPanel implements Observer {
 	public ViewPanel(final ViewFrame viewFrame) {
 		this.setViewFrame(viewFrame);
 		viewFrame.getModel().getElement().getObservable().addObserver(this);
-		for(int i = 0; i < viewFrame.getModel().elementLoader().size(); i++) {
-			viewFrame.getModel().elementLoader().get(i).getObservable().addObserver(this);
+		for(int i = 0; i < viewFrame.getModel().elementList().size(); i++) {
+			viewFrame.getModel().elementList().get(i).getObservable().addObserver(this);
 		}
-		System.out.println(viewFrame.getModel().elementLoader().size());
+		System.out.println(viewFrame.getModel().elementList().size());
 	}
 
 	/**
@@ -65,9 +65,9 @@ class ViewPanel extends JPanel implements Observer {
 	public void paintComponent(final Graphics graphics) {
 		System.out.println("jsqbcqkc");
 		graphics.clearRect(0, 0, 800, 800);	
-		int size = this.viewFrame.getModel().elementLoader().size();
+		int size = this.viewFrame.getModel().elementList().size();
 		for(int i = 0; i < size ; i++) {			
-			IElement element = this.viewFrame.getModel().elementLoader().get(i);
+			IElement element = this.viewFrame.getModel().elementList().get(i);
             System.err.println("je je peint la fenetre en ce moment ");
 			graphics.drawImage(element.getImage(),element.getX()*16, element.getY()*16, null);
 		}		

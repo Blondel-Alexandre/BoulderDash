@@ -1,6 +1,7 @@
 package model.element.mobile;
 
 
+import contract.ElementType;
 import contract.IDwarfMiner;
 import contract.Permeability;
 import model.element.Sprite;
@@ -21,7 +22,7 @@ public void setNumberLife(int numberLife) {
 
 	
 	public DwarfMiner() {
-		super(SPRITE, Permeability.BLOCKING);
+		super(SPRITE, Permeability.BLOCKING, ElementType.DwarfMiner);
 		this.getSprite().loadImage();
 	}
 		
