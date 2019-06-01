@@ -32,8 +32,6 @@ public class ElementTest {
 		this.dwarf.setX(1);
 		this.dwarf.setY(1);
 		this.dwarf.setSprite(sprite);
-		this.dwarf.setPermeability(permeability);
-		this.dwarf.setElementType(elementType);
 
 		
 	}

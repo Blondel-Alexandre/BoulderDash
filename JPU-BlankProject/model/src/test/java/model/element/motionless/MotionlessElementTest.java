@@ -8,11 +8,7 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import contract.ElementType;
-import contract.Permeability;
-
-public class DirtTest {
-	private Dirt dirt;
+public class MotionlessElementTest  {
 
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
@@ -24,7 +20,6 @@ public class DirtTest {
 
 	@Before
 	public void setUp() throws Exception {
-		this.dirt = new Dirt();
 	}
 
 	@After
@@ -32,15 +27,8 @@ public class DirtTest {
 	}
 
 	@Test
-	public void test() {
-		assertNotNull(this.dirt.getSprite());
-		
-		Permeability expected1 = Permeability.BLOCKING;
-		assertEquals(expected1, this.dirt.getPermeability());
-		
-		ElementType expected2 =  ElementType.Dirt;
-		assertEquals(expected2, this.dirt.getElementType());
-		
+	public void testMotionlessElement() {
+		fail("Not yet implemented");
 	}
 
 }

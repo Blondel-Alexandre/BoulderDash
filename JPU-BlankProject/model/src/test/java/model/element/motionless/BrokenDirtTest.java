@@ -8,20 +8,16 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import contract.ElementType;
+import contract.Permeability;
+
 public class BrokenDirtTest {
 	
-	private BrokenDirt b;
-
-	@BeforeClass
-	public static void setUpBeforeClass() throws Exception {
-	}
-
-	@AfterClass
-	public static void tearDownAfterClass() throws Exception {
-	}
+	private BrokenDirt brokenDirt;
 
 	@Before
 	public void setUp() throws Exception {
+		this.brokenDirt = new BrokenDirt();
 	}
 
 	@After
@@ -30,7 +26,13 @@ public class BrokenDirtTest {
 
 	@Test
 	public void test() {
-		b = new BrokenDirt();
+		assertNotNull(this.brokenDirt.getSprite());
+		
+		Permeability expected1 = Permeability.BLOCKING;
+		assertEquals(expected1, this.brokenDirt.getPermeability());
+		
+		ElementType expected2 =  ElementType.BrokenDirt;
+		assertEquals(expected2, this.brokenDirt.getElementType());
 	}
 
 }
