@@ -1,5 +1,7 @@
 package view;
 
+import java.awt.Color;
+import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Image;
 import java.util.Observable;
@@ -18,7 +20,7 @@ class ViewPanel extends JPanel implements Observer {
 	private ViewFrame					viewFrame;
 	/** The Constant serialVersionUID. */
 	private static final long	serialVersionUID	= -998294702363713521L;
-
+	private int spriteSize = 16;
 	public Image img;
 	
 	/**
@@ -64,33 +66,26 @@ class ViewPanel extends JPanel implements Observer {
 	@Override
 	public void paintComponent(final Graphics graphics) {
 		System.out.println("jsqbcqkc");
-		graphics.clearRect(0, 0, 800, 800);	
+		graphics.clearRect(0, 0, 550, 550);	
 		int size = this.viewFrame.getModel().elementList().size();
 		for(int i = 0; i < size ; i++) {			
 			IElement element = this.viewFrame.getModel().elementList().get(i);
-            System.err.println("je je peint la fenetre en ce moment ");
-			graphics.drawImage(element.getImage(),element.getX()*16, element.getY()*16, null);
+            //System.err.println("je je peint la fenetre en ce moment ");
+			graphics.drawImage(element.getImage(),element.getX()*spriteSize, element.getY()*spriteSize, null);
 		}		
 		IElement character = this.viewFrame.getModel().getElement();
-		graphics.drawImage(character.getImage(), character.getX()*16, character.getY()*16, null);
+		graphics.drawImage(character.getImage(), character.getX()*spriteSize, character.getY()*spriteSize, null);
 		
-		/*//score
+		//score
 		Font f = new Font("Impact",Font.BOLD,20);
 		graphics.setColor(Color.BLUE);
 		graphics.setFont(f);
-		graphics.drawString("Diamants : " ,20,30);
+		graphics.drawString("Diamants : " ,5,500);
 		
 		Font B = new Font("Impact",Font.BOLD,20);
 		graphics.setColor(Color.RED);
 		graphics.setFont(B);
-		graphics.drawString("Vies: " , 20, 50);
-		
-		rocher 
-		
-		for (int i = 0 ; i<Model.Rock.rocks.size() ; i++)
-		{
-		Rock r = Model.Rock.rocks.get(i);
-		graphics.drawImage(r.image, r.x, r.y, null);
-		*/
+		graphics.drawString("Vies: " , 155, 500);
+
 			}
 }

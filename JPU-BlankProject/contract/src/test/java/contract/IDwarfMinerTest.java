@@ -1,9 +1,6 @@
-package model;
+package contract;
 
 import static org.junit.Assert.*;
-
-import java.sql.Connection;
-import java.sql.SQLException;
 
 import org.junit.After;
 import org.junit.AfterClass;
@@ -11,18 +8,17 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-public class DAOHelloWorldTest extends DAOHelloWorld {
+import entity.Entity;
 
-	public DAOHelloWorldTest(Connection connection) throws SQLException {
-		super(connection);
-	}
+public class IDwarfMinerTest {
+public class DAOMapTest extends Entity {
 
 	@BeforeClass
-	public static void setUpBeforeClass() throws Exception {
+	public void setUpBeforeClass() throws Exception {
 	}
 
 	@AfterClass
-	public static void tearDownAfterClass() throws Exception {
+	public void tearDownAfterClass() throws Exception {
 	}
 
 	@Before
@@ -62,5 +58,6 @@ public class DAOHelloWorldTest extends DAOHelloWorld {
 	public void testFindString() {
 		fail("Not yet implemented");
 	}
+}
 
 }

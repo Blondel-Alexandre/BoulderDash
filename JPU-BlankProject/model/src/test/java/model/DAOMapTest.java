@@ -2,6 +2,9 @@ package model;
 
 import static org.junit.Assert.*;
 
+import java.sql.Connection;
+import java.sql.SQLException;
+
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -10,12 +13,16 @@ import org.junit.Test;
 
 public class DAOMapTest extends DAOHelloWorld {
 
+	public DAOMapTest(Connection connection) throws SQLException {
+		super(connection);
+	}
+
 	@BeforeClass
-	public static void setUpBeforeClass() throws Exception {
+	public void setUpBeforeClass() throws Exception {
 	}
 
 	@AfterClass
-	public static void tearDownAfterClass() throws Exception {
+	public void tearDownAfterClass() throws Exception {
 	}
 
 	@Before

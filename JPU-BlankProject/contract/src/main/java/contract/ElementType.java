@@ -10,5 +10,4 @@ public enum ElementType {
 	Enemy,
 	DwarfMiner,
 	Diamond
-
 }

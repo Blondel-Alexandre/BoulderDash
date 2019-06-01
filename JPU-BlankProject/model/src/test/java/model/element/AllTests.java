@@ -5,7 +5,7 @@ import org.junit.runners.Suite;
 import org.junit.runners.Suite.SuiteClasses;
 
 @RunWith(Suite.class)
-@SuiteClasses({ PermeabilityTest.class })
+@SuiteClasses({ SpriteTest.class, ElementTest.class })
 public class AllTests {
 
 }

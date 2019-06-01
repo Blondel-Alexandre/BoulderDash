@@ -186,6 +186,7 @@ public class BoulderDashModel extends Observable implements IModel {
 	public Observable getObservable() {
 		return this;
 	}
+
 	
 	public IElement createBrokenDirt(int x, int y) {
         BrokenDirt brokenDirt = new BrokenDirt();

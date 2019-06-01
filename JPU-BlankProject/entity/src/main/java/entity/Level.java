@@ -17,9 +17,8 @@ public class Level extends Entity {
 	/** The message. */
 	private String	message  ;
 	
-	private int levelSize = 30;
+	protected int levelSize = 30;
 
-	
 	char map[][] = new char[levelSize][levelSize];
 
 

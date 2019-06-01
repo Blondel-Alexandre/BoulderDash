@@ -32,8 +32,8 @@ public class SpriteTest  {
 	@Before
 	public void setUp() throws Exception {
 		image = ImageIO.read(getClass().getClassLoader().getResourceAsStream("images/" + filename));
+		new Wall();
 		this.wall = new Wall();
-
 	}
 
 	@After
