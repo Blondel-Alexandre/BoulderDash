@@ -37,14 +37,11 @@ public interface IModel {
 
 	
 	ArrayList<IElement> getSprites();
-
 	ArrayList<IElement> elementList();
-
 	IMobile getDwarf();
 	Observable getObservable();
-
-
 	IElement getElement();
+	IElement createBrokenDirt(int x, int y);
 
 
 }

@@ -110,11 +110,14 @@ public final class Controller extends KeyAdapter implements IController  {
 			break;
 			case UP:
 				position = new Point(this.getModel().getDwarf().getX(), this.getModel().getDwarf().getY()-1);
+				
 				for(IElement element: this.getModel().elementList()) {
 					if(element.getX() == position.getX() && element.getY() == position.getY()) {
 						switch(element.getElementType()) {
 						case Dirt:
 							canMove = true;
+							this.getModel().elementList().remove(element);
+							this.getModel().elementList().add(this.getModel().createBrokenDirt((int) position.getX(), (int) position.getY()));
 							break;
 						case Wall:
 							canMove = false;
@@ -147,6 +150,8 @@ public final class Controller extends KeyAdapter implements IController  {
 						switch(element.getElementType()) {
 						case Dirt:
 							canMove = true;
+							this.getModel().elementList().remove(element);
+							this.getModel().elementList().add(this.getModel().createBrokenDirt((int) position.getX(), (int) position.getY()));
 							break;
 						case Wall:
 							canMove = false;
@@ -176,6 +181,8 @@ public final class Controller extends KeyAdapter implements IController  {
 						switch(element.getElementType()) {
 						case Dirt:
 							canMove = true;
+							this.getModel().elementList().remove(element);
+							this.getModel().elementList().add(this.getModel().createBrokenDirt((int) position.getX(), (int) position.getY()));
 							break;
 						case Wall:
 							canMove = false;
@@ -205,6 +212,8 @@ public final class Controller extends KeyAdapter implements IController  {
 						switch(element.getElementType()) {
 						case Dirt:
 							canMove = true;
+							this.getModel().elementList().remove(element);
+							this.getModel().elementList().add(this.getModel().createBrokenDirt((int) position.getX(), (int) position.getY()));
 							break;
 						case Wall:
 							canMove = false;
