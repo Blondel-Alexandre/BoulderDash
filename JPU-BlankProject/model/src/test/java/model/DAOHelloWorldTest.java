@@ -1,8 +1,4 @@
-<<<<<<< HEAD:JPU-BlankProject/contract/src/test/java/contract/IDwarfMinerTest.java
-package contract;
-=======
 package model;
->>>>>>> c7abc14db61243a9d52256eac4cce22f5fe95c6f:JPU-BlankProject/model/src/test/java/model/DAOMapTest.java
 
 import static org.junit.Assert.*;
 
@@ -12,11 +8,7 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-<<<<<<< HEAD:JPU-BlankProject/contract/src/test/java/contract/IDwarfMinerTest.java
-public class IDwarfMinerTest {
-=======
-public class DAOMapTest extends DAOHelloWorld {
->>>>>>> c7abc14db61243a9d52256eac4cce22f5fe95c6f:JPU-BlankProject/model/src/test/java/model/DAOMapTest.java
+public class DAOHelloWorldTest extends DAOHelloWorld {
 
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {

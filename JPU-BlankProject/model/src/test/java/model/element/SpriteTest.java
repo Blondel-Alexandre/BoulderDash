@@ -15,7 +15,12 @@ import org.junit.Test;
 import model.element.motionless.Wall;
 
 public class SpriteTest  {
+<<<<<<< HEAD
 	private String filename = "Wall.png";
+=======
+	private Wall wall;
+    private String filename = "Wall.png";
+>>>>>>> c7abc14db61243a9d52256eac4cce22f5fe95c6f
     private String consoleImage ="w";
     private Image image;
     private char character;
@@ -31,7 +36,11 @@ public class SpriteTest  {
 	@Before
 	public void setUp() throws Exception {
 		image = ImageIO.read(getClass().getClassLoader().getResourceAsStream("images/" + filename));
+<<<<<<< HEAD
 		new Wall();
+=======
+		this.wall = new Wall();
+>>>>>>> c7abc14db61243a9d52256eac4cce22f5fe95c6f
 
 	}
 

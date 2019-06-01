@@ -91,7 +91,12 @@ public final class Controller extends KeyAdapter implements IController  {
 	 */
 	public void orderPerform(final ControllerOrder controllerOrder) {
 		boolean canMove = true;
+<<<<<<< HEAD
 		Point position;
+=======
+		Point position = null;
+		
+>>>>>>> c7abc14db61243a9d52256eac4cce22f5fe95c6f
 		switch (controllerOrder) {
 		case A:
 			this.model.loadHelloWorld("GB");
@@ -109,7 +114,11 @@ public final class Controller extends KeyAdapter implements IController  {
 			this.model.loadHelloWorld("ID");
 			break;
 			case UP:
+<<<<<<< HEAD
 				position = new Point(this.getModel().getDwarf().getX(), this.getModel().getDwarf().getY()-1);
+=======
+				position = new Point(this.getModel().getDwarf().getX(), this.getModel().getDwarf().getY()-1);			
+>>>>>>> c7abc14db61243a9d52256eac4cce22f5fe95c6f
 				for(IElement element: this.getModel().elementList()) {
 					if(element.getX() == position.getX() && element.getY() == position.getY()) {
 						switch(element.getElementType()) {
@@ -137,7 +146,11 @@ public final class Controller extends KeyAdapter implements IController  {
 					}
 				}
 				if(canMove == true) {
+<<<<<<< HEAD
 					((IDwarfMiner) this.getModel().getDwarf()).moveUpPlayer();
+=======
+					((IDwarfMiner) this.getModel().getDwarf()).moveUpPlayer();	
+>>>>>>> c7abc14db61243a9d52256eac4cce22f5fe95c6f
 				}
 				break;
 			case DOWN:
@@ -229,6 +242,10 @@ public final class Controller extends KeyAdapter implements IController  {
 				break;
 			default:
 				break;
+		}if(canMove == true) {
+			//this.getModel().elementList().remove(this.getModel().elementList());
+			this.getModel().elementList().add(this.getModel().createBrokenDirt((int) position.getX(), (int) position.getY()));
+			
 		}
 	}
 }
