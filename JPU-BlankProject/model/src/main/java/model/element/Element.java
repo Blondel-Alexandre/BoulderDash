@@ -37,7 +37,7 @@ public class Element extends Observable implements IElement {
      * @param sprite
      *            the new sprite
      */
-    private void setSprite(final Sprite sprite) {
+    public void setSprite(final Sprite sprite) {
         this.sprite = sprite;
     }
 
@@ -56,7 +56,7 @@ public class Element extends Observable implements IElement {
      * @param permeability
      *            the new permeability
      */
-    private void setPermeability(final Permeability permeability) {
+    public void setPermeability(final Permeability permeability) {
         this.permeability = permeability;
     }
 
@@ -75,7 +75,7 @@ public class Element extends Observable implements IElement {
      * @param elementType
      *            the new elementType
      */
-    private void setElementType(final ElementType elementType) {
+    public void setElementType(final ElementType elementType) {
         this.elementType = elementType;
     }
 
