@@ -1,4 +1,4 @@
-package model.element;
+package contract;
 
 import static org.junit.Assert.*;
 
@@ -8,7 +8,7 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-public class PermeabilityTest {
+public class IDwarfMinerTest {
 
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {

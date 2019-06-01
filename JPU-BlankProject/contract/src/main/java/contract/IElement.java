@@ -12,5 +12,6 @@ public interface IElement {
 	Image getImage();
 	String getFileName();
 	Observable getObservable();
-
+	ElementType getElementType();
+	
 }

@@ -8,8 +8,15 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import contract.ElementType;
+import contract.Permeability;
+import model.element.Sprite;
+
 public class WallTest {
-private Wall w;
+	private Wall wall;
+	public Sprite sprite = new Sprite('w',"Wall.png");
+	private Permeability permeability = Permeability.BLOCKING;
+	private ElementType elementType = ElementType.Wall;
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
 	}
@@ -20,6 +27,7 @@ private Wall w;
 
 	@Before
 	public void setUp() throws Exception {
+		this.wall = new Wall();
 	}
 
 	@After
@@ -27,7 +35,10 @@ private Wall w;
 	}
 
 	@Test
-	public void test() {
-w = new Wall();	}
+	public void testWall() {
+		assertEquals(sprite, this.wall.getSprite());
+		
+		
+	}
 
 }

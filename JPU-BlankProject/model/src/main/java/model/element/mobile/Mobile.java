@@ -1,17 +1,17 @@
 package model.element.mobile;
 
 
+import contract.ElementType;
 import contract.IMobile;
+import contract.Permeability;
 import model.element.Element;
-import model.element.Permeability;
 import model.element.Sprite;
 
 public class Mobile extends Element implements IMobile {
 	
 
-	public Mobile(final Sprite sprite, final Permeability permeability) {
-        super(sprite, permeability);
-		// TODO Auto-generated constructor stub
+	public Mobile(final Sprite sprite, final Permeability permeability, final ElementType elementType) {
+        super(sprite, permeability, elementType);
 	}
 
 @Override
@@ -29,12 +29,12 @@ public class Mobile extends Element implements IMobile {
 	
 	public void moveRight()
 	{
-		this.setY(this.getY()-1);
+		this.setX(this.getX()+1);
 	}
 @Override	
 	public void moveLeft()
 	{
-		this.setY(this.getY()+1);
+		this.setX(this.getX()-1);
 	}
 
 

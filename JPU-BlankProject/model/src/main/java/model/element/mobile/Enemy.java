@@ -1,6 +1,7 @@
 package model.element.mobile;
 
-import model.element.Permeability;
+import contract.ElementType;
+import contract.Permeability;
 import model.element.Sprite;
 
 public class Enemy extends Mobile{
@@ -41,7 +42,7 @@ public class Enemy extends Mobile{
             }
 	
 	public Enemy() {
-		super(SPRITE, Permeability.BLOCKING);
+		super(SPRITE, Permeability.BLOCKING, ElementType.Enemy);
 		this.getSprite().loadImage();
 	}
 

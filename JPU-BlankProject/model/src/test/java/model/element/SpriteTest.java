@@ -4,17 +4,21 @@ import static org.junit.Assert.*;
 
 import java.awt.Image;
 
+import javax.imageio.ImageIO;
+
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import model.element.motionless.Wall;
+
 public class SpriteTest  {
-	
-    private String filename;
-    private char consoleImage;
+	private String filename = "Wall.png";
+    private String consoleImage ="w";
     private Image image;
+    private char character;
 
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
@@ -26,6 +30,9 @@ public class SpriteTest  {
 
 	@Before
 	public void setUp() throws Exception {
+		image = ImageIO.read(getClass().getClassLoader().getResourceAsStream("images/" + filename));
+		new Wall();
+
 	}
 
 	@After
@@ -34,27 +41,29 @@ public class SpriteTest  {
 
 	@Test
 	public void testSprite() {
+		assertNotNull(character);
+		assertNotNull(filename);
 		
 	}
 
 	@Test
 	public void testLoadImage() {
-		fail("Not yet implemented");
+		assertNotNull(image);
 	}
 
 	@Test
 	public void testGetImage() {
-		fail("Not yet implemented");
+		assertNotNull(image);
 	}
 
 	@Test
 	public void testGetConsoleImage() {
-		fail("Not yet implemented");
+		assertNotNull(consoleImage);
 	}
 
 	@Test
 	public void testGetImageName() {
-		fail("Not yet implemented");
+		assertNotNull(filename);
 	}
 
 }

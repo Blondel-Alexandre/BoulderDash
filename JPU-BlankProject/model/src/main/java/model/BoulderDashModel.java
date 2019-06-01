@@ -37,6 +37,7 @@ import model.element.motionless.*;
 public class BoulderDashModel extends Observable implements IModel {
 
 	/** The helloWorld. */
+	private String levelChoice = "1";
 
 	private Level helloWorld;
 	
@@ -46,24 +47,18 @@ public class BoulderDashModel extends Observable implements IModel {
 	
 	IElement elements;
 	
-	
-
-	//private BoulderMap boulderMap;
-	//get Sprite type into arraylist
 	private ArrayList<IElement> sprites;
 	/**
 	 * Instantiates a new model.
 	 */
 	public BoulderDashModel() {
 		this.sprites = new ArrayList<>();
-		this.helloWorld = new Level();
+		this.loadHelloWorld(levelChoice);
 		this.levelSize = new Level();
-		//this.boulderMap = new BoulderMap();
+		this.sprites = this.getSprites();
 		
 	}
 	
-
-
 	/**
      * Gets the hello world.
      *
@@ -115,9 +110,7 @@ public class BoulderDashModel extends Observable implements IModel {
 	@Override
 	public ArrayList<IElement> getSprites() {
 		char[][] map = this.helloWorld.getLevel();
-		//System.out.println(map);
 		for(int y = 0, mapSize = this.levelSize.getLevelSize(); y < mapSize ; y++) {
-			//System.out.println("pmpmpmpmpmpmpmpmpmpmpmp");
 			for (int x = 0; x < mapSize ; x++) {
 				char c = map[y][x];
 				switch (c) {
@@ -133,63 +126,55 @@ public class BoulderDashModel extends Observable implements IModel {
 					dirt.setY(y);
 					this.sprites.add(dirt);
 					break;
-				   case 'b':
-	                    BrokenDirt brokendirt = new BrokenDirt();
-	                    brokendirt.setX(x);
-	                    brokendirt.setY(y);
-	                    this.sprites.add(brokendirt);
-	                    break;
-	                case 'r':
-	                    Rock rock = new Rock();
-	                    rock.setX(x);
-	                    rock.setY(y);
-	                    this.sprites.add(rock);
-	                    break;
-	                case 'i':
-	                    Diamond diamond = new Diamond();
-	                    diamond.setX(x);
-	                    diamond.setY(y);
-	                    this.sprites.add(diamond);
-	                    break;
-	                case 'p':
-	                    Exit exit = new Exit();
-	                    exit.setX(x);
-	                    exit.setY(y);
-	                    this.sprites.add(exit);
-	                    break;
-	                case 'e':
-	                    Enemy enemy = new Enemy();
-	                    enemy.setX(x);
-	                    enemy.setY(y);
-	                    this.sprites.add(enemy);
-	                    break;
-	                case 'c':
-	                	DwarfMiner dwarf = new DwarfMiner();
-	                	dwarf.setX(x);
-	                	dwarf.setY(y);
-	                	this.sprites.add(dwarf);
-	                	this.dwarfs=dwarf;
-	                	this.elements=dwarf;
-	                	break;
-					
-				}
+				case 'b':
+	                BrokenDirt brokendirt = new BrokenDirt();
+	                brokendirt.setX(x);
+	                brokendirt.setY(y);
+	                this.sprites.add(brokendirt);
+	                break;
+	            case 'r':
+	                Rock rock = new Rock();
+	                rock.setX(x);
+	                rock.setY(y);
+	                this.sprites.add(rock);
+	                break;
+	            case 'i':
+	                Diamond diamond = new Diamond();
+	                diamond.setX(x);
+	                diamond.setY(y);
+	                this.sprites.add(diamond);
+	                break;
+	            case 'p':
+	                Exit exit = new Exit();
+	                exit.setX(x);
+	                exit.setY(y);
+	                this.sprites.add(exit);
+	                break;
+	            case 'e':
+	                Enemy enemy = new Enemy();
+	                enemy.setX(x);
+	                enemy.setY(y);
+	                this.sprites.add(enemy);
+	                break;
+	            case 'c':
+	             	DwarfMiner dwarf = new DwarfMiner();
+	              	dwarf.setX(x);
+	               	dwarf.setY(y);
+	               	this.dwarfs=dwarf;
+	               	this.elements=dwarf;
+	               	break;					
 			}
 		}
-		return this.sprites;
 	}
-	
-
-
-
-	public ArrayList<IElement> ListLoader() {
-		return this.sprites;
+	return this.sprites;
 	}
 
-
+	public ArrayList<IElement> elementList() {
+		return this.sprites;
+	}
 
 	@Override
 	public IMobile getDwarf() {
-		// TODO Auto-generated method stub
 		return this.dwarfs;
 	}
 	
@@ -198,17 +183,8 @@ public class BoulderDashModel extends Observable implements IModel {
 		return this.elements;
 	}
 
-
-
 	@Override
 	public Observable getObservable() {
 		return this;
 	}
-
-
-
-
-
-
-
 }

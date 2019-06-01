@@ -1,4 +1,4 @@
-package model.element.motionless;
+package contract;
 
 import static org.junit.Assert.*;
 
@@ -8,9 +8,7 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-
-public class BrokenDirtTest {
-	
+public class ElementTypeTest {
 
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
@@ -30,7 +28,8 @@ public class BrokenDirtTest {
 
 	@Test
 	public void test() {
-		
+		ElementType elementtype = ElementType.BrokenDirt;
+		assertEquals(ElementType.valueOf("BrokenDirt"), elementtype);
 	}
 
 }

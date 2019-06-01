@@ -6,7 +6,6 @@ import java.util.Observable;
 import java.util.Observer;
 import javax.swing.JPanel;
 import contract.IElement;
-import contract.IModel;
 
 /**
  * The Class ViewPanel.
@@ -30,9 +29,11 @@ class ViewPanel extends JPanel implements Observer {
 	 */
 	public ViewPanel(final ViewFrame viewFrame) {
 		this.setViewFrame(viewFrame);
-		viewFrame.getModel().getObservable().addObserver(this);
 		viewFrame.getModel().getElement().getObservable().addObserver(this);
-
+		for(int i = 0; i < viewFrame.getModel().elementList().size(); i++) {
+			viewFrame.getModel().elementList().get(i).getObservable().addObserver(this);
+		}
+		System.out.println(viewFrame.getModel().elementList().size());
 	}
 
 	/**
@@ -63,17 +64,15 @@ class ViewPanel extends JPanel implements Observer {
 	@Override
 	public void paintComponent(final Graphics graphics) {
 		System.out.println("jsqbcqkc");
-		graphics.clearRect(0, 0, this.getWidth(), this.getHeight());	
-		int size = this.viewFrame.getModel().getSprites().size();
-		for(int i = 0; i < size ; i++) {
-			
-			IElement element = this.viewFrame.getModel().ListLoader().get(i);
+		graphics.clearRect(0, 0, 800, 800);	
+		int size = this.viewFrame.getModel().elementList().size();
+		for(int i = 0; i < size ; i++) {			
+			IElement element = this.viewFrame.getModel().elementList().get(i);
             System.err.println("je je peint la fenetre en ce moment ");
-            
-            //
 			graphics.drawImage(element.getImage(),element.getX()*16, element.getY()*16, null);
-
-		}
+		}		
+		IElement character = this.viewFrame.getModel().getElement();
+		graphics.drawImage(character.getImage(), character.getX()*16, character.getY()*16, null);
 		
 		/*//score
 		Font f = new Font("Impact",Font.BOLD,20);
@@ -85,14 +84,13 @@ class ViewPanel extends JPanel implements Observer {
 		graphics.setColor(Color.RED);
 		graphics.setFont(B);
 		graphics.drawString("Vies: " , 20, 50);
+		
+		rocher 
+		
+		for (int i = 0 ; i<Model.Rock.rocks.size() ; i++)
+		{
+		Rock r = Model.Rock.rocks.get(i);
+		graphics.drawImage(r.image, r.x, r.y, null);
 		*/
-		//rocher 
-		
-		//for (int i = 0 ; i<Model.Rock.rocks.size() ; i++)
-		//{
-		//	Rock r = Model.Rock.rocks.get(i);
-		//	graphics.drawImage(r.image, r.x, r.y, null);
-		
-		//	}
-}
+			}
 }
