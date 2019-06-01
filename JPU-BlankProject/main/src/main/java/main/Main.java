@@ -4,10 +4,7 @@
  */
 package main;
 
-<<<<<<< HEAD
-=======
-//import contract.ControllerOrder;
->>>>>>> c7abc14db61243a9d52256eac4cce22f5fe95c6f
+import contract.ControllerOrder;
 import controller.Controller;
 import model.BoulderDashModel;
 import view.View;
