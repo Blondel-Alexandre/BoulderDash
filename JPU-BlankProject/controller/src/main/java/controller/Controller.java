@@ -43,7 +43,7 @@ public final class Controller extends KeyAdapter implements IController  {
 	 * @see contract.IController#control()
 	 */
 	public void control() {
-		this.view.printMessage("JOUE");
+		this.view.printMessage("Welcome in BoulderDash");
 	}
 	
 	public void gameOver() {
