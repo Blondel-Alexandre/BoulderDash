@@ -47,26 +47,30 @@ public class MobileTest  {
 	@Test
 	public void testMoveUp() {
 		this.dwarf.moveUp();
-		assertEquals(0,this.dwarf.getY());
+		int expected = 0;
+		assertEquals(expected,this.dwarf.getY());
 	}
 
 	@Test
 	public void testMoveDown() {
 		this.dwarf.moveDown();
-		assertEquals(2,this.dwarf.getY());
+		int expected = 2;
+		assertEquals(expected,this.dwarf.getY());
 	}
 
 	@Test
 	public void testMoveRight() {
 		this.dwarf.moveRight();
-		assertEquals(2,this.dwarf.getX());
+		int expected = 2;
+		assertEquals(expected,this.dwarf.getX());
 		
 	}
 
 	@Test
 	public void testMoveLeft() {
 		this.dwarf.moveLeft();
-		assertEquals(0,this.dwarf.getX());
+		int expected = 0;
+		assertEquals(expected,this.dwarf.getX());
 	}
 
 	@Test

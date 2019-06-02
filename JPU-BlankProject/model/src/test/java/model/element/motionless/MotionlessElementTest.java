@@ -8,18 +8,15 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import contract.ElementType;
+import contract.Permeability;
+
 public class MotionlessElementTest  {
-
-	@BeforeClass
-	public static void setUpBeforeClass() throws Exception {
-	}
-
-	@AfterClass
-	public static void tearDownAfterClass() throws Exception {
-	}
+	private Wall wall;
 
 	@Before
 	public void setUp() throws Exception {
+		this.wall = new Wall();
 	}
 
 	@After
@@ -28,7 +25,14 @@ public class MotionlessElementTest  {
 
 	@Test
 	public void testMotionlessElement() {
-		fail("Not yet implemented");
+
+		assertNotNull(this.wall.getSprite());
+		
+		Permeability expected1 = Permeability.BLOCKING;
+		assertEquals(expected1, this.wall.getPermeability());
+		
+		ElementType expected2 =  ElementType.Wall;
+		assertEquals(expected2, this.wall.getElementType());
 	}
 
 }

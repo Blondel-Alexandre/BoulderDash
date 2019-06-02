@@ -8,18 +8,16 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-public class DiamondTest {
- private Diamond d;
-	@BeforeClass
-	public static void setUpBeforeClass() throws Exception {
-	}
+import contract.ElementType;
+import contract.Permeability;
 
-	@AfterClass
-	public static void tearDownAfterClass() throws Exception {
-	}
+public class DiamondTest {
+	private Diamond diamond;
+	
 
 	@Before
 	public void setUp() throws Exception {
+		this.diamond = new Diamond();
 	}
 
 	@After
@@ -28,7 +26,13 @@ public class DiamondTest {
 
 	@Test
 	public void test() {
-		d = new Diamond();
+		assertNotNull(this.diamond.getSprite());
+		
+		Permeability expected1 = Permeability.BLOCKING;
+		assertEquals(expected1, this.diamond.getPermeability());
+		
+		ElementType expected2 =  ElementType.Diamond;
+		assertEquals(expected2, this.diamond.getElementType());
 	}
 
 }
