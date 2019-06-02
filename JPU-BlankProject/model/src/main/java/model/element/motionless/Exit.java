@@ -6,7 +6,7 @@ import model.element.Sprite;
 
 public class Exit extends MotionlessElement  {
 
-    private static final Sprite SPRITE = new Sprite('p', "Monster1.png");
+    private static final Sprite SPRITE = new Sprite('p', "Portal.png");
 	
 	public Exit() {
 		super(SPRITE, Permeability.BLOCKING, ElementType.Exit);
