@@ -125,6 +125,7 @@ public final class Controller extends KeyAdapter implements IController  {
 							break;
 						case Diamond:
 							canMove = true;
+							this.getModel().collectDiamond();
 							break;
 						case Enemy:
 							gameOver();
@@ -161,6 +162,7 @@ public final class Controller extends KeyAdapter implements IController  {
 							break;
 						case Diamond:
 							canMove = true;
+							this.getModel().collectDiamond();
 							break;
 						case Enemy:
 							gameOver();
@@ -194,6 +196,8 @@ public final class Controller extends KeyAdapter implements IController  {
 							break;
 						case Diamond:
 							canMove = true;
+							this.getModel().collectDiamond();
+
 							break;
 						case Enemy:
 							gameOver();
@@ -227,6 +231,8 @@ public final class Controller extends KeyAdapter implements IController  {
 							break;
 						case Diamond:
 							canMove = true;
+							this.getModel().collectDiamond();
+
 							break;
 						case Enemy:
 							gameOver();

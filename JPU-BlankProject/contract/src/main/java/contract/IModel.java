@@ -35,6 +35,8 @@ public interface IModel {
 	 *
 	 */
 
+	int getScore();
+	void setScore(int Score);
 	
 	ArrayList<IElement> getSprites();
 
@@ -44,6 +46,6 @@ public interface IModel {
 	Observable getObservable();
 	IElement getElement();
 	IElement createBrokenDirt(int x, int y);
-
+	public void collectDiamond();
 
 }
