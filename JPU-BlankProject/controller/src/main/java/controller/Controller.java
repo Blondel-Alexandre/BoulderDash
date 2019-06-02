@@ -96,21 +96,6 @@ public final class Controller extends KeyAdapter implements IController  {
 		Point position = null;
 		boolean isBrokenDirt = false;
 		switch (controllerOrder) {
-		case A:
-			this.model.loadHelloWorld("GB");
-			break;
-		case B:
-			this.model.loadHelloWorld("FR");
-			break;
-		case C:
-			this.model.loadHelloWorld("DE");
-			break;
-		case D:
-			this.model.loadHelloWorld("ID");
-			break;
-		case E:
-			this.model.loadHelloWorld("ID");
-			break;
 			case UP:
 				position = new Point(this.getModel().getDwarf().getX(), this.getModel().getDwarf().getY()-1);		
 				for(IElement element: this.getModel().elementList()) {
@@ -258,6 +243,6 @@ public final class Controller extends KeyAdapter implements IController  {
 			if(canMove == true) {
 				this.getModel().elementList().add(this.getModel().createBrokenDirt((int) position.getX(), (int) position.getY()));	
 			}			
-		}System.out.println(this.getModel().elementList().size() + " : taille de la liste d'éléments");
+		}System.out.println(this.getModel().elementList().size() +"oui"+ " : taille de la liste d'éléments");
 	}
 }
