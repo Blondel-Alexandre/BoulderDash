@@ -48,6 +48,8 @@ public final class Controller extends KeyAdapter implements IController  {
 	
 	public void gameOver() {
 		this.view.printMessage("Game Over");
+		System.exit(0);
+
 	}
 	
 	public void win() {
