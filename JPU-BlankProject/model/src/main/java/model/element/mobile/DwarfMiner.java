@@ -34,7 +34,7 @@ public void setNumberLife(int numberLife) {
 @Override
 public void moveUpPlayer() {
 	super.moveUp();
-	System.out.println(getY());
+	//System.out.println(getY());
 
 	
 }
@@ -42,7 +42,7 @@ public void moveUpPlayer() {
 @Override
 public void moveLeftPlayer() {
 super.moveLeft();
-System.out.println(y);
+//System.out.println(y);
 
 }
 

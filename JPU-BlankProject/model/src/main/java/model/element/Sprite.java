@@ -51,5 +51,4 @@ public class Sprite {
     private void setImageName(String filename) {
         this.filename = filename;
     }
-
 }

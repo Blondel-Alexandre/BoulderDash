@@ -14,9 +14,7 @@ import model.element.Sprite;
 
 public class WallTest {
 	private Wall wall;
-	public Sprite sprite = new Sprite('w',"Wall.png");
-	private Permeability permeability = Permeability.BLOCKING;
-	private ElementType elementType = ElementType.Wall;
+
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
 	}
@@ -36,9 +34,15 @@ public class WallTest {
 
 	@Test
 	public void testWall() {
-		assertEquals(sprite, this.wall.getSprite());
 		
+	
+		assertNotNull(this.wall.getSprite());
 		
+		Permeability expected1 = Permeability.BLOCKING;
+		assertEquals(expected1, this.wall.getPermeability());
+		
+		ElementType expected2 =  ElementType.Wall;
+		assertEquals(expected2, this.wall.getElementType());
 	}
 
 }

@@ -11,12 +11,12 @@ import org.junit.Test;
 import contract.ElementType;
 import contract.Permeability;
 
-public class BrokenDirtTest  {
-	private BrokenDirt brokenDirt;
+public class MotionlessElementTest  {
+	private Wall wall;
 
 	@Before
 	public void setUp() throws Exception {
-		this.brokenDirt = new BrokenDirt();
+		this.wall = new Wall();
 	}
 
 	@After
@@ -24,15 +24,15 @@ public class BrokenDirtTest  {
 	}
 
 	@Test
-	public void testBrokenDirt() {
-		assertNotNull(this.brokenDirt.getSprite());
+	public void testMotionlessElement() {
+
+		assertNotNull(this.wall.getSprite());
 		
 		Permeability expected1 = Permeability.BLOCKING;
-		assertEquals(expected1, this.brokenDirt.getPermeability());
+		assertEquals(expected1, this.wall.getPermeability());
 		
-		ElementType expected2 =  ElementType.BrokenDirt;
-		assertEquals(expected2, this.brokenDirt.getElementType());
-		
+		ElementType expected2 =  ElementType.Wall;
+		assertEquals(expected2, this.wall.getElementType());
 	}
 
 }

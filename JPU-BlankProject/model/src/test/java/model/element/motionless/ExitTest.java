@@ -8,18 +8,16 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-public class ExitTest {
-	private Exit e;
-	@BeforeClass
-	public static void setUpBeforeClass() throws Exception {
-	}
+import contract.ElementType;
+import contract.Permeability;
 
-	@AfterClass
-	public static void tearDownAfterClass() throws Exception {
-	}
+public class ExitTest {
+	private Exit exit;
+	
 
 	@Before
 	public void setUp() throws Exception {
+		this.exit = new Exit();
 	}
 
 	@After
@@ -28,7 +26,13 @@ public class ExitTest {
 
 	@Test
 	public void test() {
-		e = new Exit();
+		assertNotNull(this.exit.getSprite());
+		
+		Permeability expected1 = Permeability.BLOCKING;
+		assertEquals(expected1, this.exit.getPermeability());
+		
+		ElementType expected2 =  ElementType.Exit;
+		assertEquals(expected2, this.exit.getElementType());
 	}
 
 }

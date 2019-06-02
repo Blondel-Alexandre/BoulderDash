@@ -37,17 +37,17 @@ import model.element.motionless.*;
 public class BoulderDashModel extends Observable implements IModel {
 
 	/** The helloWorld. */
-	private String levelChoice = "1";
+	public String levelChoice = "1";
 
-	private Level helloWorld;
+	public Level helloWorld;
 	
-	private Level levelSize ;
+	public Level levelSize ;
 	
 	IMobile dwarfs;
 	
 	IElement elements;
 	
-	private ArrayList<IElement> sprites;
+	public ArrayList<IElement> sprites;
 	/**
 	 * Instantiates a new model.
 	 */
@@ -56,7 +56,6 @@ public class BoulderDashModel extends Observable implements IModel {
 		this.loadHelloWorld(levelChoice);
 		this.levelSize = new Level();
 		this.sprites = this.getSprites();
-		
 	}
 	
 	/**

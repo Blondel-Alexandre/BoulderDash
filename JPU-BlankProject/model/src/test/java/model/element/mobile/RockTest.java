@@ -8,18 +8,15 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import contract.ElementType;
+import contract.Permeability;
+
 public class RockTest {
-private Rock r;
-	@BeforeClass
-	public static void setUpBeforeClass() throws Exception {
-	}
-
-	@AfterClass
-	public static void tearDownAfterClass() throws Exception {
-	}
-
+	private Rock rock;
+	
 	@Before
 	public void setUp() throws Exception {
+		this.rock = new Rock();
 	}
 
 	@After
@@ -28,7 +25,13 @@ private Rock r;
 
 	@Test
 	public void test() {
-r = new Rock();
-}
+		assertNotNull(this.rock.getSprite());
+		
+		Permeability expected1 = Permeability.BLOCKING;
+		assertEquals(expected1, this.rock.getPermeability());
+		
+		ElementType expected2 =  ElementType.Rock;
+		assertEquals(expected2, this.rock.getElementType());
 
-}
+	}
+}	

@@ -92,7 +92,7 @@ public final class Controller extends KeyAdapter implements IController  {
 	public void orderPerform(final ControllerOrder controllerOrder) {
 		boolean canMove = true;
 		Point position = null;
-		
+		boolean isBrokenDirt = false;
 		switch (controllerOrder) {
 		case A:
 			this.model.loadHelloWorld("GB");
@@ -110,8 +110,7 @@ public final class Controller extends KeyAdapter implements IController  {
 			this.model.loadHelloWorld("ID");
 			break;
 			case UP:
-				position = new Point(this.getModel().getDwarf().getX(), this.getModel().getDwarf().getY()-1);
-
+				position = new Point(this.getModel().getDwarf().getX(), this.getModel().getDwarf().getY()-1);		
 				for(IElement element: this.getModel().elementList()) {
 					if(element.getX() == position.getX() && element.getY() == position.getY()) {
 						switch(element.getElementType()) {
@@ -133,15 +132,17 @@ public final class Controller extends KeyAdapter implements IController  {
 						case Exit:
 							win();
 							break;
+						case BrokenDirt:
+							canMove = true;
+							isBrokenDirt = true;
+						break;
 						default:
 							break;
 						}
 					}
 				}
 				if(canMove == true) {
-
 					((IDwarfMiner) this.getModel().getDwarf()).moveUpPlayer();
-
 				}
 				break;
 			case DOWN:
@@ -164,6 +165,10 @@ public final class Controller extends KeyAdapter implements IController  {
 						case Enemy:
 							gameOver();
 							break;
+						case BrokenDirt:
+							canMove = true;
+							isBrokenDirt = true;
+						break;
 						default:
 							break;
 						}
@@ -193,6 +198,10 @@ public final class Controller extends KeyAdapter implements IController  {
 						case Enemy:
 							gameOver();
 							break;
+						case BrokenDirt:
+							canMove = true;
+							isBrokenDirt = true;
+						break;
 						default:
 							break;
 						}
@@ -222,6 +231,10 @@ public final class Controller extends KeyAdapter implements IController  {
 						case Enemy:
 							gameOver();
 							break;
+						case BrokenDirt:
+							canMove = true;
+							isBrokenDirt = true;
+						break;
 						default:
 							break;
 						}
@@ -233,10 +246,10 @@ public final class Controller extends KeyAdapter implements IController  {
 				break;
 			default:
 				break;
-		}if(canMove == true) {
-			//this.getModel().elementList().remove(this.getModel().elementList());
-			this.getModel().elementList().add(this.getModel().createBrokenDirt((int) position.getX(), (int) position.getY()));
-			
-		}
+		}if(isBrokenDirt == false) {
+			if(canMove == true) {
+				this.getModel().elementList().add(this.getModel().createBrokenDirt((int) position.getX(), (int) position.getY()));	
+			}			
+		}System.out.println(this.getModel().elementList().size() + " : taille de la liste d'éléments");
 	}
 }
