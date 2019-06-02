@@ -43,6 +43,8 @@ public class BoulderDashModel extends Observable implements IModel {
 	
 	public Level levelSize ;
 	
+	public int Score =10;
+	
 	IMobile dwarfs;
 	
 	IElement elements;
@@ -193,6 +195,22 @@ public class BoulderDashModel extends Observable implements IModel {
 		brokenDirt.setX(x);
         brokenDirt.setY(y);
 		return brokenDirt;
+	}
+
+	public int getScore() {
+		return Score;
+	}
+
+	public void setScore(int score) {
+		this.Score = score;
+		this.setChanged();
+		this.notifyObservers();
+		
+	}
+	
+	public void collectDiamond()
+	{
+		this.setScore(this.getScore()-1);
 	}
 
 }
