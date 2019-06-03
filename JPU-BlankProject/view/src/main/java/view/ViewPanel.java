@@ -6,6 +6,8 @@ import java.awt.Graphics;
 import java.awt.Image;
 import java.util.Observable;
 import java.util.Observer;
+
+import javax.swing.ImageIcon;
 import javax.swing.JPanel;
 
 import contract.ElementType;

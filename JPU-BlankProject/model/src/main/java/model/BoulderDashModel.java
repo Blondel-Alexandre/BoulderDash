@@ -73,6 +73,7 @@ public class BoulderDashModel extends Observable implements IModel {
 	 * Sets the level
 	 * 
 	 * @param helloWorld
+	 * 			helloworld
 	 */
 	
 	private void setHelloWorld(final Level helloWorld) {
@@ -133,7 +134,6 @@ public class BoulderDashModel extends Observable implements IModel {
 	                rock.setX(x);
 	                rock.setY(y);
 	                this.sprites.add(rock);
-	                this.sprites.add(createBrokenDirt(x,y));
 	                break;
 	            case 'i':
 	            	//Loads the diamonds.

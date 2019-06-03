@@ -8,7 +8,7 @@ public class DwarfMiner extends Mobile{
 
 
 	/** The sprite */
-    private static final Sprite SPRITE = new Sprite('c', "Character.png");
+    private static final Sprite SPRITE = new Sprite('c', "DwarfWithBrokendirt.png");
 
 	/**
 	 * Instantiates a new Dwarf Miner.

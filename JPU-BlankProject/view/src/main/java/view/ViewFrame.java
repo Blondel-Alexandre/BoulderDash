@@ -2,6 +2,8 @@ package view;
 
 import java.awt.GraphicsConfiguration;
 import java.awt.HeadlessException;
+import java.awt.Image;
+import java.awt.Toolkit;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.util.Observer;
@@ -28,6 +30,8 @@ class ViewFrame extends JFrame implements KeyListener {
 	private IController controller;
 	/** The Constant serialVersionUID. */
 	private static final long	serialVersionUID	= -697358409737458175L;
+	/** The background */
+	private Image back;
 
 	/**
 	 * Instantiates a new view frame.

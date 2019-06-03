@@ -6,7 +6,6 @@ package main;
 
 
 import controller.Controller;
-import controller.RemoveBrokenDirt;
 import model.BoulderDashModel;
 import view.View;
 

@@ -20,6 +20,12 @@ public class Sprite {
 
 	/**
 	 * Instantiates a new sprite.
+	 * 
+	 * @param character 
+	 * 		Character
+	 * 
+	 * @param filename
+	 * 		Filename
 	 */
     
     public Sprite(final char character, final String filename) {

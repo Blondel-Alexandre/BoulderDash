@@ -11,6 +11,15 @@ public class Mobile extends Element implements IMobile {
 	
 	/**
 	 * Instantiates a new diamond.
+	 * @param sprite
+	 * 		Sprite
+	 * 
+	 * @param permeability
+	 * 		Permeability
+	 * 
+	 * @param elementType
+	 * 		ElementType
+	 * 
 	 */
 
 	public Mobile(final Sprite sprite, final Permeability permeability, final ElementType elementType) {

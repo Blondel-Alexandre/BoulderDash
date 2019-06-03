@@ -7,7 +7,7 @@ import model.element.Sprite;
 public class Exit extends MotionlessElement  {
 	
 	/** The sprite */
-    private static final Sprite SPRITE = new Sprite('p', "Portal.png");
+    private static final Sprite SPRITE = new Sprite('p', "PortalWithBrokendirt.png");
 	
 	/**
 	 * Instantiates a new exit.

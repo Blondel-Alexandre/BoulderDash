@@ -38,7 +38,7 @@ public class Controller extends KeyAdapter implements IController, Runnable{
 	
 	private boolean canMove;
 	
-	private Point next;
+	private Point nullElement;
 	
 	private IElement currentElement;
 	
@@ -77,12 +77,18 @@ public class Controller extends KeyAdapter implements IController, Runnable{
 		this.view.printMessage("Welcome in BoulderDash");
 	}
 	
+	/**
+	 * Game over
+	 */
 	public void gameOver() {
 		this.view.printMessage("Game Over");
 		System.exit(0);
 
 	}
 	
+	/**
+	 * Win
+	 */
 	public void win() {
 		this.view.printMessage("You Win");
 		System.exit(0);
@@ -98,7 +104,12 @@ public class Controller extends KeyAdapter implements IController, Runnable{
 	private void setView(final IView pview) {
 		this.view = pview;
 	}
-
+	/**
+	 * Get the model.
+	 *
+	 * @return
+	 *          the model
+	 */
     private IModel getModel() {
         return this.model;
     }
@@ -114,14 +125,9 @@ public class Controller extends KeyAdapter implements IController, Runnable{
 	}
 	
 	/**
-     * Order perform.
-     *
-     * @param controllerOrder
-     *            the controller order
-     */
-	
+	 * Gravity
+	 */
 	public void gravity() {
-
 			for(IElement currentRock : this.getModel().elementList()){
 				if(currentRock.getElementType() == ElementType.Rock || currentRock.getElementType() == ElementType.Diamond) {
 					position = new Point(currentRock.getX(),currentRock.getY()+1);
@@ -129,6 +135,7 @@ public class Controller extends KeyAdapter implements IController, Runnable{
 							if(nextPos.getX() == position.x && nextPos.getY() == position.y && nextPos.getPermeability() == Permeability.PENETRABLE) {
 								System.out.println("je peux bouger");
 								currentRock.setY(currentRock.getY()+1);
+								
 							}
 						}
 					}
@@ -141,7 +148,9 @@ public class Controller extends KeyAdapter implements IController, Runnable{
 	 *
 	 * @see contract.IController#orderPerform(contract.ControllerOrder)
 	 */
-	
+	/**
+	 * orderPereform
+	 */
 	public void orderPerform(final ControllerOrder controllerOrder) {
 		boolean rock = false;
 		characterOnMovement = true;
@@ -349,7 +358,9 @@ public class Controller extends KeyAdapter implements IController, Runnable{
 		replaceElement();
 characterOnMovement = false;
 	}
-	
+	/**
+	 * Replace Element
+	 */
 	public void replaceElement() {
 		if(canMove == true) {
 			//characterOnMovement = true;
@@ -358,7 +369,9 @@ characterOnMovement = false;
 			//characterOnMovement = false;
 		}
 	}
-	
+	/**
+	 * Remove Broken Dirt
+	 */
 	public void removeBrokenDirt() {
 			IElement issou = null;
 			a = 1;
@@ -373,7 +386,9 @@ characterOnMovement = false;
 				this.getModel().elementList().remove(issou);
 				}
 		}
-	
+	/**
+	 * move Enemy
+	 */
 	public void moveEnemy(){
 		
 		Random r = new Random();	
@@ -439,8 +454,10 @@ characterOnMovement = false;
 		}
 	}
 		
+	/**
+	 * run the controller
+	 */
 
-	    
 	@Override
 	public void run() {		
 		while (end== false && characterOnMovement== false) {

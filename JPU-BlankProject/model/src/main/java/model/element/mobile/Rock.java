@@ -8,7 +8,7 @@ import model.element.Sprite;
 public class Rock extends Mobile implements IMobile{
 
 	/** The sprite */
-    private static final Sprite SPRITE = new Sprite('r', "Stone.png");
+    private static final Sprite SPRITE = new Sprite('r', "StoneWithBrokendirt.png");
     
 	/**
 	 * Instantiates a new rock.

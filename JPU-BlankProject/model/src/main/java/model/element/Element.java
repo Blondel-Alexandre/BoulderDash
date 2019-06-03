@@ -27,6 +27,16 @@ public class Element extends Observable implements IElement {
 	
 	/**
 	 * Instantiates a new element.
+	 * 
+	 * @param sprite
+	 * 		Sprite
+	 * 
+	 * @param permeability
+	 * 		Permeability
+	 * 
+	 * @param elementType
+	 * 		ElementType
+	 * 
 	 */
 
     public Element(final Sprite sprite, final Permeability permeability, final ElementType elementType) {
