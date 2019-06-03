@@ -96,25 +96,10 @@ public interface IModel {
 
 	IElement createBrokenDirt(int x, int y);
 
-	/**
-	 * Implements the elements in the map
-	 *
-	 * @return the elements
-	 * 
-	 *
-	 */
-	
+	/**  Implements the elements in the map */
 	ArrayList<IElement> getSprites();
 	
-
-	/**
-	 * The ArrayList of the elements in the map
-	 *
-	 * @return the elements
-	 * 
-	 *
-	 */
-	
+	/**  The ArrayList of the elements in the map */
 	ArrayList<IElement> elementList();
 	
 

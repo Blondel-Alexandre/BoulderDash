@@ -1,25 +1,8 @@
 package model;
 
-//import java.io.BufferedReader;
-//import java.io.BufferedWriter;
-//import java.io.File;
-//import java.io.FileInputStream;
-//import java.io.FileNotFoundException;
-//import java.io.FileReader;
-//import java.io.FileWriter;
-//import java.io.IOException;
-//import java.io.InputStream;
-//import java.io.InputStreamReader;
-//import java.io.PrintWriter;
-//import java.sql.Connection;
-//import java.sql.DriverManager;
-//import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-//import java.sql.Statement;
-//import java.time.format.ResolverStyle;
 import java.util.Observable;
-//import java.util.Scanner;
 
 import contract.IElement;
 import contract.IMobile;
@@ -34,22 +17,32 @@ import model.element.motionless.*;
  *
  * @author Jean-Aymeric Diet
  */
+
 public class BoulderDashModel extends Observable implements IModel {
 
-	/** The helloWorld. */
+	/** The choice of the level */
 	public String levelChoice = "1";
-
+	
+	/** The level */
 	public Level helloWorld;
 	
+	/** The size of the level */
 	public Level levelSize ;
 	
+	/** The score */
 	public int Score =10;
 	
+	/** The dwarf in IMobile */
 	IMobile dwarfs;
-
+	
+	/** The dwarf in IElement */
 	IElement elements;
 	
+	
+	/** The Array List of the elements in the map */
 	public ArrayList<IElement> sprites;
+	
+	
 	/**
 	 * Instantiates a new model.
 	 */
@@ -128,10 +121,10 @@ public class BoulderDashModel extends Observable implements IModel {
 					this.sprites.add(dirt);
 					break;
 				case 'b':
-	                BrokenDirt brokendirt = new BrokenDirt();
-	                brokendirt.setX(x);
-	                brokendirt.setY(y);
-	                this.sprites.add(brokendirt);
+	                BrokenDirt brokenDirt = new BrokenDirt();
+	                brokenDirt.setX(x);
+	                brokenDirt.setY(y);
+	                this.sprites.add(brokenDirt);
 	                break;
 	            case 'r':
 	                Rock rock = new Rock();
@@ -153,18 +146,21 @@ public class BoulderDashModel extends Observable implements IModel {
 	                break;
 	            case 'e':
 	                Enemy enemy = new Enemy();
+	                BrokenDirt brokenDirt1 = new BrokenDirt();
+	             	brokenDirt1.setX(x);
+	             	brokenDirt1.setY(y);
 	                enemy.setX(x);
 	                enemy.setY(y);
 	                this.sprites.add(enemy);
 	                break;
 	            case 'c':
 	             	DwarfMiner dwarf = new DwarfMiner();
-	             	BrokenDirt brokenDirt = new BrokenDirt();
-	             	brokenDirt.setX(x);
-	             	brokenDirt.setY(y);
+	             	BrokenDirt brokenDirt2 = new BrokenDirt();
+	             	brokenDirt2.setX(x);
+	             	brokenDirt2.setY(y);
 	              	dwarf.setX(x);
 	               	dwarf.setY(y);
-	               	this.sprites.add(brokenDirt);
+	               	this.sprites.add(brokenDirt2);
 	               	this.dwarfs=dwarf;
 	               	this.elements=dwarf;
 	               	break;					
