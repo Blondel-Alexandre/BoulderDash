@@ -38,11 +38,5 @@ public class Mobile extends Element implements IMobile {
 	}
 
 
-	@Override
-	public void doNothing() {
-		// TODO Auto-generated method stub
-		
-	}
-
 
 }
