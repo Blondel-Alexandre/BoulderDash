@@ -2,27 +2,34 @@ package model;
 
 import static org.junit.Assert.*;
 
-import java.util.ArrayList;
 
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import contract.IElement;
 
+/**
+ * The Test Model.
+ *
+ * @author Groupe 4 A1 - Arras
+ */
+
 public class BoulderDashModelTest  {
-//	private DwarfMiner dwarf;
-//	private BrokenDirt brokenDirt;
+ 
+	/**
+	 * Create model and element
+	 */
 	private BoulderDashModel model;
 	IElement elements;
-	ArrayList<IElement> list;
-	int x = 3;
-	int y = 2;
 	
-
+	/**
+	* Create new BoulderDahModel() in model
+	* Create new model.getElement() in elements
+	*/
 	@Before
 	public void setUp() throws Exception {
+		
 		this.model = new BoulderDashModel();
-	//	DwarfMiner dwarf = new DwarfMiner();
 		this.elements=model.getElement();
 	}
 
@@ -30,12 +37,17 @@ public class BoulderDashModelTest  {
 	public void tearDown() throws Exception {
 	}
 
-
+	/**
+	* Test if model.helloWorld exist
+	*/
 	@Test
 	public void testGetHelloWorld() {
+		
 		assertNotNull(this.model.helloWorld);
 	}
-
+	/**
+	* Test if the message in the database is equals to this message
+	*/
 	@Test
 	public void testLoadHelloWorld() { 
 		this.model.loadHelloWorld("1");
@@ -49,28 +61,43 @@ public class BoulderDashModelTest  {
 		this.model.loadHelloWorld("5");
 		assertEquals("wwwwwwwwwwwwwwwwwwwwwwwwwwwwww@wcbbbbibwddddrrrrrrrrrrrrrrriw@wbbbbbebwddwdddddddddddddddddw@wbbbbbbbwddwrrrrrrrrrrrrrrrrdw@wbbebbbbwddwiddddddddddddddddw@wbbbbbbbwrdwddrrrrrrrrrrrrrrdw@wbbebbbbdddwdddddddddddddddddw@wwwwwwwwwwwwwwwwwwwwwwwwwwwwdw@wbbbbebbbbbbbbbbbbbebbbbbbbbbw@wbbbbebbbbebbbbbbbbebbbbbbbbbw@wbbbbibbbbebbbbibbbbbbbebbbbbw@wwbbbwbbbbbbbbbwbbbbbbbebbbbbw@wdbbbbbebbbbbbbebbbbbbbbbbbbbw@wdwwwwwwwwwwwwwwwwwwwwwwwwwwww@wdddddddrdddddddddddrddrddbbiw@wddddrddrdddrdddddrddddddrrbdw@wddddddddddddrddddddddrdrddbdw@wdddrddrdrddddrddddrddddddrbdw@wdddddddddddddrdddddddddrddedw@wdwwwwwwwwwwwwwwwwwwwwwwwwwwww@wbbbbbbbbbbbbbrbbbbbbbbbbbbbbw@wbbbbbbbbbbbbbdbbbbbbbbbbibbbw@wbbbbbbbbbeeeeeebbbbbbbbbwbbbw@wbbbbbbbbbbbbbbbbbbbbbbbbbbbbw@wbbeeeeeeeeeeeeeeeeeeeeeeebbbw@wbbbbbibbbbbbbbbbbbibbbbbbbbbw@wbbbbbwbbbbbbbbbbbbwbbbbbbbbbw@wbbbbbbbbbbbbbbeeeeeebbbbbbbbw@wbbbbbbbbbbbbbbbbbbbbbbbbbbbpw@wwwwwwwwwwwwwwwwwwwwwwwwwwwwww", this.model.getHelloWorld().getMessage());
 	}
-
+	
+	/**
+	* Test if the sprites exist and load
+	*/
 	@Test
 	public void testGetSprites() {
 		assertNotNull(this.model.sprites);
 	}
-
+	
+	/**
+	* Test the elements of the level in the map
+	*/
 	@Test
 	public void testElementList() {
 		assertNotNull(this.model.sprites);
 	}
-
+	
+	/**
+	* Test if DwarfMiner exists
+	*/
 	@Test
 	public void testGetDwarf() {
 		assertNotNull(this.model.dwarfs);
 	}
-
+	
+	/**
+ 	*Test if elements exist 
+	*/
 	@Test
 	public void testGetElement() {
 		assertNotNull(this.model.elements);
 		
 	}
-
+	
+	/**
+	* Test if the observable exists
+	*/
 	@Test
 	public void testGetObservable() {
 		assertNotNull(this);
