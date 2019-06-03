@@ -27,11 +27,17 @@ public class Controller extends KeyAdapter implements IController, Runnable{
 	
 	private Point enemyPosition;
 	
+	private Point broken;
+	
 	private boolean canMove;
+	
+	private Point next;
 	
 	private IElement currentElement;
 	
 	private IElement enemy;
+	
+	private IElement rock;
 	
 	protected boolean end = false;
 	
@@ -107,19 +113,24 @@ public class Controller extends KeyAdapter implements IController, Runnable{
 	
 	public void gravity() {
 
-		boolean fall = false ;
 		//Point rockPosition;
-		do{
-			for(IElement element : this.getModel().elementList()){
-				if(element.getElementType() == ElementType.Rock) {
-					if(element.getX() == element.getX() && element.getY() == element.getY()+1 && element.getElementType() == ElementType.BrokenDirt) {
-						System.out.println("je peux deplacer");
-				
-						fall = true;
+		
+			for(IElement currentRock : this.getModel().elementList()){
+				if(currentRock.getElementType() == ElementType.Rock || currentRock.getElementType() == ElementType.Diamond) {
+					System.out.println(currentRock);
+					rock = currentRock;
+					broken = new Point(currentRock.getX(), currentRock.getY()+1);
+					next = new Point(currentRock.getX(), currentRock.getY()+1);
+					for(IElement element : this.getModel().elementList()) {
+						if(element.getX() == broken.getX() && element.getY() == broken.getY() && element.getElementType() == ElementType.BrokenDirt) {
+							currentRock.setY(broken.y);
+							canMove = true;
+					
 						}
 					}
 				}
-			}while(fall == true);
+			}
+		
 		}
 	/*
 	 * (non-Javadoc)
@@ -145,7 +156,6 @@ public class Controller extends KeyAdapter implements IController, Runnable{
 							break;
 						case Rock:
 							canMove = false;
-							gravity();
 							break;
 						case Diamond:
 							canMove = true;
@@ -404,6 +414,7 @@ public class Controller extends KeyAdapter implements IController, Runnable{
 	public void run() {
 		while (end== false) {
 			moveEnemy();
+			gravity();
 			try{
 				Thread.sleep(250);
 			}
