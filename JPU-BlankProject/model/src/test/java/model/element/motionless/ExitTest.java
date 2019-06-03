@@ -10,13 +10,23 @@ import org.junit.Test;
 
 import contract.ElementType;
 import contract.Permeability;
+/**
+ * The Test DBConnectionTest.
+ * @author Groupe 4 A1 - Arras
+ */
 
 public class ExitTest {
+	/**
+	 * Create the exit
+	 */
 	private Exit exit;
 	
 
 	@Before
 	public void setUp() throws Exception {
+		/**
+		 * Update the exit
+		 */
 		this.exit = new Exit();
 	}
 
@@ -26,11 +36,15 @@ public class ExitTest {
 
 	@Test
 	public void test() {
-		assertNotNull(this.exit.getSprite());
 		
+		/**
+		 * test if the exit exists
+		 * test if the permeability of exit is BLOCKING
+		 * test if the exit is a Exit
+		 */
+		assertNotNull(this.exit.getSprite());
 		Permeability expected1 = Permeability.BLOCKING;
 		assertEquals(expected1, this.exit.getPermeability());
-		
 		ElementType expected2 =  ElementType.Exit;
 		assertEquals(expected2, this.exit.getElementType());
 	}

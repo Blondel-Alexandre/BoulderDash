@@ -10,12 +10,22 @@ import org.junit.Test;
 
 import contract.ElementType;
 import contract.Permeability;
+/**
+ * The Test DBConnectionTest.
+ * @author Groupe 4 A1 - Arras
+ */
 
 public class BrokenDirtTest  {
+	/**
+	 * Create the BrokenDirt
+	 */
 	private BrokenDirt brokenDirt;
 
 	@Before
 	public void setUp() throws Exception {
+		/**
+		 * Update brokenDirt
+		 */
 		this.brokenDirt = new BrokenDirt();
 	}
 
@@ -25,6 +35,11 @@ public class BrokenDirtTest  {
 
 	@Test
 	public void testBrokenDirt() {
+		/**
+		 * test if the brokenDirt exists
+		 * test if the permeability of brokenDirt is BLOCKING
+		 * test if the brokenDirt is a BrokenDirt
+		 */
 		assertNotNull(this.brokenDirt.getSprite());
 		
 		Permeability expected1 = Permeability.BLOCKING;

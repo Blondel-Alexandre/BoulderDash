@@ -2,27 +2,33 @@ package model;
 
 import static org.junit.Assert.*;
 
-import java.util.ArrayList;
 
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import contract.IElement;
 
+/**
+ * The Test Model.
+ *
+ * @author Groupe 4 A1 - Arras
+ */
+
 public class BoulderDashModelTest  {
-//	private DwarfMiner dwarf;
-//	private BrokenDirt brokenDirt;
+ 
+	/**
+	 * Create model and element
+	 */
 	private BoulderDashModel model;
 	IElement elements;
-	ArrayList<IElement> list;
-	int x = 3;
-	int y = 2;
-	
 
 	@Before
 	public void setUp() throws Exception {
+		/**
+		 * Create new BoulderDahModel() in model
+		 * Create new model.getElement() in elements
+		 */
 		this.model = new BoulderDashModel();
-	//	DwarfMiner dwarf = new DwarfMiner();
 		this.elements=model.getElement();
 	}
 
@@ -33,11 +39,17 @@ public class BoulderDashModelTest  {
 
 	@Test
 	public void testGetHelloWorld() {
+		/**
+		 * Test if model.helloWorld exist
+		 */
 		assertNotNull(this.model.helloWorld);
 	}
 
 	@Test
 	public void testLoadHelloWorld() { 
+		/**
+		 * Test if the message in the database is equals to this message
+		 */
 		this.model.loadHelloWorld("1");
 		assertEquals("wwwwwwwwwwwwwwwwwwwwwwwwwwwwww@wrrrrrddddddddddddddddddddridw@wbbbbbddrddddddrrrrdddrdddrddw@wbbbbbdddddrddddddddddddddrddw@wcddddidddddddddddrddddrddrrrw@wddddddddddddddddddddddddddddw@wdrddddddddrdddddddddrdddddddw@wdddrdddddrddddrddddiddddddddw@wdddrdrddddddrddddddddddrddddw@wdddddddddrddddddrdddddrdddddw@wdrdddddrddddddddddddddddddddw@wddddddddddrdddrddidddrddddddw@wddrddrdrddddidddddddddrdddddw@wdddidddddddrdddrddddddddddddw@wdddrdddrdddddddddddiddrddiddw@wdddddddddrddddddrdddddrdddddw@wddrddidddrddddddddrddddrddddw@wddrdddidddddrdddddrdddddddddw@wrrrddddrdddrddddddrrrrdddrddw@wddddddddidddddddddddddddddddw@wddddiddrddddrdddiddddrddddddw@wddrdddddidddddddddddddddddddw@wddddddddddddddddrrrdddddddddw@wdddrdddddddddddddiddrdddrdddw@wddrirdddddrdddddrdddirddddddw@wwwwwwwwwwddddddddddddrrdrdddw@wdddddddrwddddddrddddddddrwwww@wdrrrrrrwwdddddddddrdddddddddw@wddddddidddddddddddidddrwbddpw@wwwwwwwwwwwwwwwwwwwwwwwwwwwwww", this.model.getHelloWorld().getMessage());
 		this.model.loadHelloWorld("2");
@@ -52,27 +64,42 @@ public class BoulderDashModelTest  {
 
 	@Test
 	public void testGetSprites() {
+		/**
+		 * Test if the sprites exist and load
+		 */
 		assertNotNull(this.model.sprites);
 	}
 
 	@Test
 	public void testElementList() {
+		/**
+		 * Test the elements of the level in the map
+		 */
 		assertNotNull(this.model.sprites);
 	}
 
 	@Test
 	public void testGetDwarf() {
+		/**
+		 * Test if DwarfMiner exists
+		 */
 		assertNotNull(this.model.dwarfs);
 	}
 
 	@Test
 	public void testGetElement() {
+		/**
+		 * Test if elements exist 
+		 */
 		assertNotNull(this.model.elements);
 		
 	}
 
 	@Test
 	public void testGetObservable() {
+		/**
+		 * Test if the observable exists
+		 */
 		assertNotNull(this);
 	}
 	

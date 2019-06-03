@@ -7,7 +7,11 @@ import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
-
+/**
+ * The Class Model.
+ *
+ * @author Groupe 4 A1 - Arras
+ */
 public class ControllerOrderTest {
 
 	@BeforeClass
