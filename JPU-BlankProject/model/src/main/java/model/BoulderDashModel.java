@@ -46,7 +46,7 @@ public class BoulderDashModel extends Observable implements IModel {
 	public int Score =10;
 	
 	IMobile dwarfs;
-	
+
 	IElement elements;
 	
 	public ArrayList<IElement> sprites;
@@ -178,6 +178,7 @@ public class BoulderDashModel extends Observable implements IModel {
 	public IMobile getDwarf() {
 		return this.dwarfs;
 	}
+	
 	
 	@Override
 	public IElement getElement() {

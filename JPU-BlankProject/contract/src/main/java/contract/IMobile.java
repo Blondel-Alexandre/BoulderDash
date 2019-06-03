@@ -11,4 +11,5 @@ public interface IMobile  {
 	int getY();
 	void setY(int y);
 	void setX(int x);
+
 }

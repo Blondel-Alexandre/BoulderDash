@@ -20,9 +20,7 @@ public class Sprite {
 
 	public void loadImage() {
         try {
-            this.setImage(ImageIO.read(getClass().getClassLoader().getResourceAsStream("images/" + this.getImageName())));
-            System.err.println("je charge un sprite");
-            
+            this.setImage(ImageIO.read(getClass().getClassLoader().getResourceAsStream("images/" + this.getImageName())));           
         }
         catch (IOException e) {
             e.printStackTrace();
