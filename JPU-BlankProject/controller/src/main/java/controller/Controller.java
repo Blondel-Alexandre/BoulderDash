@@ -2,6 +2,7 @@ package controller;
 
 import java.awt.Point;
 import java.awt.event.KeyAdapter;
+import java.util.Random;
 import contract.ControllerOrder;
 import contract.ElementType;
 import contract.IController;
@@ -169,23 +170,6 @@ public final class Controller extends KeyAdapter implements IController  {
 					}//this.getModel().elementList().remove(element);
 				}if(canMove == true) {
 					((IMobile) this.getModel().getDwarf()).moveUp();
-					/*//boolean fall = false ;
-					Point rockPosition;
-					//do{
-						for(IElement element : this.getModel().elementList()){
-							if(element.getElementType() == ElementType.Rock) {
-								System.out.println("je suis la");
-								rockPosition = new Point(this.getModel().getRock().getX(), this.getModel().getRock().getY()+1);
-								System.out.println("je suis la123456789");
-								if(element.getX() == rockPosition.getX() && element.getY() == rockPosition.getY() && element.getElementType() == ElementType.BrokenDirt) {
-									System.out.println("hihiihhiihje suis la");
-									((IMobile) this.getModel().getRock()).moveDown();
-									System.out.println("HALAIDE");
-									//fall = true;
-									}
-								}
-							}
-						//}while(fall == true);*/
 				}
 				break;
 			case DOWN:
@@ -322,7 +306,7 @@ public final class Controller extends KeyAdapter implements IController  {
 			}*/			
 		}System.out.println(this.getModel().elementList().size() + " : taille de la liste d'éléments");
 		replaceElement();
-		gravity();
+		moveEnemy();
 	}
 	
 	public void replaceElement() {
@@ -333,5 +317,120 @@ public final class Controller extends KeyAdapter implements IController  {
 			System.err.println(position);
 		}
 	}
-}
+	
+	public void moveEnemy()
+	{
+		Random r = new Random();
+		int random;
+		System.err.println("nique ta mere java");
+		random = r.nextInt(4);
+		boolean isBrokenDirt = false;
+		boolean canMove = false;
+		switch (random) {
+			case 0:
+				for(IElement element : this.getModel().elementList()){
+					if(element.getElementType() == ElementType.Enemy) {
+						if(element.getX() == element.getX() && element.getY() == element.getY()+1 && element.getElementType() == ElementType.BrokenDirt) {
+							System.out.println("je peux deplacer");
+						switch(element.getElementType()) {
+						case BrokenDirt:
+							canMove = true;
+							isBrokenDirt = true;
+						break;
+						default:
+							break;
+						}
+					}
+				}if(canMove == true) {
+					System.out.println("nique ta mere java");
+					element.setY(element.getY()+1);
+					try {
+						Thread.sleep(250);
+					}
+					catch (Exception e) {
+						e.printStackTrace();
+					}
+					
+				}}
+				break;
+			case 1:
+				for(IElement element : this.getModel().elementList()){
+					if(element.getElementType() == ElementType.Enemy) {
+						if(element.getX() == element.getX() && element.getY() == element.getY()-1 && element.getElementType() == ElementType.BrokenDirt) {
+							System.out.println("je peux deplacer");
+						switch(element.getElementType()) {
+						case BrokenDirt:
+							canMove = true;
+							isBrokenDirt = true;
+						break;
+						default:
+							break;
+						}
+					}
+				}if(canMove == true) {
+					element.setY(element.getY()-1);
+					try {
+						Thread.sleep(250);
+					}
+					catch (Exception e) {
+						e.printStackTrace();
+					}
+				}}
+				break;
+			case 2:
+				for(IElement element : this.getModel().elementList()){
+					if(element.getElementType() == ElementType.Enemy) {
+						if(element.getX() == element.getX()+1 && element.getY() == element.getY() && element.getElementType() == ElementType.BrokenDirt) {
+							System.out.println("je peux deplacer");
+						switch(element.getElementType()) {
+						case BrokenDirt:
+							canMove = true;
+							isBrokenDirt = true;
+						break;
+						default:
+							break;
+						}
+					}
+				}if(canMove == true) {
+					element.setX(element.getX()+1);
+					try {
+						Thread.sleep(250);
+					}
+					catch (Exception e) {
+						e.printStackTrace();
+					}
+				}}
+				break;
+			case 3:
+				for(IElement element : this.getModel().elementList()){
+					if(element.getElementType() == ElementType.Enemy) {
+						if(element.getX() == element.getX()-1 && element.getY() == element.getY() && element.getElementType() == ElementType.BrokenDirt) {
+							System.out.println("je peux deplacer");
+						switch(element.getElementType()) {
+						case BrokenDirt:
+							canMove = true;
+							isBrokenDirt = true;
+						break;
+						default:
+							break;
+						}
+					}
+				}if(canMove == true) {
+					element.setY(element.getX()-1);
+					try {
+						Thread.sleep(250);
+					}
+					catch (Exception e) {
+						e.printStackTrace();
+					}
+				}}
+				break;
+			default:
+				break;
+		}if(isBrokenDirt == false) {
+		
+		}
+	}
+	}
+
 
