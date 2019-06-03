@@ -17,18 +17,19 @@ import contract.Permeability;
 *@author Group 4 A1 - Arras
 */
 
-public class DiamondTest {
+
 /**
 *Create a diamond
 */
+public class DiamondTest {
 	private Diamond diamond;
 	
-
-	@Before
-	public void setUp() throws Exception {
+	
 /**
 *Create the diamond method
 */
+	@Before
+	public void setUp() throws Exception {
 		this.diamond = new Diamond();
 	}
 
@@ -36,13 +37,14 @@ public class DiamondTest {
 	public void tearDown() throws Exception {
 	}
 
-	@Test
-	public void test() {
+	
 /**
 *Test if the diamond Sprite exists
 *Test if the permeability of diamond is BLOCKING
 *Test if the Diamond is a diamond
 */
+	@Test
+	public void test() {
 		assertNotNull(this.diamond.getSprite());
 		
 		Permeability expected1 = Permeability.BLOCKING;
