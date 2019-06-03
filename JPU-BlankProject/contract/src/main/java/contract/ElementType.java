@@ -1,10 +1,5 @@
 package contract;
 
-/**
- * The Enum ElementType.
- *
- */
-
 public enum ElementType {
 	
 	Wall,

@@ -211,9 +211,6 @@ public class BoulderDashModel extends Observable implements IModel {
 	public void collectDiamond()
 	{
 		this.setScore(this.getScore()-1);
-		if(getScore() <= 0)
-		{
-			this.setScore(0);		}
 	}
 
 }

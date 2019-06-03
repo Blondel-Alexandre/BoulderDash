@@ -53,13 +53,7 @@ public final class Controller extends KeyAdapter implements IController  {
 	}
 	
 	public void win() {
-		if(this.getModel().getScore()<= 0)
-		{
-			this.view.printMessage("You Win");
-			System.exit(0);
-		}
-
-
+		this.view.printMessage("You Win");
 	}
 
 	/**
@@ -124,12 +118,7 @@ public final class Controller extends KeyAdapter implements IController  {
 							gameOver();
 							break;
 						case Exit:
-							canMove =false;
-							if(this.getModel().getScore()<=0)
-							{
-								win();
-
-							}
+							win();
 							break;
 						case BrokenDirt:
 							canMove = true;
@@ -168,14 +157,7 @@ public final class Controller extends KeyAdapter implements IController  {
 						case BrokenDirt:
 							canMove = true;
 							isBrokenDirt = true;
-						case Exit:
-							canMove =false;
-							if(this.getModel().getScore()<=0)
-							{
-								win();
-
-							}
-							break;
+						break;
 						default:
 							break;
 						}
@@ -210,14 +192,7 @@ public final class Controller extends KeyAdapter implements IController  {
 						case BrokenDirt:
 							canMove = true;
 							isBrokenDirt = true;
-						case Exit:
-							canMove =false;
-							if(this.getModel().getScore()<=0)
-							{
-								win();
-
-							}
-							break;
+						break;
 						default:
 							break;
 						}
@@ -252,14 +227,7 @@ public final class Controller extends KeyAdapter implements IController  {
 						case BrokenDirt:
 							canMove = true;
 							isBrokenDirt = true;
-						case Exit:
-							canMove =false;
-							if(this.getModel().getScore()<=0)
-							{
-								win();
-
-							}
-							break;
+						break;
 						default:
 							break;
 						}
