@@ -23,9 +23,7 @@ public class LevelTest extends Level {
 	char map[][] = new char[levelSize][levelSize];
 	private Level level;
 
-/** 
-*Test the initialization
-*/
+
 	
 	@Before
 	public void setUp() throws Exception {
