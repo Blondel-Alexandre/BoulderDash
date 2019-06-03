@@ -2,6 +2,7 @@ package controller;
 
 import java.awt.Point;
 import java.awt.event.KeyAdapter;
+import java.util.Random;
 import contract.ControllerOrder;
 import contract.ElementType;
 import contract.IController;
@@ -14,7 +15,7 @@ import contract.IView;
 /**
  * The Class Controller.
  */
-public final class Controller extends KeyAdapter implements IController  {
+public class Controller extends KeyAdapter implements IController, Runnable{
 
 	/** The view. */
 	private IView view;
@@ -24,9 +25,15 @@ public final class Controller extends KeyAdapter implements IController  {
 	
 	private Point position;
 	
+	private Point enemyPosition;
+	
 	private boolean canMove;
 	
 	private IElement currentElement;
+	
+	private IElement enemy;
+	
+	protected boolean end = false;
 	
 	
 
@@ -119,11 +126,6 @@ public final class Controller extends KeyAdapter implements IController  {
 	 *
 	 * @see contract.IController#orderPerform(contract.ControllerOrder)
 	 */
-    /*private synchronized ArrayList<IElement> getCopyOfElements(){
-		ArrayList<IElement> copy = new ArrayList<>();
-		copy.addAll(this.getModel().elementList());
-		return copy;
-	}*/
 	
 	public void orderPerform(final ControllerOrder controllerOrder) {
 		//boolean canMove = true;
@@ -151,9 +153,11 @@ public final class Controller extends KeyAdapter implements IController  {
 							break;
 						case Enemy:
 							gameOver();
+							end = true;
 							break;
 						case Exit:
 							canMove = false;
+							end = true;
 							if(this.getModel().getScore()==0)
 							{
 							win();
@@ -169,23 +173,6 @@ public final class Controller extends KeyAdapter implements IController  {
 					}//this.getModel().elementList().remove(element);
 				}if(canMove == true) {
 					((IMobile) this.getModel().getDwarf()).moveUp();
-					/*//boolean fall = false ;
-					Point rockPosition;
-					//do{
-						for(IElement element : this.getModel().elementList()){
-							if(element.getElementType() == ElementType.Rock) {
-								System.out.println("je suis la");
-								rockPosition = new Point(this.getModel().getRock().getX(), this.getModel().getRock().getY()+1);
-								System.out.println("je suis la123456789");
-								if(element.getX() == rockPosition.getX() && element.getY() == rockPosition.getY() && element.getElementType() == ElementType.BrokenDirt) {
-									System.out.println("hihiihhiihje suis la");
-									((IMobile) this.getModel().getRock()).moveDown();
-									System.out.println("HALAIDE");
-									//fall = true;
-									}
-								}
-							}
-						//}while(fall == true);*/
 				}
 				break;
 			case DOWN:
@@ -209,9 +196,11 @@ public final class Controller extends KeyAdapter implements IController  {
 							break;
 						case Enemy:
 							gameOver();
+							end = true;
 							break;
 						case Exit:
 							canMove = false;
+							end = true;
 							if(this.getModel().getScore()==0)
 							{
 							win();
@@ -250,10 +239,12 @@ public final class Controller extends KeyAdapter implements IController  {
 							this.getModel().collectDiamond();
 							break;
 						case Enemy:
+							end = true;
 							gameOver();
 							break;
 						case Exit:
 							canMove = false;
+							end = true;
 							if(this.getModel().getScore()==0)
 							{
 							win();
@@ -292,9 +283,11 @@ public final class Controller extends KeyAdapter implements IController  {
 							this.getModel().collectDiamond();
 							break;
 						case Enemy:
+							end = true;
 							gameOver();
 							break;
 						case Exit:
+							end = true;
 							canMove = false;
 							if(this.getModel().getScore()==0)
 							{
@@ -316,22 +309,124 @@ public final class Controller extends KeyAdapter implements IController  {
 				break;
 			default:
 				break;
-		}if(isBrokenDirt == false) {
-			/*if(canMove == true) {
-				this.getModel().elementList().add(this.getModel().createBrokenDirt((int) position.getX(), (int) position.getY()));
-			}*/			
-		}System.out.println(this.getModel().elementList().size() + " : taille de la liste d'éléments");
+		}if(isBrokenDirt == false) {		
+		}
+		System.out.println(this.getModel().elementList().size() + " : taille de la liste d'éléments");
 		replaceElement();
-		gravity();
 	}
 	
 	public void replaceElement() {
 		if(canMove == true) {
 			this.getModel().elementList().remove(currentElement);
-			System.out.println(currentElement);
 			this.getModel().elementList().add(this.getModel().createBrokenDirt((int) position.getX(), (int) position.getY()));
-			System.err.println(position);
 		}
 	}
-}
+	
+	
+	public void moveEnemy()
+	{
+		Random r = new Random();
+		int random;
+		random = r.nextInt(4);
+		boolean isBrokenDirt = false;
+		switch (random) {
+			case 0:
+				for(IElement currentEnemy : this.getModel().elementList()){
+					if(currentEnemy.getElementType() == ElementType.Enemy) {
+						enemy = currentEnemy;
+						enemyPosition = new Point(currentEnemy.getX(), currentEnemy.getY()+1);
+						for(IElement element : this.getModel().elementList()) {
+							if(element.getX() == enemyPosition.getX() && element.getY() == enemyPosition.getY() && element.getElementType() == ElementType.BrokenDirt) {
+								currentEnemy.setY(enemyPosition.y);
+								canMove = true;
+								try {
+									Thread.sleep(250);
+								}
+								catch (Exception e) {
+									e.printStackTrace();							
+								}
+								
+							}
+						}
+					}
+				}
+				break;
+			case 1:
+				for(IElement currentEnemy : this.getModel().elementList()){
+					if(currentEnemy.getElementType() == ElementType.Enemy) {
+						System.out.println(currentEnemy);
+						enemy = currentEnemy;
+						enemyPosition = new Point(currentEnemy.getX(), currentEnemy.getY()-1);
+						for(IElement element : this.getModel().elementList()) {
+							if(element.getX() == enemyPosition.getX() && element.getY() == enemyPosition.getY() && element.getElementType() == ElementType.BrokenDirt) {
+								currentEnemy.setY(enemyPosition.y);
+								canMove = true;
+								try {
+									Thread.sleep(250);
+								}
+								catch (Exception e) {
+									e.printStackTrace();							
+								}
+								
+							}
+						}
+					}
+				}
+				break;
+			case 2:
+				for(IElement currentEnemy : this.getModel().elementList()){
+					if(currentEnemy.getElementType() == ElementType.Enemy) {
+						System.out.println(currentEnemy);
+						enemy = currentEnemy;
+						enemyPosition = new Point(currentEnemy.getX()+1, currentEnemy.getY());
+						for(IElement element : this.getModel().elementList()) {
+							if(element.getX() == enemyPosition.getX() && element.getY() == enemyPosition.getY() && element.getElementType() == ElementType.BrokenDirt) {
+								currentEnemy.setX(enemyPosition.x);
+								canMove = true;
+								try {
+									Thread.sleep(250);
+								}
+								catch (Exception e) {
+									e.printStackTrace();							
+								}
+								
+							}
+						}
+					}
+				}
+				break;
+			case 3:
+				for(IElement currentEnemy : this.getModel().elementList()){
+					if(currentEnemy.getElementType() == ElementType.Enemy) {
+						System.out.println(currentEnemy);
+						enemy = currentEnemy;
+						enemyPosition = new Point(currentEnemy.getX()-1, currentEnemy.getY());
+						for(IElement element : this.getModel().elementList()) {
+							if(element.getX() == enemyPosition.getX() && element.getY() == enemyPosition.getY() && element.getElementType() == ElementType.BrokenDirt) {
+								currentEnemy.setX(enemyPosition.x);
+								canMove = true;
+								try {
+									Thread.sleep(250);
+								}
+								catch (Exception e) {
+									e.printStackTrace();							
+								}
+								
+							}
+						}
+					}
+				}
+				break;
+			default:
+				break;
+		}if(isBrokenDirt == false) {
+		}
+		}
+	public void run() {
+		while (end == false) {
+			moveEnemy();
+		}
+	}
+	}
+
 

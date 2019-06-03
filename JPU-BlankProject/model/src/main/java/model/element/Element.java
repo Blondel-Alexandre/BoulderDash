@@ -7,15 +7,27 @@ import contract.ElementType;
 import contract.IElement;
 import contract.Permeability;
 
-
+/**
+ * The Class Element.
+ *
+ * @author Groupe 4 A1 - Arras
+ */
 
 public class Element extends Observable implements IElement {
-
+	
+	/** The sprite */
 	private Sprite sprite;
 	private Permeability permeability;
+	/** The Element Type */
 	private ElementType elementType;
+	/** The x position */
 	protected int x;
+	/** The y position */
 	protected int y;
+	
+	/**
+	 * Instantiates a new element.
+	 */
 
     public Element(final Sprite sprite, final Permeability permeability, final ElementType elementType) {
         this.setSprite(sprite);
@@ -88,19 +100,41 @@ public class Element extends Observable implements IElement {
         return this.getSprite().getImage();
     }
 
+	/**
+	 * Gets the x.
+	 * 
+	 * @return the x
+	 */
 	public int getX() {
 		return x;
 	}
-
+	
+	/**
+	 * Sets the x.
+	 *
+	 * @param x
+	 *          the new x
+	 */
 	public void setX(int x) {
 		this.x = x;
 		this.setChanged();
 		this.notifyObservers();
 	}
-
+	/**
+	 * Gets the y.
+	 * 
+	 * @return the y
+	 */
 	public int getY() {
 		return y;
 	}
+	
+	/**
+	 * Sets the y.
+	 *
+	 * @param y
+	 *          the new y
+	 */
 
 	public void setY(int y) {
 		this.y = y;
@@ -108,10 +142,26 @@ public class Element extends Observable implements IElement {
 		this.notifyObservers();
 	}
 	
+	/**
+	 * Gets the observable.
+	 *
+	 * @return the observable
+	 * 
+	 *
+	 */
+	
 	public Observable getObservable() {
         return this;
     }
 
+	/**
+	 * Get the filename of the image.
+	 * 
+	 * @return the filename
+	 * 
+	 * 
+	 */
+	
 	@Override
 	public String getFileName() {
 		return this.getSprite().getImageName();

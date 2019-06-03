@@ -9,8 +9,8 @@ import entity.Level;
 
 /**
  * The Class DAOHelloWorld.
- *
- * @author Jean-Aymeric Diet
+ * 
+ * @author Groupe 4 A1 - Arras
  */
 class DAOHelloWorld extends DAOMap<Level> {
 

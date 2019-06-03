@@ -7,20 +7,24 @@ import java.awt.Image;
 import java.util.Observable;
 import java.util.Observer;
 import javax.swing.JPanel;
+
+import contract.ElementType;
 import contract.IElement;
 
 /**
  * The Class ViewPanel.
- *
- * @author Jean-Aymeric Diet
+ * @author Groupe 4 A1 - Arras
  */
+
 class ViewPanel extends JPanel implements Observer {
 
 	/** The view frame. */
 	private ViewFrame					viewFrame;
 	/** The Constant serialVersionUID. */
 	private static final long	serialVersionUID	= -998294702363713521L;
+	/** The size of the sprites */
 	private int spriteSize = 16;
+	/** The image */
 	public Image img;
 	
 	/**
@@ -29,6 +33,7 @@ class ViewPanel extends JPanel implements Observer {
 	 * @param viewFrame
 	 *          the view frame
 	 */
+	
 	public ViewPanel(final ViewFrame viewFrame) {
 		this.setViewFrame(viewFrame);
 		viewFrame.getModel().getElement().getObservable().addObserver(this);
@@ -44,7 +49,8 @@ class ViewPanel extends JPanel implements Observer {
 	 * @param viewFrame
 	 *          the new view frame
 	 */
-	private void setViewFrame(final ViewFrame viewFrame) {
+	private 
+	void setViewFrame(final ViewFrame viewFrame) {
 		this.viewFrame = viewFrame;
 	}
 
@@ -53,6 +59,7 @@ class ViewPanel extends JPanel implements Observer {
 	 *
 	 * @see java.util.Observer#update(java.util.Observable, java.lang.Object)
 	 */
+	
 	@Override
 	public void update(final Observable arg0, final Object o) {
 		this.repaint();
@@ -63,28 +70,41 @@ class ViewPanel extends JPanel implements Observer {
 	 *
 	 * @see javax.swing.JComponent#paintComponent(java.awt.Graphics)
 	 */
+	
 	@Override
 	public void paintComponent(final Graphics graphics) {
 		graphics.clearRect(0, 0, 550, 550);	
-		int size = this.viewFrame.getModel().elementList().size();
-		for(int i = 0; i < size ; i++) {			
-			IElement element = this.viewFrame.getModel().elementList().get(i);
-            //System.err.println("je je peint la fenetre en ce moment ");
+		for(IElement element : this.viewFrame.getModel().elementList()) {
+			if(element.getElementType() != ElementType.Enemy && element.getElementType() != ElementType.Rock)
+			//Prints others elements in the map.
 			graphics.drawImage(element.getImage(),element.getX()*spriteSize, element.getY()*spriteSize, null);
-		}		
+		}
+		for(IElement element : this.viewFrame.getModel().elementList()) {
+			if(element.getElementType() == ElementType.Enemy)
+			//Prints the enemy.
+			graphics.drawImage(element.getImage(),element.getX()*spriteSize, element.getY()*spriteSize, null);
+		}
+		for(IElement element : this.viewFrame.getModel().elementList()) {
+			if(element.getElementType() == ElementType.Rock)
+			//Prints the rocks.
+			graphics.drawImage(element.getImage(),element.getX()*spriteSize, element.getY()*spriteSize, null);
+		}
+		
+		// Prints the dwarf
 		IElement character = this.viewFrame.getModel().getElement();
 		graphics.drawImage(character.getImage(), character.getX()*spriteSize, character.getY()*spriteSize, null);
 		
-		//score
+		// Prints the score
 		Font f = new Font("Impact",Font.BOLD,20);
 		graphics.setColor(Color.BLUE);
 		graphics.setFont(f);
 		graphics.drawString("Diamants : " + this.viewFrame.getModel().getScore(),5,500);
 		
+		// Prints the lives
 		Font B = new Font("Impact",Font.BOLD,20);
 		graphics.setColor(Color.RED);
 		graphics.setFont(B);
-		graphics.drawString("Vies: " , 155, 500);
+		graphics.drawString("Lives: " , 155, 500);
 
 			}
 }
