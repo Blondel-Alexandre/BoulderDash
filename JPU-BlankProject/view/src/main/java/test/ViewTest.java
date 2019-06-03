@@ -1,9 +1,6 @@
-package model;
+package test;
 
 import static org.junit.Assert.*;
-
-import java.sql.Connection;
-import java.sql.SQLException;
 
 import org.junit.After;
 import org.junit.AfterClass;
@@ -11,11 +8,9 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-public class DAOHelloWorldTest extends DAOHelloWorld {
+import view.View;
 
-	public DAOHelloWorldTest(Connection connection) throws SQLException {
-		super(connection);
-	}
+public class ViewTest  {
 
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
@@ -34,33 +29,33 @@ public class DAOHelloWorldTest extends DAOHelloWorld {
 	}
 
 	@Test
-	public void testDAOHelloWorld() {
-		
+	public void testView() {
+		fail("Not yet implemented");
 	}
 
 	@Test
-	public void testCreateLevel() {
-		
+	public void testKeyCodeToControllerOrder() {
+		fail("Not yet implemented");
 	}
 
 	@Test
-	public void testDeleteLevel() {
-		
+	public void testPrintMessage() {
+		fail("Not yet implemented");
 	}
 
 	@Test
-	public void testUpdateLevel() {
-		
+	public void testRun() {
+		fail("Not yet implemented");
 	}
 
 	@Test
-	public void testFindInt() {
-		
+	public void testSetController() {
+		fail("Not yet implemented");
 	}
 
 	@Test
-	public void testFindString() {
-		
+	public void testGetObserver() {
+		fail("Not yet implemented");
 	}
 
 }
