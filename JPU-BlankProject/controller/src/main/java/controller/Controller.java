@@ -1,4 +1,6 @@
-package controller;
+
+
+  package controller;
 
 import java.awt.Point;
 import java.awt.event.KeyAdapter;
@@ -115,18 +117,16 @@ public class Controller extends KeyAdapter implements IController, Runnable{
 
 		//Point rockPosition;
 		
-			for(IElement currentRock : this.getModel().elementList()){
-				if(currentRock.getElementType() == ElementType.Rock || currentRock.getElementType() == ElementType.Diamond) {
-					System.out.println(currentRock);
-					rock = currentRock;
-					broken = new Point(currentRock.getX(), currentRock.getY()+1);
-					next = new Point(currentRock.getX(), currentRock.getY()+1);
-					for(IElement element : this.getModel().elementList()) {
-						if(element.getX() == broken.getX() && element.getY() == broken.getY() && element.getElementType() == ElementType.BrokenDirt) {
-							currentRock.setY(broken.y);
+			for(IElement element : this.getModel().elementList()){
+				if(element.getElementType() == ElementType.Rock || element.getElementType() == ElementType.Diamond) {
+					System.out.println(element);
+					rock = element;
+					broken = new Point(element.getX(), element.getY()+1);
+						if(rock.getX() == broken.getX() && rock.getY() == broken.getY() && element.getElementType() == ElementType.BrokenDirt) {
+							rock.setY(broken.y);
 							canMove = true;
 					
-						}
+						
 					}
 				}
 			}

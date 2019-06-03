@@ -6,6 +6,7 @@ import model.element.Sprite;
 
 public class Diamond extends Mobile {
 
+	/** The sprite */
     private static final Sprite SPRITE = new Sprite('i', "Diamond.png");
     
 	/**
