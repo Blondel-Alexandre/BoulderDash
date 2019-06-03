@@ -17,29 +17,27 @@ public class DBConnectionTest  {
 	@Before
 	public void setUp() throws Exception {
 	}
-
+	
+	/**
+	* Close the connection with the database
+	*/
 	@After
 	public void tearDown() throws Exception {
-		/**
-		 * Close the connection with the database
-		 */
 		DBConnection.getInstance().getConnection().close();
     }
 	
-
+	/**
+	* Test if the instance of the database exists
+	*/
 	@Test
 	public void testGetInstance() {
-		/**
-		 * Test if the instance of the database exists
-		 */
 		 assertNotNull(DBConnection.getInstance());
 	}
-
+	/**
+	* Test if the connection of the database exists
+	*/
 	@Test
 	public void testGetConnection(){
-		/**
-		 * Test if the connection of the database exists
-		 */
 		assertNotNull(DBConnection.getInstance().getConnection());
 	}
 

@@ -19,27 +19,27 @@ public class MotionlessElementTest  {
 	 * Create the wall
 	 */
 	private Wall wall;
-
+	
+	/**
+	* Update wall
+	*/
 	@Before
 	public void setUp() throws Exception {
-		/**
-		 * Update wall
-		 */
+		
 		this.wall = new Wall();
 	}
 
 	@After
 	public void tearDown() throws Exception {
 	}
-
+	
+	/**
+	* test if the wall exists
+	* test if the permeability of wall is BLOCKING
+	* test if the wall is a Wall
+	*/
 	@Test
 	public void testMotionlessElement() {
-		
-		/**
-		 * test if the wall exists
-		 * test if the permeability of wall is BLOCKING
-		 * test if the wall is a Wall
-		 */
 		assertNotNull(this.wall.getSprite());
 		Permeability expected1 = Permeability.BLOCKING;
 		assertEquals(expected1, this.wall.getPermeability());

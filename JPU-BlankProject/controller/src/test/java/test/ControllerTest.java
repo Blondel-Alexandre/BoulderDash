@@ -16,12 +16,13 @@ public class ControllerTest  {
 	private Controller controller;
 	private IView view ;
 	private IModel model;
-
+	
+	/**
+	* Create a new Controller with view and model in parameter
+	*/
 	@Before
 	public void setUp() throws Exception {
-		/**
-		 * Create a new Controller with view and model in parameter
-		 */
+		
 		this.controller = new Controller(view,model);
 		
 	}
@@ -29,37 +30,37 @@ public class ControllerTest  {
 	@After
 	public void tearDown() throws Exception {
 	}
-
+	
+	/**
+	 * Test if controller is not null so test if controller exist
+	 */
 	@Test
 	public void testController() {
-		/**
-		 * Test if controller is not null so test if controller exist
-		 */
 		assertNotNull(this.controller);
 	}
 	
+	/**
+	* Test if model is Null
+	*/
 	@Test
 	public void getModelTest() {
-		/**
-		 * Test if model is Null
-		 */
 		assertNull(this.model);
 	}
+	
+	/**
+	* Test if view is Null
+	*/
 	@Test
 	public void getViewTest() {
-		/**
-		 * Test if view is Null
-		 */
 		assertNull(this.view);
 	}
-
-
+	
+	/**
+	* configure order in order to be equal to ControllerOrder.UP
+	* Test if order is equal to ControllerOrder.valueOf("UP")
+	*/
 	@Test
 	public void testOrderPerform() {
-		/**
-		 * configure order in order to be equal to ControllerOrder.UP
-		 * Test if order is equal to ControllerOrder.valueOf("UP")
-		 */
 		ControllerOrder order = ControllerOrder.UP;
 		assertEquals(ControllerOrder.valueOf("UP"), order);
 	}

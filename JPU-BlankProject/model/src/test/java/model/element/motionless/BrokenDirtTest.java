@@ -20,26 +20,28 @@ public class BrokenDirtTest  {
 	 * Create the BrokenDirt
 	 */
 	private BrokenDirt brokenDirt;
-
+	
+	/**
+	* Update brokenDirt
+	*/
 	@Before
 	public void setUp() throws Exception {
-		/**
-		 * Update brokenDirt
-		 */
+		
 		this.brokenDirt = new BrokenDirt();
 	}
 
 	@After
 	public void tearDown() throws Exception {
 	}
-
+	
+	/**
+	* test if the brokenDirt exists
+	* test if the permeability of brokenDirt is BLOCKING
+	* test if the brokenDirt is a BrokenDirt
+	*/
 	@Test
 	public void testBrokenDirt() {
-		/**
-		 * test if the brokenDirt exists
-		 * test if the permeability of brokenDirt is BLOCKING
-		 * test if the brokenDirt is a BrokenDirt
-		 */
+		
 		assertNotNull(this.brokenDirt.getSprite());
 		
 		Permeability expected1 = Permeability.BLOCKING;

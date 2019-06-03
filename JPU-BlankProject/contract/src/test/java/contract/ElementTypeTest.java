@@ -31,13 +31,13 @@ public class ElementTypeTest {
 	@After
 	public void tearDown() throws Exception {
 	}
-
-	@Test
-	public void test() {
-		/**
+	
+	/**
 		 * configure elementtype in order to be equal to ElementType.BrokenDirt 
 		 * Test if elementtype is equal to ElementType.valueOf("BrokenDirt")
 		 */
+	@Test
+	public void test() {
 		ElementType elementtype = ElementType.BrokenDirt;
 		assertEquals(ElementType.valueOf("BrokenDirt"), elementtype);
 	}

@@ -24,58 +24,58 @@ public class SpriteTest  {
     private String consoleImage ="w";
     private Image image ;
     private char character;
-
+    
+    /**
+	* Load the image
+	*/
 	@Before
 	public void setUp() throws Exception {
-		/**
-		 * Load the image
-		 */
 		image = ImageIO.read(getClass().getClassLoader().getResourceAsStream("images/" + filename));
 	}
 
 	@After
 	public void tearDown() throws Exception {
 	}
-
+	
+	/**
+	* Test if character and filename exist
+	*/
 	@Test
 	public void testSprite() {
-		/**
-		 * Test if character and filename exist
-		 */
+		
 		assertNotNull(character);
 		assertNotNull(filename);
 		
 	}
-
+	
+	/**
+	* Test if the image has been load
+	*/
 	@Test
 	public void testLoadImage() {
-		/**
-		 * Test if the image has been load
-		 */
 		assertNotNull(image);
 	}
-
+	
+	/**
+	* Test if the image exists
+	*/
 	@Test
 	public void testGetImage() {
-		/**
-		 * Test if the image exists
-		 */
 		assertNotNull(image);
 	}
-
+	
+	/**
+	* Test if the ConsoleImage exists
+	*/
 	@Test
 	public void testGetConsoleImage() {
-		/**
-		 * Test if the ConsoleImage exists
-		 */
 		assertNotNull(consoleImage);
 	}
-
+	/**
+	* Test if the filename exists
+	*/
 	@Test
 	public void testGetImageName() {
-		/**
-		 * Test if the filename exists
-		 */
 		assertNotNull(filename);
 	}
 

@@ -21,27 +21,25 @@ public class ExitTest {
 	 */
 	private Exit exit;
 	
-
+	/**
+	* Update the exit
+	*/
 	@Before
 	public void setUp() throws Exception {
-		/**
-		 * Update the exit
-		 */
 		this.exit = new Exit();
 	}
 
 	@After
 	public void tearDown() throws Exception {
 	}
-
+	
+	/**
+	* test if the exit exists
+	* test if the permeability of exit is BLOCKING
+	* test if the exit is a Exit
+	*/
 	@Test
 	public void test() {
-		
-		/**
-		 * test if the exit exists
-		 * test if the permeability of exit is BLOCKING
-		 * test if the exit is a Exit
-		 */
 		assertNotNull(this.exit.getSprite());
 		Permeability expected1 = Permeability.BLOCKING;
 		assertEquals(expected1, this.exit.getPermeability());

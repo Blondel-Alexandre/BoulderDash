@@ -29,13 +29,12 @@ public class ControllerOrderTest {
 	@After
 	public void tearDown() throws Exception {
 	}
-
-	@Test
-	public void test() {
-		/**
+	/**
 		 * configure order in order to be equal to ControllerOrder.UP
 		 * Test if order is equal to ControllerOrder.valueOf("UP")
 		 */
+	@Test
+	public void test() {
 		ControllerOrder order = ControllerOrder.UP;
 		assertEquals(ControllerOrder.valueOf("UP"), order);
 	}

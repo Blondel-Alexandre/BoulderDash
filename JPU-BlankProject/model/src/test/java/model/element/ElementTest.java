@@ -21,12 +21,13 @@ public class ElementTest {
 	 */
 	private DwarfMiner dwarf;
 	private Sprite sprite = new Sprite('c',"Character.png") ;
-
+	
+	/**
+	* Set up the DwarfMiner
+	*/
 	@Before
 	public void setUp() throws Exception {
-		/**
-		 * Set up the DwarfMiner
-		 */
+		
 		this.dwarf = new DwarfMiner();
 		this.dwarf.setX(1);
 		this.dwarf.setY(1);
@@ -36,12 +37,13 @@ public class ElementTest {
 	@After
 	public void tearDown() throws Exception {
 	}
-
+	
+	/**
+	* Test if setPermeability(),setSprite() and setElementType() works
+	*/
 	@Test
 	public void testElement() {
-		/**
-		 * Test if setPermeability(),setSprite() and setElementType() works
-		 */
+		
 		Permeability permeability = Permeability.BLOCKING;
 		ElementType elementType = ElementType.DwarfMiner;
 		Sprite sprite = new Sprite('c',"Character.png") ;
@@ -57,74 +59,68 @@ public class ElementTest {
 		assertEquals(sprite, this.dwarf.getSprite());
 		assertEquals(elementType,this.dwarf.getElementType());
 	}
-
+	/**
+	* Test if dwarf has the good sprite
+	*/
 	@Test
 	public void testGetSprite() {
-	/**
-	 * Test if dwarf has the good sprite
-	 */
+	
 		assertNotNull(sprite);
 		assertEquals(sprite,this.dwarf.getSprite());
 		
 		
 	}
-
+	/**
+	* Test if dwarf has the good permeability
+	*/
 	@Test
 	public void testGetPermeability() {
-		/**
-		 * Test if dwarf has the good permeability
-		 */
 		Permeability permeability = Permeability.BLOCKING;
 		assertNotNull(permeability);
 		assertEquals(permeability, this.dwarf.getPermeability());
 	}
-
+	
+	/**
+	* Test if dwarf has the good ElementType
+	*/
 	@Test
 	public void testGetElementType() {
-		/**
-		 * Test if dwarf has the good ElementType
-		 */
 		ElementType elementType = ElementType.DwarfMiner;
 		assertNotNull(elementType);
 		assertEquals(elementType, this.dwarf.getElementType());
 	}
 
-
+	/**
+	* Test if dwarf has the good position (x)
+	*/
 	@Test
 	public void testGetX() {
-		/**
-		 * Test if dwarf has the good position (x)
-		 */
 		int expected = 1;
 		assertEquals(expected, this.dwarf.getX());
 	}
 
 
-
+	/**
+	* Test if dwarf has the good position (y)
+	*/
 	@Test
 	public void testGetY() {
-		/**
-		 * Test if dwarf has the good position (y)
-		 */
 		int expected = 1;
 		assertEquals(expected, this.dwarf.getY());
 	}
-
+	
+	/**
+	* Test if the observable exists
+	*/
 	@Test
 	public void testGetObservable() {
-		/**
-		 * Test if the observable exists
-		 */
 		assertNotNull(this);
-		
 	}
-
+	/**
+	* Test if the dwarf has the good filename
+	*/
 	@Test
 	public void testGetFileName() {
-		/**
-		 * Test if the dwarf has the good filename
-		 */
-		
 		assertNotNull(this.dwarf.getSprite().getImageName());
 		String test ="Character.png";
 		assertEquals(test, this.dwarf.getSprite().getImageName());

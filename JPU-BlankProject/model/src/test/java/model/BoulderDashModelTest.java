@@ -21,13 +21,14 @@ public class BoulderDashModelTest  {
 	 */
 	private BoulderDashModel model;
 	IElement elements;
-
+	
+	/**
+	* Create new BoulderDahModel() in model
+	* Create new model.getElement() in elements
+	*/
 	@Before
 	public void setUp() throws Exception {
-		/**
-		 * Create new BoulderDahModel() in model
-		 * Create new model.getElement() in elements
-		 */
+		
 		this.model = new BoulderDashModel();
 		this.elements=model.getElement();
 	}
@@ -36,20 +37,19 @@ public class BoulderDashModelTest  {
 	public void tearDown() throws Exception {
 	}
 
-
+	/**
+	* Test if model.helloWorld exist
+	*/
 	@Test
 	public void testGetHelloWorld() {
-		/**
-		 * Test if model.helloWorld exist
-		 */
+		
 		assertNotNull(this.model.helloWorld);
 	}
-
+	/**
+	* Test if the message in the database is equals to this message
+	*/
 	@Test
 	public void testLoadHelloWorld() { 
-		/**
-		 * Test if the message in the database is equals to this message
-		 */
 		this.model.loadHelloWorld("1");
 		assertEquals("wwwwwwwwwwwwwwwwwwwwwwwwwwwwww@wrrrrrddddddddddddddddddddridw@wbbbbbddrddddddrrrrdddrdddrddw@wbbbbbdddddrddddddddddddddrddw@wcddddidddddddddddrddddrddrrrw@wddddddddddddddddddddddddddddw@wdrddddddddrdddddddddrdddddddw@wdddrdddddrddddrddddiddddddddw@wdddrdrddddddrddddddddddrddddw@wdddddddddrddddddrdddddrdddddw@wdrdddddrddddddddddddddddddddw@wddddddddddrdddrddidddrddddddw@wddrddrdrddddidddddddddrdddddw@wdddidddddddrdddrddddddddddddw@wdddrdddrdddddddddddiddrddiddw@wdddddddddrddddddrdddddrdddddw@wddrddidddrddddddddrddddrddddw@wddrdddidddddrdddddrdddddddddw@wrrrddddrdddrddddddrrrrdddrddw@wddddddddidddddddddddddddddddw@wddddiddrddddrdddiddddrddddddw@wddrdddddidddddddddddddddddddw@wddddddddddddddddrrrdddddddddw@wdddrdddddddddddddiddrdddrdddw@wddrirdddddrdddddrdddirddddddw@wwwwwwwwwwddddddddddddrrdrdddw@wdddddddrwddddddrddddddddrwwww@wdrrrrrrwwdddddddddrdddddddddw@wddddddidddddddddddidddrwbddpw@wwwwwwwwwwwwwwwwwwwwwwwwwwwwww", this.model.getHelloWorld().getMessage());
 		this.model.loadHelloWorld("2");
@@ -61,45 +61,45 @@ public class BoulderDashModelTest  {
 		this.model.loadHelloWorld("5");
 		assertEquals("wwwwwwwwwwwwwwwwwwwwwwwwwwwwww@wcbbbbibwddddrrrrrrrrrrrrrrriw@wbbbbbebwddwdddddddddddddddddw@wbbbbbbbwddwrrrrrrrrrrrrrrrrdw@wbbebbbbwddwiddddddddddddddddw@wbbbbbbbwrdwddrrrrrrrrrrrrrrdw@wbbebbbbdddwdddddddddddddddddw@wwwwwwwwwwwwwwwwwwwwwwwwwwwwdw@wbbbbebbbbbbbbbbbbbebbbbbbbbbw@wbbbbebbbbebbbbbbbbebbbbbbbbbw@wbbbbibbbbebbbbibbbbbbbebbbbbw@wwbbbwbbbbbbbbbwbbbbbbbebbbbbw@wdbbbbbebbbbbbbebbbbbbbbbbbbbw@wdwwwwwwwwwwwwwwwwwwwwwwwwwwww@wdddddddrdddddddddddrddrddbbiw@wddddrddrdddrdddddrddddddrrbdw@wddddddddddddrddddddddrdrddbdw@wdddrddrdrddddrddddrddddddrbdw@wdddddddddddddrdddddddddrddedw@wdwwwwwwwwwwwwwwwwwwwwwwwwwwww@wbbbbbbbbbbbbbrbbbbbbbbbbbbbbw@wbbbbbbbbbbbbbdbbbbbbbbbbibbbw@wbbbbbbbbbeeeeeebbbbbbbbbwbbbw@wbbbbbbbbbbbbbbbbbbbbbbbbbbbbw@wbbeeeeeeeeeeeeeeeeeeeeeeebbbw@wbbbbbibbbbbbbbbbbbibbbbbbbbbw@wbbbbbwbbbbbbbbbbbbwbbbbbbbbbw@wbbbbbbbbbbbbbbeeeeeebbbbbbbbw@wbbbbbbbbbbbbbbbbbbbbbbbbbbbpw@wwwwwwwwwwwwwwwwwwwwwwwwwwwwww", this.model.getHelloWorld().getMessage());
 	}
-
+	
+	/**
+	* Test if the sprites exist and load
+	*/
 	@Test
 	public void testGetSprites() {
-		/**
-		 * Test if the sprites exist and load
-		 */
 		assertNotNull(this.model.sprites);
 	}
-
+	
+	/**
+	* Test the elements of the level in the map
+	*/
 	@Test
 	public void testElementList() {
-		/**
-		 * Test the elements of the level in the map
-		 */
 		assertNotNull(this.model.sprites);
 	}
-
+	
+	/**
+	* Test if DwarfMiner exists
+	*/
 	@Test
 	public void testGetDwarf() {
-		/**
-		 * Test if DwarfMiner exists
-		 */
 		assertNotNull(this.model.dwarfs);
 	}
-
+	
+	/**
+ 	*Test if elements exist 
+	*/
 	@Test
 	public void testGetElement() {
-		/**
-		 * Test if elements exist 
-		 */
 		assertNotNull(this.model.elements);
 		
 	}
-
+	
+	/**
+	* Test if the observable exists
+	*/
 	@Test
 	public void testGetObservable() {
-		/**
-		 * Test if the observable exists
-		 */
 		assertNotNull(this);
 	}
 	
