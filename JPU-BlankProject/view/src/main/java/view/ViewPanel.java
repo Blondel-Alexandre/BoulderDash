@@ -65,7 +65,6 @@ class ViewPanel extends JPanel implements Observer {
 	 */
 	@Override
 	public void paintComponent(final Graphics graphics) {
-		System.out.println("jsqbcqkc");
 		graphics.clearRect(0, 0, 550, 550);	
 		int size = this.viewFrame.getModel().elementList().size();
 		for(int i = 0; i < size ; i++) {			

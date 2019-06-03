@@ -11,7 +11,7 @@ import contract.IModel;
 import contract.IView;
 
 /**
- * The Class View.z
+ * The Class View.
  *
  * @author Jean-Aymeric Diet
  */
@@ -92,6 +92,7 @@ public final class View implements IView, Runnable {
 		this.viewFrame.setController(controller);
 		
 	}
+
 		@Override
 		public Observer getObserver() {
 			return this.viewFrame.getObserver();
