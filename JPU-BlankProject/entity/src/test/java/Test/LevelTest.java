@@ -1,4 +1,4 @@
-package Test;
+/*package Test;
 
 import static org.junit.Assert.*;
 
@@ -94,4 +94,4 @@ public class LevelTest extends Level {
 		
 	}
 
-}
+}*/

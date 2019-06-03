@@ -2,7 +2,7 @@ package contract;
 
 import java.util.ArrayList;
 import java.util.Observable;
-
+import contract.IElement;
 import entity.Level;
 
 /**
@@ -44,6 +44,7 @@ public interface IModel {
 	IMobile getDwarf();
 	Observable getObservable();
 	IElement getElement();
+
 	IElement createBrokenDirt(int x, int y);
 	public void collectDiamond();
 

@@ -9,10 +9,10 @@ package entity;
 public class Level extends Entity {
 
 	/** The id. */
-	private int			id;
+	private int	id;
 
 	/** The key. */
-	private String	key;
+	private String key;
 
 	/** The message. */
 	private String	message  ;
@@ -57,10 +57,7 @@ public class Level extends Entity {
     	int tempLenght = temp.length();
     	for(int x = 0; x < tempLenght; x++) {
     		char c = temp.charAt(x);
-    		map[y][x] = c;
-    		//System.out.println(c + " x : " + x  + " y : " + y );
-    		//System.out.println(tempLenght);
-    		}
+    		map[y][x] = c;    		}
     		}
       }
 	public char[][] getLevel(){
@@ -127,13 +124,6 @@ public class Level extends Entity {
 	 */
 	
 	public void setMessage(final String message) {
-		/*
-		final String SEPARATEUR = "@";
-		String mot[] = message.split(SEPARATEUR);
-
-        for (int i = 0; i < mot.length; i++) {
-            System.out.println(mot[i] + );
-        }*/
 		this.message = message;
 
 	}

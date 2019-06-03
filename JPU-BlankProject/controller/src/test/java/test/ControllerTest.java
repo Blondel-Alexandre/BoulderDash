@@ -2,20 +2,14 @@ package test;
 
 import static org.junit.Assert.*;
 
-import java.awt.Point;
-
 import org.junit.After;
-import org.junit.AfterClass;
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
-
-import contract.ControllerOrder;
 import contract.IModel;
 import contract.IView;
 import controller.Controller;
 
-public class ControlleurTest  {
+public class ControllerTest  {
 
 	private Controller controller;
 	private IView view;

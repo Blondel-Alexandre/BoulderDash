@@ -3,8 +3,6 @@
  */
 package contract;
 
-import static org.junit.Assert.*;
-
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -16,7 +14,7 @@ import org.junit.Test;
  *
  */
 public class IControllerTest {
-private IView view;
+//private IView view;
 	/**
 	 * @throws java.lang.Exception
 	 */

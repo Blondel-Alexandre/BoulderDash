@@ -159,8 +159,12 @@ public class BoulderDashModel extends Observable implements IModel {
 	                break;
 	            case 'c':
 	             	DwarfMiner dwarf = new DwarfMiner();
+	             	BrokenDirt brokenDirt = new BrokenDirt();
+	             	brokenDirt.setX(x);
+	             	brokenDirt.setY(y);
 	              	dwarf.setX(x);
 	               	dwarf.setY(y);
+	               	this.sprites.add(brokenDirt);
 	               	this.dwarfs=dwarf;
 	               	this.elements=dwarf;
 	               	break;					
@@ -190,7 +194,6 @@ public class BoulderDashModel extends Observable implements IModel {
 		return this;
 	}
 
-	
 	public IElement createBrokenDirt(int x, int y) {
         BrokenDirt brokenDirt = new BrokenDirt();
 		brokenDirt.setX(x);

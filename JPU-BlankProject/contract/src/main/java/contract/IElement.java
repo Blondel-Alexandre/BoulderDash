@@ -3,7 +3,7 @@ package contract;
 import java.awt.Image;
 import java.util.Observable;
 
-public interface IElement {
+public interface IElement{
 	
 	int getX();
 	int getY();

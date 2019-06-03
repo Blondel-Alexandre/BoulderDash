@@ -12,10 +12,8 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import model.element.motionless.Wall;
-
 public class SpriteTest  {
-	private Wall wall;
+//	private Wall wall;
     private String filename = "Wall.png";
     private String consoleImage ="w";
     private Image image;
@@ -28,14 +26,14 @@ public class SpriteTest  {
 	@AfterClass
 	public static void tearDownAfterClass() throws Exception {
 	}
-
+/*
 	@Before
 	public void setUp() throws Exception {
 		image = ImageIO.read(getClass().getClassLoader().getResourceAsStream("images/" + filename));
 		new Wall();
 		this.wall = new Wall();
 	}
-
+*/
 	@After
 	public void tearDown() throws Exception {
 	}

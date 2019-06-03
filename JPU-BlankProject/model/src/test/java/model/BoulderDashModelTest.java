@@ -5,19 +5,13 @@ import static org.junit.Assert.*;
 import java.util.ArrayList;
 
 import org.junit.After;
-import org.junit.AfterClass;
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
-
 import contract.IElement;
-import entity.Level;
-import model.element.mobile.DwarfMiner;
-import model.element.motionless.BrokenDirt;
 
 public class BoulderDashModelTest  {
-	private DwarfMiner dwarf;
-	private BrokenDirt brokenDirt;
+//	private DwarfMiner dwarf;
+//	private BrokenDirt brokenDirt;
 	private BoulderDashModel model;
 	IElement elements;
 	ArrayList<IElement> list;
@@ -28,7 +22,7 @@ public class BoulderDashModelTest  {
 	@Before
 	public void setUp() throws Exception {
 		this.model = new BoulderDashModel();
-		DwarfMiner dwarf = new DwarfMiner();
+	//	DwarfMiner dwarf = new DwarfMiner();
 		this.elements=model.getElement();
 	}
 

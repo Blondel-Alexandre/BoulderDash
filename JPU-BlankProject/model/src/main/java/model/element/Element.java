@@ -116,10 +116,7 @@ public class Element extends Observable implements IElement {
 	public String getFileName() {
 		return this.getSprite().getImageName();
 	}
-
-
-
-
+	
 }
 
 
