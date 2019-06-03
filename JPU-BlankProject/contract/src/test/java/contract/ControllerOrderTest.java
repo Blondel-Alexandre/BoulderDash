@@ -28,6 +28,10 @@ public class ControllerOrderTest {
 
 	@Test
 	public void test() {
+		/**
+		 * configure order in order to be equal to ControllerOrder.UP
+		 * Test if order is equal to ControllerOrder.valueOf("UP")
+		 */
 		ControllerOrder order = ControllerOrder.UP;
 		assertEquals(ControllerOrder.valueOf("UP"), order);
 	}
