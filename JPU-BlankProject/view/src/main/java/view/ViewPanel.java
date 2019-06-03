@@ -11,6 +11,7 @@ import javax.swing.JPanel;
 import contract.ElementType;
 import contract.IElement;
 
+
 /**
  * The Class ViewPanel.
  * @author Groupe 4 A1 - Arras
@@ -19,13 +20,15 @@ import contract.IElement;
 class ViewPanel extends JPanel implements Observer {
 
 	/** The view frame. */
-	private ViewFrame					viewFrame;
+	private ViewFrame viewFrame;
 	/** The Constant serialVersionUID. */
 	private static final long	serialVersionUID	= -998294702363713521L;
 	/** The size of the sprites */
 	private int spriteSize = 16;
 	/** The image */
 	public Image img;
+	/** The controller. */
+
 	
 	/**
 	 * Instantiates a new view panel.
@@ -41,6 +44,7 @@ class ViewPanel extends JPanel implements Observer {
 			viewFrame.getModel().elementList().get(i).getObservable().addObserver(this);
 		}
 		System.out.println(viewFrame.getModel().elementList().size());
+		
 	}
 
 	/**

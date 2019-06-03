@@ -322,11 +322,9 @@ public class Controller extends KeyAdapter implements IController, Runnable{
 		}
 	}
 	
-	
-	public void moveEnemy()
+		public void moveEnemy()
 	{
-		Random r = new Random();
-		int random;
+		Random r = new Random();	int random;
 		random = r.nextInt(4);
 		boolean isBrokenDirt = false;
 		switch (random) {
@@ -339,12 +337,7 @@ public class Controller extends KeyAdapter implements IController, Runnable{
 							if(element.getX() == enemyPosition.getX() && element.getY() == enemyPosition.getY() && element.getElementType() == ElementType.BrokenDirt) {
 								currentEnemy.setY(enemyPosition.y);
 								canMove = true;
-								try {
-									Thread.sleep(250);
-								}
-								catch (Exception e) {
-									e.printStackTrace();							
-								}
+
 								
 							}
 						}
@@ -361,12 +354,7 @@ public class Controller extends KeyAdapter implements IController, Runnable{
 							if(element.getX() == enemyPosition.getX() && element.getY() == enemyPosition.getY() && element.getElementType() == ElementType.BrokenDirt) {
 								currentEnemy.setY(enemyPosition.y);
 								canMove = true;
-								try {
-									Thread.sleep(250);
-								}
-								catch (Exception e) {
-									e.printStackTrace();							
-								}
+
 								
 							}
 						}
@@ -383,12 +371,7 @@ public class Controller extends KeyAdapter implements IController, Runnable{
 							if(element.getX() == enemyPosition.getX() && element.getY() == enemyPosition.getY() && element.getElementType() == ElementType.BrokenDirt) {
 								currentEnemy.setX(enemyPosition.x);
 								canMove = true;
-								try {
-									Thread.sleep(250);
-								}
-								catch (Exception e) {
-									e.printStackTrace();							
-								}
+
 								
 							}
 						}
@@ -405,12 +388,7 @@ public class Controller extends KeyAdapter implements IController, Runnable{
 							if(element.getX() == enemyPosition.getX() && element.getY() == enemyPosition.getY() && element.getElementType() == ElementType.BrokenDirt) {
 								currentEnemy.setX(enemyPosition.x);
 								canMove = true;
-								try {
-									Thread.sleep(250);
-								}
-								catch (Exception e) {
-									e.printStackTrace();							
-								}
+
 								
 							}
 						}
@@ -422,11 +400,20 @@ public class Controller extends KeyAdapter implements IController, Runnable{
 		}if(isBrokenDirt == false) {
 		}
 		}
+	@Override
 	public void run() {
-		while (end == false) {
+		while (end== false) {
 			moveEnemy();
-		}
-	}
+			try{
+				Thread.sleep(250);
+			}
+			catch(Exception e) {
+				e.printStackTrace();
+			
+			}}		
 	}
 
+
+	
+	}
 
