@@ -2,6 +2,7 @@ package controller;
 
 import java.awt.Point;
 import java.awt.event.KeyAdapter;
+import java.util.ArrayList;
 import java.util.Random;
 import contract.ControllerOrder;
 import contract.ElementType;
@@ -25,9 +26,13 @@ public final class Controller extends KeyAdapter implements IController  {
 	
 	private Point position;
 	
-	private boolean canMove;
+	private Point enemyPosition;
+	
+	private int canMove;
 	
 	private IElement currentElement;
+	
+	private IElement enemy;
 	
 	
 
@@ -120,11 +125,6 @@ public final class Controller extends KeyAdapter implements IController  {
 	 *
 	 * @see contract.IController#orderPerform(contract.ControllerOrder)
 	 */
-    /*private synchronized ArrayList<IElement> getCopyOfElements(){
-		ArrayList<IElement> copy = new ArrayList<>();
-		copy.addAll(this.getModel().elementList());
-		return copy;
-	}*/
 	
 	public void orderPerform(final ControllerOrder controllerOrder) {
 		//boolean canMove = true;
@@ -137,38 +137,38 @@ public final class Controller extends KeyAdapter implements IController  {
 						currentElement = element;
 						switch(element.getElementType()) {
 						case Dirt:
-							canMove = true;
+							canMove = 1;
 							break;
 						case Wall:
-							canMove = false;
+							canMove = 0;
 							break;
 						case Rock:
-							canMove = false;
+							canMove = 0;
 							gravity();
 							break;
 						case Diamond:
-							canMove = true;
+							canMove = 1;
 							this.getModel().collectDiamond();
 							break;
 						case Enemy:
 							gameOver();
 							break;
 						case Exit:
-							canMove = false;
+							canMove = 0;
 							if(this.getModel().getScore()==0)
 							{
 							win();
 							}
 							break;
 						case BrokenDirt:
-							canMove = true;
+							canMove = 1;
 							isBrokenDirt = true;
 						break;
 						default:
 							break;
 						}
 					}//this.getModel().elementList().remove(element);
-				}if(canMove == true) {
+				}if(canMove == 1) {
 					((IMobile) this.getModel().getDwarf()).moveUp();
 				}
 				break;
@@ -179,30 +179,30 @@ public final class Controller extends KeyAdapter implements IController  {
 						currentElement = element;
 						switch(element.getElementType()) {
 						case Dirt:
-							canMove = true;
+							canMove = 1;
 							break;
 						case Wall:
-							canMove = false;
+							canMove = 0;
 							break;
 						case Rock:
-							canMove = false;
+							canMove = 0;
 							break;
 						case Diamond:
-							canMove = true;
+							canMove = 0;
 							this.getModel().collectDiamond();
 							break;
 						case Enemy:
 							gameOver();
 							break;
 						case Exit:
-							canMove = false;
+							canMove = 0;
 							if(this.getModel().getScore()==0)
 							{
 							win();
 							}
 							break;
 						case BrokenDirt:
-							canMove = true;
+							canMove = 1;
 							isBrokenDirt = true;
 						break;
 						default:
@@ -210,7 +210,7 @@ public final class Controller extends KeyAdapter implements IController  {
 						}
 					}
 				}
-				if(canMove == true) {
+				if(canMove == 1) {
 					((IMobile) this.getModel().getDwarf()).moveDown();
 				}	
 				break;
@@ -221,30 +221,30 @@ public final class Controller extends KeyAdapter implements IController  {
 						currentElement = element;
 						switch(element.getElementType()) {
 						case Dirt:
-							canMove = true;
+							canMove = 1;
 							break;
 						case Wall:
-							canMove = false;
+							canMove = 0;
 							break;
 						case Rock:
-							canMove = false;
+							canMove = 0;
 							break;
 						case Diamond:
-							canMove = true;
+							canMove = 0;
 							this.getModel().collectDiamond();
 							break;
 						case Enemy:
 							gameOver();
 							break;
 						case Exit:
-							canMove = false;
+							canMove = 0;
 							if(this.getModel().getScore()==0)
 							{
 							win();
 							}
 							break;
 						case BrokenDirt:
-							canMove = true;
+							canMove = 1;
 							isBrokenDirt = true;
 						break;
 						default:
@@ -252,7 +252,7 @@ public final class Controller extends KeyAdapter implements IController  {
 						}
 					}
 				}
-				if(canMove == true) {
+				if(canMove == 1) {
 					((IMobile) this.getModel().getDwarf()).moveLeft();
 				}
 				break;
@@ -263,30 +263,30 @@ public final class Controller extends KeyAdapter implements IController  {
 						currentElement = element;
 						switch(element.getElementType()) {
 						case Dirt:
-							canMove = true;
+							canMove = 1;
 							break;
 						case Wall:
-							canMove = false;
+							canMove = 0;
 							break;
 						case Rock:
-							canMove = false;
+							canMove = 0;
 							break;
 						case Diamond:
-							canMove = true;
+							canMove = 1;
 							this.getModel().collectDiamond();
 							break;
 						case Enemy:
 							gameOver();
 							break;
 						case Exit:
-							canMove = false;
+							canMove = 0;
 							if(this.getModel().getScore()==0)
 							{
 							win();
 							}
 							break;
 						case BrokenDirt:
-							canMove = true;
+							canMove = 1;
 							isBrokenDirt = true;
 						break;
 						default:
@@ -294,7 +294,7 @@ public final class Controller extends KeyAdapter implements IController  {
 						}
 					}
 				}
-				if(canMove == true) {
+				if(canMove == 1) {
 					((IMobile) this.getModel().getDwarf()).moveRight();
 				}	
 				break;
@@ -310,64 +310,53 @@ public final class Controller extends KeyAdapter implements IController  {
 	}
 	
 	public void replaceElement() {
-		if(canMove == true) {
+		if(canMove == 1) {
 			this.getModel().elementList().remove(currentElement);
 			System.out.println(currentElement);
 			this.getModel().elementList().add(this.getModel().createBrokenDirt((int) position.getX(), (int) position.getY()));
 			System.err.println(position);
 		}
+		if(canMove == 2) {
+			for(IElement azerty : this.getModel().elementList()) {
+				if (azerty.getElementType() == ElementType.Enemy) {
+					
+				}
+			}
+		}
 	}
+	
 	
 	public void moveEnemy()
 	{
 		Random r = new Random();
 		int random;
 		System.err.println("nique ta mere java");
-		random = r.nextInt(4);
+		//random = r.nextInt(4);
+		random = 0;
 		boolean isBrokenDirt = false;
-		boolean canMove = false;
 		switch (random) {
 			case 0:
-				for(IElement element : this.getModel().elementList()){
-					if(element.getElementType() == ElementType.Enemy) {
-						if(element.getX() == element.getX() && element.getY() == element.getY()+1 && element.getElementType() == ElementType.BrokenDirt) {
-							System.out.println("je peux deplacer");
-						switch(element.getElementType()) {
-						case BrokenDirt:
-							canMove = true;
-							isBrokenDirt = true;
-						break;
-						default:
-							break;
-						}
+				for(IElement currentEnemy : this.getModel().elementList()){
+					if(currentEnemy.getElementType() == ElementType.Enemy) {
+						System.out.println(currentEnemy);
+						enemy = currentEnemy;
+						enemyPosition = new Point(currentEnemy.getX(), currentEnemy.getY()+1);
+						for(IElement element : this.getModel().elementList())
+						if(element.getX() == enemyPosition.getX() && element.getY() == enemyPosition.getY() && element.getElementType() == ElementType.BrokenDirt) {
+							currentEnemy.setY(enemyPosition.y);
+							//this.getModel().elementList().add(this.getModel().createBrokenDirt(enemyPosition.x, enemyPosition.y));
+							//canMove = 2;						
 					}
-				}if(canMove == true) {
-					System.out.println("nique ta mere java");
-					element.setY(element.getY()+1);
-					try {
-						Thread.sleep(250);
-					}
-					catch (Exception e) {
-						e.printStackTrace();
-					}
-					
-				}}
+				}
+			}
 				break;
 			case 1:
 				for(IElement element : this.getModel().elementList()){
 					if(element.getElementType() == ElementType.Enemy) {
 						if(element.getX() == element.getX() && element.getY() == element.getY()-1 && element.getElementType() == ElementType.BrokenDirt) {
 							System.out.println("je peux deplacer");
-						switch(element.getElementType()) {
-						case BrokenDirt:
-							canMove = true;
-							isBrokenDirt = true;
-						break;
-						default:
-							break;
-						}
 					}
-				}if(canMove == true) {
+				}/*if(canMove == true) {
 					element.setY(element.getY()-1);
 					try {
 						Thread.sleep(250);
@@ -375,23 +364,15 @@ public final class Controller extends KeyAdapter implements IController  {
 					catch (Exception e) {
 						e.printStackTrace();
 					}
-				}}
+				}*/}
 				break;
 			case 2:
 				for(IElement element : this.getModel().elementList()){
 					if(element.getElementType() == ElementType.Enemy) {
 						if(element.getX() == element.getX()+1 && element.getY() == element.getY() && element.getElementType() == ElementType.BrokenDirt) {
 							System.out.println("je peux deplacer");
-						switch(element.getElementType()) {
-						case BrokenDirt:
-							canMove = true;
-							isBrokenDirt = true;
-						break;
-						default:
-							break;
-						}
 					}
-				}if(canMove == true) {
+				}/*if(canMove == true) {
 					element.setX(element.getX()+1);
 					try {
 						Thread.sleep(250);
@@ -399,23 +380,15 @@ public final class Controller extends KeyAdapter implements IController  {
 					catch (Exception e) {
 						e.printStackTrace();
 					}
-				}}
+				}*/}
 				break;
 			case 3:
 				for(IElement element : this.getModel().elementList()){
 					if(element.getElementType() == ElementType.Enemy) {
 						if(element.getX() == element.getX()-1 && element.getY() == element.getY() && element.getElementType() == ElementType.BrokenDirt) {
 							System.out.println("je peux deplacer");
-						switch(element.getElementType()) {
-						case BrokenDirt:
-							canMove = true;
-							isBrokenDirt = true;
-						break;
-						default:
-							break;
-						}
 					}
-				}if(canMove == true) {
+				}/*if(canMove == true) {
 					element.setY(element.getX()-1);
 					try {
 						Thread.sleep(250);
@@ -423,14 +396,15 @@ public final class Controller extends KeyAdapter implements IController  {
 					catch (Exception e) {
 						e.printStackTrace();
 					}
-				}}
+				}*/}
 				break;
 			default:
 				break;
 		}if(isBrokenDirt == false) {
 		
 		}
-	}
+		replaceElement();
+		}
 	}
 
 

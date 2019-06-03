@@ -152,6 +152,7 @@ public class BoulderDashModel extends Observable implements IModel {
 	                enemy.setX(x);
 	                enemy.setY(y);
 	                this.sprites.add(enemy);
+	                this.sprites.add(brokenDirt1);
 	                break;
 	            case 'c':
 	             	DwarfMiner dwarf = new DwarfMiner();

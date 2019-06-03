@@ -7,6 +7,8 @@ import java.awt.Image;
 import java.util.Observable;
 import java.util.Observer;
 import javax.swing.JPanel;
+
+import contract.ElementType;
 import contract.IElement;
 
 /**
@@ -66,12 +68,19 @@ class ViewPanel extends JPanel implements Observer {
 	@Override
 	public void paintComponent(final Graphics graphics) {
 		graphics.clearRect(0, 0, 550, 550);	
-		int size = this.viewFrame.getModel().elementList().size();
-		for(int i = 0; i < size ; i++) {			
-			IElement element = this.viewFrame.getModel().elementList().get(i);
-            //System.err.println("je je peint la fenetre en ce moment ");
+		//int size = this.viewFrame.getModel().elementList().size();
+		for(IElement element : this.viewFrame.getModel().elementList()) {
+			if(element.getElementType() != ElementType.Enemy && element.getElementType() != ElementType.Rock)
 			graphics.drawImage(element.getImage(),element.getX()*spriteSize, element.getY()*spriteSize, null);
-		}		
+		}
+		for(IElement element : this.viewFrame.getModel().elementList()) {
+			if(element.getElementType() == ElementType.Enemy)
+			graphics.drawImage(element.getImage(),element.getX()*spriteSize, element.getY()*spriteSize, null);
+		}
+		for(IElement element : this.viewFrame.getModel().elementList()) {
+			if(element.getElementType() == ElementType.Rock)
+			graphics.drawImage(element.getImage(),element.getX()*spriteSize, element.getY()*spriteSize, null);
+		}
 		IElement character = this.viewFrame.getModel().getElement();
 		graphics.drawImage(character.getImage(), character.getX()*spriteSize, character.getY()*spriteSize, null);
 		
