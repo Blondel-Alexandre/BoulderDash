@@ -11,8 +11,22 @@ import org.junit.Test;
 import contract.ElementType;
 import contract.Permeability;
 
+/**
+*The test DwarfMiner
+*
+*@author Group 4 A1 - Arras
+*/
+
+
+/**
+*Create the dwarf
+*/
 public class DwarfMinerTest extends DwarfMiner {
 	private DwarfMiner dwarf;
+	
+/**
+*Create a dwarf with position equal to (1;1)
+*/	
 	@Before
 	public void setUp() throws Exception {
 		this.dwarf = new DwarfMiner();
@@ -24,6 +38,10 @@ public class DwarfMinerTest extends DwarfMiner {
 	public void tearDown() throws Exception {
 	}
 
+/**
+*Test if the dwarf number of life exists
+*Test if the number of life of the dwarf which are get are equal to the expected one (2)
+*/
 	@Test
 	public void testGetNumberLife() {
 		assertNotNull(this.dwarf.getNumberLife());
@@ -31,6 +49,12 @@ public class DwarfMinerTest extends DwarfMiner {
 		assertEquals(expected, this.dwarf.getNumberLife());
 	}
 
+	
+/**
+*Test if the sprite of the dwarf exists
+*Test if the permeability of dwarf is BLOCKING
+*Test if the dwarf is a DwarfMiner
+*/
 	@Test
 	public void testDwarfMiner() {
 		assertNotNull(this.dwarf.getSprite());

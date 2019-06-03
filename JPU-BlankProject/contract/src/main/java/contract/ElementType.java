@@ -1,7 +1,7 @@
 package contract;
 
 /**
- * The Enum ControllerOrder.
+ * The Test ElementType.
  *
  * @author Groupe 4 A1 - Arras
  */

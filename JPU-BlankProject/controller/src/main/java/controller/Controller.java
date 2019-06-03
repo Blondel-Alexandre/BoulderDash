@@ -4,6 +4,7 @@
 
 import java.awt.Point;
 import java.awt.event.KeyAdapter;
+import java.util.ArrayList;
 import java.util.Random;
 import contract.ControllerOrder;
 import contract.ElementType;
@@ -12,6 +13,7 @@ import contract.IElement;
 import contract.IMobile;
 import contract.IModel;
 import contract.IView;
+import contract.Permeability;
 
 
 /**
@@ -29,7 +31,10 @@ public class Controller extends KeyAdapter implements IController, Runnable{
 	
 	private Point enemyPosition;
 	
-	private Point broken;
+	private Point oldPosition;
+	
+	private boolean characterOnMovement = false;
+
 	
 	private boolean canMove;
 	
@@ -42,6 +47,8 @@ public class Controller extends KeyAdapter implements IController, Runnable{
 	private IElement rock;
 	
 	protected boolean end = false;
+	
+	protected int a;
 	
 	
 
@@ -114,6 +121,7 @@ public class Controller extends KeyAdapter implements IController, Runnable{
      */
 	
 	public void gravity() {
+<<<<<<< HEAD
 
 		//Point rockPosition;
 		
@@ -127,11 +135,22 @@ public class Controller extends KeyAdapter implements IController, Runnable{
 							canMove = true;
 					
 						
+=======
+			for(IElement currentRock : this.getModel().elementList()){
+				if(currentRock.getElementType() == ElementType.Rock || currentRock.getElementType() == ElementType.Diamond) {
+					position = new Point(currentRock.getX(),currentRock.getY()+1);
+						for(IElement nextPos : this.getModel().elementList()) {
+							if(nextPos.getX() == position.x && nextPos.getY() == position.y && nextPos.getPermeability() == Permeability.PENETRABLE) {
+								System.out.println("je peux bouger");
+								currentRock.setY(currentRock.getY()+1);
+							}
+						}
+>>>>>>> dafd8de38f0339daa9ca8ff86b046ddd840b57dc
 					}
 				}
 			}
 		
-		}
+		
 	/*
 	 * (non-Javadoc)
 	 *
@@ -139,10 +158,12 @@ public class Controller extends KeyAdapter implements IController, Runnable{
 	 */
 	
 	public void orderPerform(final ControllerOrder controllerOrder) {
-		//boolean canMove = true;
+		boolean rock = false;
+		characterOnMovement = true;
 		boolean isBrokenDirt = false;
 		switch (controllerOrder) {
 			case UP:
+				oldPosition = new Point(this.getModel().getDwarf().getX(), this.getModel().getDwarf().getY());
 				position = new Point(this.getModel().getDwarf().getX(), this.getModel().getDwarf().getY()-1);		
 				for(IElement element: this.getModel().elementList()) {
 					if(element.getX() == position.getX() && element.getY() == position.getY()) {
@@ -154,8 +175,15 @@ public class Controller extends KeyAdapter implements IController, Runnable{
 						case Wall:
 							canMove = false;
 							break;
+						case BrokenDirt:
+							if (rock == false) {
+								canMove = true;
+							}
+							isBrokenDirt = true;
+						break;
 						case Rock:
 							canMove = false;
+							rock = true;
 							break;
 						case Diamond:
 							canMove = true;
@@ -173,10 +201,7 @@ public class Controller extends KeyAdapter implements IController, Runnable{
 							win();
 							}
 							break;
-						case BrokenDirt:
-							canMove = true;
-							isBrokenDirt = true;
-						break;
+
 						default:
 							break;
 						}
@@ -186,6 +211,7 @@ public class Controller extends KeyAdapter implements IController, Runnable{
 				}
 				break;
 			case DOWN:
+				oldPosition = new Point(this.getModel().getDwarf().getX(), this.getModel().getDwarf().getY());
 				position = new Point(this.getModel().getDwarf().getX(), this.getModel().getDwarf().getY()+1);
 				for(IElement element: this.getModel().elementList()) {
 					if(element.getX() == position.getX() && element.getY() == position.getY()) {
@@ -199,6 +225,7 @@ public class Controller extends KeyAdapter implements IController, Runnable{
 							break;
 						case Rock:
 							canMove = false;
+							rock = true;
 							break;
 						case Diamond:
 							canMove = true;
@@ -217,7 +244,9 @@ public class Controller extends KeyAdapter implements IController, Runnable{
 							}
 							break;
 						case BrokenDirt:
-							canMove = true;
+							if (rock == false) {
+								canMove = true;
+							}
 							isBrokenDirt = true;
 						break;
 						default:
@@ -230,6 +259,7 @@ public class Controller extends KeyAdapter implements IController, Runnable{
 				}	
 				break;
 			case LEFT:
+				oldPosition = new Point(this.getModel().getDwarf().getX(), this.getModel().getDwarf().getY());
 				position = new Point(this.getModel().getDwarf().getX()-1, this.getModel().getDwarf().getY());
 				for(IElement element: this.getModel().elementList()) {
 					if(element.getX() == position.getX() && element.getY() == position.getY()) {
@@ -243,6 +273,7 @@ public class Controller extends KeyAdapter implements IController, Runnable{
 							break;
 						case Rock:
 							canMove = false;
+							rock = true;
 							break;
 						case Diamond:
 							canMove = true;
@@ -261,7 +292,9 @@ public class Controller extends KeyAdapter implements IController, Runnable{
 							}
 							break;
 						case BrokenDirt:
-							canMove = true;
+							if (rock == false) {
+								canMove = true;
+							}
 							isBrokenDirt = true;
 						break;
 						default:
@@ -274,6 +307,7 @@ public class Controller extends KeyAdapter implements IController, Runnable{
 				}
 				break;
 			case RIGHT:
+				oldPosition = new Point(this.getModel().getDwarf().getX(), this.getModel().getDwarf().getY());
 				position = new Point(this.getModel().getDwarf().getX()+1, this.getModel().getDwarf().getY());
 				for(IElement element: this.getModel().elementList()) {
 					if(element.getX() == position.getX() && element.getY() == position.getY()) {
@@ -287,7 +321,15 @@ public class Controller extends KeyAdapter implements IController, Runnable{
 							break;
 						case Rock:
 							canMove = false;
+							rock = true;
 							break;
+						case BrokenDirt:
+							if (rock == false) {
+								canMove = true;
+							}
+							isBrokenDirt = true;
+						break;
+
 						case Diamond:
 							canMove = true;
 							this.getModel().collectDiamond();
@@ -304,10 +346,7 @@ public class Controller extends KeyAdapter implements IController, Runnable{
 							win();
 							}
 							break;
-						case BrokenDirt:
-							canMove = true;
-							isBrokenDirt = true;
-						break;
+
 						default:
 							break;
 						}
@@ -323,20 +362,39 @@ public class Controller extends KeyAdapter implements IController, Runnable{
 		}
 		System.out.println(this.getModel().elementList().size() + " : taille de la liste d'éléments");
 		replaceElement();
+characterOnMovement = false;
 	}
 	
 	public void replaceElement() {
 		if(canMove == true) {
+			//characterOnMovement = true;
 			this.getModel().elementList().remove(currentElement);
-			this.getModel().elementList().add(this.getModel().createBrokenDirt((int) position.getX(), (int) position.getY()));
+			this.getModel().elementList().add(this.getModel().createBrokenDirt((int) oldPosition.getX(), (int) oldPosition.getY()));
+			//characterOnMovement = false;
 		}
 	}
 	
-		public void moveEnemy()
-	{
-		Random r = new Random();	int random;
+	public void removeBrokenDirt() {
+			IElement issou = null;
+			a = 1;
+				for(IElement brokenDirtList : this.getModel().elementList()) {
+					if(brokenDirtList.getElementType() == ElementType.BrokenDirt)
+					for(IElement b : this.getModel().elementList()) {
+						if(b.getX() == brokenDirtList.getX() && b.getY() == brokenDirtList.getY() && (b.getElementType() == ElementType.Rock ||b.getElementType() == ElementType.Diamond)) {
+							issou = brokenDirtList;							
+						}
+					}
+				}if(issou != null) {
+				this.getModel().elementList().remove(issou);
+				}
+		}
+	
+	public void moveEnemy(){
+		
+		Random r = new Random();	
+		int random;
 		random = r.nextInt(4);
-		boolean isBrokenDirt = false;
+		System.out.println(random);
 		switch (random) {
 			case 0:
 				for(IElement currentEnemy : this.getModel().elementList()){
@@ -346,27 +404,20 @@ public class Controller extends KeyAdapter implements IController, Runnable{
 						for(IElement element : this.getModel().elementList()) {
 							if(element.getX() == enemyPosition.getX() && element.getY() == enemyPosition.getY() && element.getElementType() == ElementType.BrokenDirt) {
 								currentEnemy.setY(enemyPosition.y);
-								canMove = true;
-
-								
-							}
+								}
 						}
 					}
 				}
 				break;
 			case 1:
 				for(IElement currentEnemy : this.getModel().elementList()){
-					if(currentEnemy.getElementType() == ElementType.Enemy) {
-						System.out.println(currentEnemy);
+					if(currentEnemy.getElementType() == ElementType.Enemy) {						
 						enemy = currentEnemy;
 						enemyPosition = new Point(currentEnemy.getX(), currentEnemy.getY()-1);
 						for(IElement element : this.getModel().elementList()) {
 							if(element.getX() == enemyPosition.getX() && element.getY() == enemyPosition.getY() && element.getElementType() == ElementType.BrokenDirt) {
 								currentEnemy.setY(enemyPosition.y);
-								canMove = true;
-
-								
-							}
+								}
 						}
 					}
 				}
@@ -374,32 +425,25 @@ public class Controller extends KeyAdapter implements IController, Runnable{
 			case 2:
 				for(IElement currentEnemy : this.getModel().elementList()){
 					if(currentEnemy.getElementType() == ElementType.Enemy) {
-						System.out.println(currentEnemy);
+						
 						enemy = currentEnemy;
 						enemyPosition = new Point(currentEnemy.getX()+1, currentEnemy.getY());
 						for(IElement element : this.getModel().elementList()) {
 							if(element.getX() == enemyPosition.getX() && element.getY() == enemyPosition.getY() && element.getElementType() == ElementType.BrokenDirt) {
 								currentEnemy.setX(enemyPosition.x);
-								canMove = true;
-
-								
-							}
+								}
 						}
 					}
 				}
 				break;
 			case 3:
 				for(IElement currentEnemy : this.getModel().elementList()){
-					if(currentEnemy.getElementType() == ElementType.Enemy) {
-						System.out.println(currentEnemy);
+					if(currentEnemy.getElementType() == ElementType.Enemy) {					
 						enemy = currentEnemy;
 						enemyPosition = new Point(currentEnemy.getX()-1, currentEnemy.getY());
 						for(IElement element : this.getModel().elementList()) {
 							if(element.getX() == enemyPosition.getX() && element.getY() == enemyPosition.getY() && element.getElementType() == ElementType.BrokenDirt) {
-								currentEnemy.setX(enemyPosition.x);
-								canMove = true;
-
-								
+								currentEnemy.setX(enemyPosition.x);	
 							}
 						}
 					}
@@ -407,24 +451,28 @@ public class Controller extends KeyAdapter implements IController, Runnable{
 				break;
 			default:
 				break;
-		}if(isBrokenDirt == false) {
 		}
-		}
+	}
+		
+
+	    
 	@Override
-	public void run() {
-		while (end== false) {
-			moveEnemy();
-			gravity();
-			try{
-				Thread.sleep(250);
-			}
-			catch(Exception e) {
-				e.printStackTrace();
-			
-			}}		
-	}
+	public void run() {		
+		while (end== false && characterOnMovement== false) {
 
+			removeBrokenDirt();
 
-	
+				moveEnemy();
+				gravity();
+				System.err.println("dqqsd");
+				try{
+					Thread.sleep(250);
+				}
+				catch(Exception e) {
+					e.printStackTrace();
+				
+				}
+		}
 	}
+}
 

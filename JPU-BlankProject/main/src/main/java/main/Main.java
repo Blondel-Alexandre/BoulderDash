@@ -6,7 +6,7 @@ package main;
 
 
 import controller.Controller;
-
+import controller.RemoveBrokenDirt;
 import model.BoulderDashModel;
 import view.View;
 
@@ -27,11 +27,10 @@ public abstract class Main {
         final BoulderDashModel model = new BoulderDashModel();
         final View view = new View(model);
         final Controller controller = new Controller(view, model);
+        //final RemoveBrokenDirt broken = new RemoveBrokenDirt();
         view.setController(controller);
-        
-controller.control();
-controller.run();
-
+        controller.control();
+        controller.run();
 
     }
 }

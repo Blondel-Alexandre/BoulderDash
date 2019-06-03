@@ -125,10 +125,7 @@ public class BoulderDashModel extends Observable implements IModel {
 					break;
 				case 'b':
 					//Loads the broken dirts.
-	                BrokenDirt brokenDirt = new BrokenDirt();
-	                brokenDirt.setX(x);
-	                brokenDirt.setY(y);
-	                this.sprites.add(brokenDirt);
+	                this.sprites.add(createBrokenDirt(x,y));
 	                break;
 	            case 'r':
 	            	//Loads the rocks.
@@ -136,6 +133,7 @@ public class BoulderDashModel extends Observable implements IModel {
 	                rock.setX(x);
 	                rock.setY(y);
 	                this.sprites.add(rock);
+	                this.sprites.add(createBrokenDirt(x,y));
 	                break;
 	            case 'i':
 	            	//Loads the diamonds.
@@ -154,23 +152,16 @@ public class BoulderDashModel extends Observable implements IModel {
 	            case 'e':
 	            	//Loads the enemy.
 	                Enemy enemy = new Enemy();
-	                BrokenDirt brokenDirt1 = new BrokenDirt();
-	             	brokenDirt1.setX(x);
-	             	brokenDirt1.setY(y);
 	                enemy.setX(x);
 	                enemy.setY(y);
 	                this.sprites.add(enemy);
-	                this.sprites.add(brokenDirt1);
+	                this.sprites.add(createBrokenDirt(x,y));
 	                break;
 	            case 'c':
 	            	// Loads the dwarf.
 	             	DwarfMiner dwarf = new DwarfMiner();
-	             	BrokenDirt brokenDirt2 = new BrokenDirt();
-	             	brokenDirt2.setX(x);
-	             	brokenDirt2.setY(y);
 	              	dwarf.setX(x);
 	               	dwarf.setY(y);
-	               	this.sprites.add(brokenDirt2);
 	               	this.dwarfs=dwarf;
 	               	this.elements=dwarf;
 	               	break;					
