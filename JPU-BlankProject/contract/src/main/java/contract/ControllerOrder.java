@@ -5,5 +5,5 @@ package contract;
  *
  */
 public enum ControllerOrder {
-	A,B,C,D,E, UP, DOWN,LEFT, RIGHT, NO,
+	UP, DOWN,LEFT, RIGHT,
 }

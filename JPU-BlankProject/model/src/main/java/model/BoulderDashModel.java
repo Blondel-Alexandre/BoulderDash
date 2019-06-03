@@ -69,8 +69,6 @@ public class BoulderDashModel extends Observable implements IModel {
 
 	private void setHelloWorld(final Level helloWorld) {
 		this.helloWorld = helloWorld;
-		this.setChanged();
-		this.notifyObservers();
 
 	}
 
@@ -84,21 +82,7 @@ public class BoulderDashModel extends Observable implements IModel {
 			e.printStackTrace();
 		}
 	}
-	
-	
-	/**
-     * Gets the observable.
-     *
-     * @return the observable
-     */
-	/*
-	 * (non-Javadoc)
-	 *
-	 * @see contract.IModel#getObservable()
-	 */
-//	public Observable getObservable() {
-//		return this;
-//	}
+
 
 	
 	@Override

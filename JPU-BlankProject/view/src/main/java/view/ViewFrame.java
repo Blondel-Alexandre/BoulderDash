@@ -15,17 +15,16 @@ import contract.IModel;
 /**
  * The Class ViewFrame.
  *
- * @author Jean-Aymeric Diet
  */
+
 class ViewFrame extends JFrame implements KeyListener {
 
 	/** The model. */
-	private IModel						model;
-	
+	private IModel model;
+	/** The panel. */
 	private ViewPanel panel;
-
 	/** The controller. */
-	private IController				controller;
+	private IController controller;
 	/** The Constant serialVersionUID. */
 	private static final long	serialVersionUID	= -697358409737458175L;
 
@@ -175,8 +174,12 @@ class ViewFrame extends JFrame implements KeyListener {
 
 	}
 
+	/**
+	 * Gets the observer
+	 * 
+	 * @return the panel
+	 */
 	public Observer getObserver() {
-		// TODO Auto-generated method stub
 		return this.panel;
 	}
 }

@@ -13,8 +13,8 @@ import contract.IView;
 /**
  * The Class View.
  *
- * @author Jean-Aymeric Diet
  */
+
 public final class View implements IView, Runnable {
 
 	/** The frame. */
@@ -42,16 +42,6 @@ public final class View implements IView, Runnable {
 		switch (keyCode) {
 			case KeyEvent.VK_UP:
 				return ControllerOrder.UP;
-			case KeyEvent.VK_1:
-				return ControllerOrder.A;
-			case KeyEvent.VK_2:
-				return ControllerOrder.B;
-			case KeyEvent.VK_3:
-				return ControllerOrder.C;
-			case KeyEvent.VK_4:
-				return ControllerOrder.D;
-			case KeyEvent.VK_5:
-				return ControllerOrder.E;
 			case KeyEvent.VK_DOWN:
 				return ControllerOrder.DOWN;
 			case KeyEvent.VK_LEFT:
@@ -59,9 +49,8 @@ public final class View implements IView, Runnable {
 			case KeyEvent.VK_RIGHT:
 				return ControllerOrder.RIGHT;
 			default:
-				return ControllerOrder.NO;
-				//doNothing
 		}
+		return null;
 	}
 
 	/*
@@ -69,11 +58,14 @@ public final class View implements IView, Runnable {
 	 *
 	 * @see contract.IView#printMessage(java.lang.String)
 	 */
+	
 	public void printMessage(final String message) {
 		this.viewFrame.printMessage(message);
 	}
 
 	/*
+	 * Run the view.
+	 * 
 	 * (non-Javadoc)
 	 *
 	 * @see java.lang.Runnable#run()
@@ -93,15 +85,20 @@ public final class View implements IView, Runnable {
 		
 	}
 
-		@Override
-		public Observer getObserver() {
-			return this.viewFrame.getObserver();
-		}
-
-		/**
-		 * Method to set the controller
-		 * @param controller
-		 * 		Controller interface
-		 */
+	
+	/**
+	 * Gets the observer
+	 * 
+	 * @return the observer
+	 * 
+	 */
+	
+	@Override
+	public Observer getObserver() {
+	return this.viewFrame.getObserver();
 	}
+
+	
+
+}
 
