@@ -5,6 +5,8 @@ import static org.junit.Assert.*;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+
+import contract.ControllerOrder;
 import contract.IModel;
 import contract.IView;
 import controller.Controller;
@@ -43,10 +45,8 @@ public class ControllerTest  {
 	@Test
 	public void testOrderPerform() {
 		
-		
-		
-		
-		
+		ControllerOrder order = ControllerOrder.UP;
+		assertEquals(ControllerOrder.valueOf("UP"), order);
 	}
 
 }

@@ -37,7 +37,7 @@ import model.element.motionless.*;
 public class BoulderDashModel extends Observable implements IModel {
 
 	/** The helloWorld. */
-	public String levelChoice = "1";
+	public String levelChoice = "2";
 
 	public Level helloWorld;
 	

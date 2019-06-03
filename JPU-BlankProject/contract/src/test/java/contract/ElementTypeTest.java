@@ -28,6 +28,10 @@ public class ElementTypeTest {
 
 	@Test
 	public void test() {
+		/**
+		 * configure elementtype in order to be equal to ElementType.BrokenDirt 
+		 * Test if elementtype is equal to ElementType.valueOf("BrokenDirt")
+		 */
 		ElementType elementtype = ElementType.BrokenDirt;
 		assertEquals(ElementType.valueOf("BrokenDirt"), elementtype);
 	}
