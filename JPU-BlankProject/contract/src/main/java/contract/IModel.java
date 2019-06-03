@@ -51,7 +51,7 @@ public interface IModel {
 	/**
 	 * Sets the score.
 	 *
-	 * @param score
+	 * @param Score
 	 *          the score
 	 */
 	
@@ -88,18 +88,33 @@ public interface IModel {
 	/**
 	 * Create a Broken Dirt.
 	 *
-	 * @param x, y
-	 * 			the position
+	 * @param x
+	 * 			the x position
 	 * 
+	 * @param y
+	 * 			the y position
+	 * 
+	 * @return
+	 * 			return brokenDirt
 	 *
 	 */
 
 	IElement createBrokenDirt(int x, int y);
 
-	/**  Implements the elements in the map */
+	/**  Implements the elements in the map 
+	 * 
+	 * @return
+	 * 			return getSprites
+	 *
+	 */
 	ArrayList<IElement> getSprites();
 	
-	/**  The ArrayList of the elements in the map */
+	/**  The ArrayList of the elements in the map 
+	 * 
+	 * @return
+	 * 			return elementList
+	 *
+	 */
 	ArrayList<IElement> elementList();
 	
 
