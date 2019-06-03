@@ -3,8 +3,9 @@ package contract;
 /**
  * The Interface IController.
  *
- * @author Jean-Aymeric Diet
+ * @author Groupe 4 A1 - Arras
  */
+
 public interface IController {
 
 	/**
@@ -18,5 +19,6 @@ public interface IController {
 	 * @param controllerOrder
 	 *          the controller order
 	 */
+	
 	public void orderPerform(ControllerOrder controllerOrder);
 }

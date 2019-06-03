@@ -1,5 +1,10 @@
 package contract;
 
+/**
+ * The Enum ControllerOrder.
+ *
+ */
+
 public enum ElementType {
 	
 	Wall,

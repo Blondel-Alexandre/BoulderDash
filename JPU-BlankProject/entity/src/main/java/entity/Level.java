@@ -4,7 +4,6 @@ package entity;
 /**
  * The Class HelloWorld.
  *
- * @author Jean-Aymeric Diet
  */
 public class Level extends Entity {
 
@@ -17,13 +16,15 @@ public class Level extends Entity {
 	/** The message. */
 	private String	message  ;
 	
+	/** The size of the map. */
 	protected int levelSize = 30;
 
+	/** The map. */
 	char map[][] = new char[levelSize][levelSize];
 
 
 	/**
-	 * Instantiates a new hello world.
+	 * Instantiates a new level.
 	 *
 	 * @param id
 	 *          the id
@@ -32,6 +33,7 @@ public class Level extends Entity {
 	 * @param message
 	 *          the message
 	 */
+	
 	public Level(final int id, final String key, final String message) {
 		this.setId(id);
 		this.setKey(key);
@@ -40,11 +42,16 @@ public class Level extends Entity {
 	}
 
 	/**
-	 * Instantiates a new hello world.
+	 * Instantiates a new level.
 	 */
 	public Level() {
 		this(0, "", "");
 	}
+	
+	/**
+	 * Load the level
+	 * 
+	 */
 	
 	public void loadLevel() {
 	String mapCharacter = getMessage();
@@ -53,13 +60,20 @@ public class Level extends Entity {
 	System.out.println(getMessage());
     for (int y = 0; y < mot.length; y++) {
     	String temp = mot[y];
-		//System.out.println("salut");
     	int tempLenght = temp.length();
     	for(int x = 0; x < tempLenght; x++) {
     		char c = temp.charAt(x);
     		map[y][x] = c;    		}
     		}
       }
+	
+	/**
+	 * Gets the map
+	 * 
+	 * @return the map
+	 * 
+	 */
+	
 	public char[][] getLevel(){
 		return this.map;
 		
@@ -70,6 +84,7 @@ public class Level extends Entity {
 	 *
 	 * @return the id
 	 */
+	
 	public int getId() {
 		return this.id;
 	}
@@ -80,6 +95,7 @@ public class Level extends Entity {
 	 * @param id
 	 *          the new id
 	 */
+	
 	public void setId(final int id) {
 		this.id = id;
 	}
@@ -93,6 +109,12 @@ public class Level extends Entity {
 		return this.key;
 	}
 	
+	/**
+	 * Gets the size of the map.
+	 * 
+	 * @return the size of the map
+	 */
+	
 	public int getLevelSize() {
 		return this.levelSize;
 	}
@@ -103,6 +125,7 @@ public class Level extends Entity {
 	 * @param key
 	 *          the new key
 	 */
+	
 	public void setKey(final String key) {
 		this.key = key;
 	}
@@ -112,6 +135,7 @@ public class Level extends Entity {
 	 *
 	 * @return the message
 	 */
+	
 	public String getMessage() {
 		return this.message;
 	}
