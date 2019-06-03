@@ -38,16 +38,6 @@ public class DwarfMinerTest extends DwarfMiner {
 	public void tearDown() throws Exception {
 	}
 
-/**
-*Test if the dwarf number of life exists
-*Test if the number of life of the dwarf which are get are equal to the expected one (2)
-*/
-	@Test
-	public void testGetNumberLife() {
-		assertNotNull(this.dwarf.getNumberLife());
-		int expected = 2;
-		assertEquals(expected, this.dwarf.getNumberLife());
-	}
 
 	
 /**

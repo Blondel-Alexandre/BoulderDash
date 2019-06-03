@@ -121,21 +121,7 @@ public class Controller extends KeyAdapter implements IController, Runnable{
      */
 	
 	public void gravity() {
-<<<<<<< HEAD
 
-		//Point rockPosition;
-		
-			for(IElement element : this.getModel().elementList()){
-				if(element.getElementType() == ElementType.Rock || element.getElementType() == ElementType.Diamond) {
-					System.out.println(element);
-					rock = element;
-					broken = new Point(element.getX(), element.getY()+1);
-						if(rock.getX() == broken.getX() && rock.getY() == broken.getY() && element.getElementType() == ElementType.BrokenDirt) {
-							rock.setY(broken.y);
-							canMove = true;
-					
-						
-=======
 			for(IElement currentRock : this.getModel().elementList()){
 				if(currentRock.getElementType() == ElementType.Rock || currentRock.getElementType() == ElementType.Diamond) {
 					position = new Point(currentRock.getX(),currentRock.getY()+1);
@@ -145,7 +131,6 @@ public class Controller extends KeyAdapter implements IController, Runnable{
 								currentRock.setY(currentRock.getY()+1);
 							}
 						}
->>>>>>> dafd8de38f0339daa9ca8ff86b046ddd840b57dc
 					}
 				}
 			}
