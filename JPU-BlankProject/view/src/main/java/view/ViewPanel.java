@@ -13,7 +13,7 @@ import contract.IElement;
 
 /**
  * The Class ViewPanel.
- *
+ * @author Groupe 4 A1 - Arras
  */
 
 class ViewPanel extends JPanel implements Observer {

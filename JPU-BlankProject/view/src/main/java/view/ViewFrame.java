@@ -15,6 +15,7 @@ import contract.IModel;
 /**
  * The Class ViewFrame.
  *
+ * @author Groupe 4 A1 - Arras
  */
 
 class ViewFrame extends JFrame implements KeyListener {

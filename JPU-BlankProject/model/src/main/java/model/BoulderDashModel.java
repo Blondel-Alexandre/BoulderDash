@@ -15,7 +15,7 @@ import model.element.motionless.*;
 /**
  * The Class Model.
  *
- * @author Jean-Aymeric Diet
+ * @author Groupe 4 A1 - Arras
  */
 
 public class BoulderDashModel extends Observable implements IModel {
@@ -54,9 +54,9 @@ public class BoulderDashModel extends Observable implements IModel {
 	}
 	
 	/**
-     * Gets the hello world.
+     * Gets the level.
      *
-     * @return the hello world
+     * @return the level
      */
 	/*
 	 * (non-Javadoc)
@@ -67,12 +67,22 @@ public class BoulderDashModel extends Observable implements IModel {
 		return this.helloWorld ;
 	}
 
+	/**
+	 * Sets the level
+	 * 
+	 * @param helloWorld
+	 */
+	
 	private void setHelloWorld(final Level helloWorld) {
 		this.helloWorld = helloWorld;
 
 	}
 
-
+	/**
+	 * Loads the level.
+	 * 
+	 * 
+	 */
 	
 	public void loadHelloWorld(final String code) {
 		try {
@@ -84,6 +94,11 @@ public class BoulderDashModel extends Observable implements IModel {
 	}
 
 
+	/**
+	 * Get sprites of the level.
+	 * 
+	 * 
+	 */
 	
 	@Override
 	public ArrayList<IElement> getSprites() {
@@ -93,42 +108,49 @@ public class BoulderDashModel extends Observable implements IModel {
 				char c = map[y][x];
 				switch (c) {
 				case 'w':
+					// Loads the walls.
 					Wall wall = new Wall();
 					wall.setX(x);
 					wall.setY(y);
 					this.sprites.add(wall);
 					break;
 				case 'd':
+					// Loads the dirts.
 					Dirt dirt = new Dirt();
 					dirt.setX(x);
 					dirt.setY(y);
 					this.sprites.add(dirt);
 					break;
 				case 'b':
+					//Loads the broken dirts.
 	                BrokenDirt brokenDirt = new BrokenDirt();
 	                brokenDirt.setX(x);
 	                brokenDirt.setY(y);
 	                this.sprites.add(brokenDirt);
 	                break;
 	            case 'r':
+	            	//Loads the rocks.
 	                Rock rock = new Rock();
 	                rock.setX(x);
 	                rock.setY(y);
 	                this.sprites.add(rock);
 	                break;
 	            case 'i':
+	            	//Loads the diamonds.
 	                Diamond diamond = new Diamond();
 	                diamond.setX(x);
 	                diamond.setY(y);
 	                this.sprites.add(diamond);
 	                break;
 	            case 'p':
+	            	//Loads the exit.
 	                Exit exit = new Exit();
 	                exit.setX(x);
 	                exit.setY(y);
 	                this.sprites.add(exit);
 	                break;
 	            case 'e':
+	            	//Loads the enemy.
 	                Enemy enemy = new Enemy();
 	                BrokenDirt brokenDirt1 = new BrokenDirt();
 	             	brokenDirt1.setX(x);
@@ -139,6 +161,7 @@ public class BoulderDashModel extends Observable implements IModel {
 	                this.sprites.add(brokenDirt1);
 	                break;
 	            case 'c':
+	            	// Loads the dwarf.
 	             	DwarfMiner dwarf = new DwarfMiner();
 	             	BrokenDirt brokenDirt2 = new BrokenDirt();
 	             	brokenDirt2.setX(x);
@@ -155,25 +178,62 @@ public class BoulderDashModel extends Observable implements IModel {
 	return this.sprites;
 	}
 
+	/**
+	 * The elements of the level in the map.
+	 * 
+	 * @return the elements.
+	 */
 	public ArrayList<IElement> elementList() {
 		return this.sprites;
 	}
 
+	/**
+	 * Gets the dwarf in IMobile.
+	 *
+	 * @return the dwarf
+	 * 
+	 *
+	 */
+	
 	@Override
 	public IMobile getDwarf() {
 		return this.dwarfs;
 	}
 	
+	/**
+	 * Gets the dwarf in IElement.
+	 *
+	 * @return the dwarf
+	 * 
+	 *
+	 */
 	
 	@Override
 	public IElement getElement() {
 		return this.elements;
 	}
 
+	/**
+	 * Gets the observable.
+	 *
+	 * @return the observable
+	 * 
+	 *
+	 */
+	
 	@Override
 	public Observable getObservable() {
 		return this;
 	}
+	
+	/**
+	 * Create a Broken Dirt.
+	 *
+	 * @param x, y
+	 * 			the position
+	 * 
+	 *
+	 */
 
 	public IElement createBrokenDirt(int x, int y) {
         BrokenDirt brokenDirt = new BrokenDirt();
@@ -181,17 +241,35 @@ public class BoulderDashModel extends Observable implements IModel {
         brokenDirt.setY(y);
 		return brokenDirt;
 	}
-
+	
+	/**
+	 * Gets the score.
+	 *
+	 * @return the score
+	 * 
+	 *
+	 */
+	
 	public int getScore() {
 		return Score;
 	}
-
+	
+	/** Sets the score.
+	 *
+	 * @param score
+	 *          the score
+	 */
 	public void setScore(int score) {
 		this.Score = score;
 		this.setChanged();
 		this.notifyObservers();
 		
 	}
+	
+	/**
+	 * Modify the score
+	 * 
+	 */
 	
 	public void collectDiamond()
 	{

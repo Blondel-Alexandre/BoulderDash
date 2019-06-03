@@ -19,7 +19,10 @@ public void setNumberLife(int numberLife) {
 
     private static final Sprite SPRITE = new Sprite('c', "Character.png");
 
-	
+	/**
+	 * Instantiates a new Dwarf Miner.
+	 */
+    
 	public DwarfMiner() {
 		super(SPRITE, Permeability.BLOCKING, ElementType.DwarfMiner);
 		this.getSprite().loadImage();
@@ -27,35 +30,10 @@ public void setNumberLife(int numberLife) {
 		
 
 /*public void setNumberLife(int numberLife) {
-	this.numberLife = numberLife;
-}*/
-/*
-@Override
-public void moveUpPlayer() {
-	super.moveUp();
-	//System.out.println(getY());
-
+	this.numberLife = numberLife;*/
+}
 	
-}
 
-@Override
-public void moveLeftPlayer() {
-super.moveLeft();
-//System.out.println(y);
-
-}
-
-@Override
-public void moveDownPlayer() {
-super.moveDown();	
-}
-@Override
-public void moveRightPlayer() {
-super.moveRight();	
-}
-*/
-	
-}
 
 
 

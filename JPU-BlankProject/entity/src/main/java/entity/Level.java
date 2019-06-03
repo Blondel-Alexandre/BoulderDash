@@ -4,6 +4,7 @@ package entity;
 /**
  * The Class HelloWorld.
  *
+ * @author Groupe 4 A1 - Arras
  */
 public class Level extends Entity {
 

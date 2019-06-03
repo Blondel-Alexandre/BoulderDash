@@ -8,7 +8,7 @@ import entity.Level;
 /**
  * The Interface IModel.
  *
- * @author Jean-Aymeric Diet
+ * @author Groupe 4 A1 - Arras
  */
 public interface IModel {
 

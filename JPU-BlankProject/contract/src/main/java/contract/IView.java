@@ -5,6 +5,7 @@ import java.util.Observer;
 /**
  * The Interface IView.
  *
+ * @author Groupe 4 A1 - Arras
  */
 
 public interface IView {

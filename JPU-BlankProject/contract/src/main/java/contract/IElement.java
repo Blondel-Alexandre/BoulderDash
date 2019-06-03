@@ -21,6 +21,7 @@ public interface IElement{
 		
 	/**
 	 * Gets the y.
+	 * 
 	 * @return the y
 	 */
 	

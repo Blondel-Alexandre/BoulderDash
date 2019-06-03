@@ -13,6 +13,7 @@ import contract.IView;
 /**
  * The Class View.
  *
+ * @author Groupe 4 A1 - Arras
  */
 
 public final class View implements IView, Runnable {
