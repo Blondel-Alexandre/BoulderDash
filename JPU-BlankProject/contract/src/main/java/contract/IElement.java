@@ -84,6 +84,8 @@ public interface IElement{
 	 */
 	
 	ElementType getElementType();
+	
+	Permeability getPermeability();
 
 	
 }

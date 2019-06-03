@@ -79,18 +79,13 @@ class ViewPanel extends JPanel implements Observer {
 	public void paintComponent(final Graphics graphics) {
 		graphics.clearRect(0, 0, 550, 550);	
 		for(IElement element : this.viewFrame.getModel().elementList()) {
-			if(element.getElementType() != ElementType.Enemy && element.getElementType() != ElementType.Rock)
+			if(element.getElementType() != ElementType.Enemy && element.getElementType() == ElementType.Dirt || element.getElementType() == ElementType.BrokenDirt)
 			//Prints others elements in the map.
 			graphics.drawImage(element.getImage(),element.getX()*spriteSize, element.getY()*spriteSize, null);
 		}
 		for(IElement element : this.viewFrame.getModel().elementList()) {
-			if(element.getElementType() == ElementType.Enemy)
+			if(element.getElementType() != ElementType.Dirt && element.getElementType() != ElementType.BrokenDirt)
 			//Prints the enemy.
-			graphics.drawImage(element.getImage(),element.getX()*spriteSize, element.getY()*spriteSize, null);
-		}
-		for(IElement element : this.viewFrame.getModel().elementList()) {
-			if(element.getElementType() == ElementType.Rock)
-			//Prints the rocks.
 			graphics.drawImage(element.getImage(),element.getX()*spriteSize, element.getY()*spriteSize, null);
 		}
 		
