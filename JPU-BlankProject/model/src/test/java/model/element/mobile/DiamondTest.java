@@ -11,12 +11,24 @@ import org.junit.Test;
 import contract.ElementType;
 import contract.Permeability;
 
+/**
+*The test Diamond
+*
+*@author Group 4 A1 - Arras
+*/
+
 public class DiamondTest {
+/**
+*Create a diamond
+*/
 	private Diamond diamond;
 	
 
 	@Before
 	public void setUp() throws Exception {
+/**
+*Create the diamond method
+*/
 		this.diamond = new Diamond();
 	}
 
@@ -26,6 +38,11 @@ public class DiamondTest {
 
 	@Test
 	public void test() {
+/**
+*Test if the diamond Sprite exists
+*Test if the permeability of diamond is BLOCKING
+*Test if the Diamond is a diamond
+*/
 		assertNotNull(this.diamond.getSprite());
 		
 		Permeability expected1 = Permeability.BLOCKING;
