@@ -35,32 +35,32 @@ public class DAOHelloWorldTest extends DAOHelloWorld {
 
 	@Test
 	public void testDAOHelloWorld() {
-		
+		fail("Not yet implemented");
 	}
 
 	@Test
 	public void testCreateLevel() {
-		
+		fail("Not yet implemented");
 	}
 
 	@Test
 	public void testDeleteLevel() {
-		
+		fail("Not yet implemented");
 	}
 
 	@Test
 	public void testUpdateLevel() {
-		
+		fail("Not yet implemented");
 	}
 
 	@Test
 	public void testFindInt() {
-		
+		fail("Not yet implemented");
 	}
 
 	@Test
 	public void testFindString() {
-		
+		fail("Not yet implemented");
 	}
 
 }

@@ -42,7 +42,7 @@ public class DwarfMinerTest extends DwarfMiner {
 		assertEquals(expected2, this.dwarf.getElementType());
 		
 	}
-/*
+
 	@Test
 	public void testMoveUpPlayer() {
 		this.dwarf.moveUpPlayer();
@@ -70,6 +70,6 @@ public class DwarfMinerTest extends DwarfMiner {
 		int expected = 2;
 		assertEquals(expected,this.dwarf.getX());
 		
-	}*/
+	}
 
 }

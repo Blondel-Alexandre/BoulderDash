@@ -2,10 +2,11 @@ package model.element.mobile;
 
 
 import contract.ElementType;
+import contract.IDwarfMiner;
 import contract.Permeability;
 import model.element.Sprite;
 
-public class DwarfMiner extends Mobile{
+public class DwarfMiner extends Mobile implements IDwarfMiner{
 
 static int numberLife =2;
 
@@ -29,7 +30,7 @@ public void setNumberLife(int numberLife) {
 /*public void setNumberLife(int numberLife) {
 	this.numberLife = numberLife;
 }*/
-/*
+
 @Override
 public void moveUpPlayer() {
 	super.moveUp();
@@ -53,7 +54,7 @@ super.moveDown();
 public void moveRightPlayer() {
 super.moveRight();	
 }
-*/
+
 	
 }
 

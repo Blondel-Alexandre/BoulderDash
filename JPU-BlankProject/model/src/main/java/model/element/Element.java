@@ -96,6 +96,7 @@ public class Element extends Observable implements IElement {
 		this.x = x;
 		this.setChanged();
 		this.notifyObservers();
+		System.out.println(x + "je suis X");
 	}
 
 	public int getY() {
