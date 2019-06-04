@@ -4,7 +4,6 @@
 
 import java.awt.Point;
 import java.awt.event.KeyAdapter;
-import java.util.ArrayList;
 import java.util.Random;
 import contract.ControllerOrder;
 import contract.ElementType;
@@ -27,27 +26,29 @@ public class Controller extends KeyAdapter implements IController, Runnable{
 	/** The model. */
 	private IModel model;
 	
+	/** The position of an element. */
 	private Point position;
 	
+	/** The position of the enemy. */
 	private Point enemyPosition;
 	
+	/** The old position of an element. */
 	private Point oldPosition;
 	
+	/** The variable to know if the character is on movement. */
 	private boolean characterOnMovement = false;
-
+	
+	/** The boolean canMove to know if the character can move. */
 	private boolean canMove;
-	
-	private Point nullElement;
-	
+
+	/** The current element of the list. */
 	private IElement currentElement;
 	
+	/** The enemy of elementList. */
 	private IElement enemy;
 	
-	private IElement rock;
-	
+	/** The boolean for the end of the level. */
 	protected boolean end = false;
-	
-	protected int a;
 	
 	
 
@@ -373,7 +374,6 @@ characterOnMovement = false;
 	 */
 	public void removeBrokenDirt() {
 			IElement issou = null;
-			a = 1;
 				for(IElement brokenDirtList : this.getModel().elementList()) {
 					if(brokenDirtList.getElementType() == ElementType.BrokenDirt)
 					for(IElement b : this.getModel().elementList()) {
