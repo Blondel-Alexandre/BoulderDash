@@ -35,7 +35,6 @@ public class Controller extends KeyAdapter implements IController, Runnable{
 	
 	private boolean characterOnMovement = false;
 
-	
 	private boolean canMove;
 	
 	private Point nullElement;
